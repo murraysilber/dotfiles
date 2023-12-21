@@ -17,10 +17,12 @@ if [ $? -ne 0 ]; then
     touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
     PROD=$(softwareupdate -l | grep "\*.*Command Line" | tail -n 1 | sed 's/^[^C]* //')
     softwareupdate -i "$PROD" --verbose
+    echo "Command Line Tools for Xcode have been installed at:"
+    xcode-select -p
 else
     # Should see the location of the installed tools. Something like this:
     # /Library/Developer/CommandLineTools
-    echo "Command Line Tools for Xcode have been installed at:"
+    echo "Command Line Tools for Xcode have already been installed at:"
     xcode-select -p
 fi
 
