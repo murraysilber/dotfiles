@@ -5,14 +5,12 @@
 # Are we using ZSH? Not writing any fancy check yet, just a visual guide
 echo "We are using SHELL: "$SHELL
 
-# 1. Install Command Line Tools for Xcode, necessary for using git clone
+# ------------------------------ 1 ------------------------------------- #
+# Install Command Line Tools for Xcode.
+# Necessary for using git clone
 # Could I just create releases of my dotfiles using zip and then just get
 # the zip?? Then I can install Command Line Tools for Xcode as part of the
 # Homebrew install. Simpler?  Need to test this.
-
-echo "Checking Command Line Tools for Xcode"
-# Only run if the tools are not installed yet
-# To check that try to print the SDK path
 xcode-select -p &>/dev/null
 if [ $? -ne 0 ]; then
     echo "Command Line Tools for Xcode not found. Installing from softwareupdate…"
@@ -30,6 +28,22 @@ else
     echo "Command Line Tools for Xcode have already been installed at:"
     xcode-select -p
 fi
+
+# ------------------------------ 2 ------------------------------------- #
+# Clone the git repo
+# Now that we have the Command Line Tools for Xcode installed, we can
+# clone the full repo.
+echo ''
+echo "Cloning git repo"
+git clone -b main https://github.com/murraysilber/dotfiles.git $HOME/dotfiles
+echo ''
+
+# ------------------------------ 3 ------------------------------------- #
+# Now that the repo is cloned, lets have some fun
+# Lets setup macOS defaults. This is the way I like things.
+# Your preferences might differ
+echo "Setting up macOS defaults"
+. $HOME/dotfiles/install/macos_defaults.sh
 
 # # Change directory to the parent directory of the bootstrap script.
 # cd "$(dirname "$0")/.."
@@ -55,20 +69,6 @@ set -e
 # echo ''
 # echo ''
 # success 'Dotfiles installed!'
-
-# 2. Clone the git repo
-# Now that we have the Command Line Tools for Xcode installed, we can
-# clone the full repo.
-cd ~
-echo ''
-echo "Cloning git repo"
-git clone -b main https://github.com/murraysilber/dotfiles.git $HOME/dotfiles
-echo ''
-
-# Lets setup macOS defaults. This is the way I like things.
-# Your preferences might differ
-# Make sure we can access macos_defaults.sh
-. $HOME/dotfiles/install/macos_defaults.sh
 
 # Install Homebrew and Zap in preparation for more
 # 1. Install Homebrew
