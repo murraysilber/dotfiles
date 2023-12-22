@@ -45,6 +45,24 @@ echo ''
 echo "Setting up macOS defaults"
 . $HOME/dotfiles/install/macos_defaults.sh
 
+# ------------------------------ 4 ------------------------------------- #
+# Install Homebrew
+echo "Installing Homebrew"
+echo ''
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>$HOME/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# ------------------------------ 5 ------------------------------------- #
+# Install ZAP plugin manager for zsh (a very simple plugin manager)
+echo ''
+echo "Installing ZAP Plugin Mnagaer for zsh"
+echo ''
+zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1
+# --keep will keep existing .zshrc
+# zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1 --keep
+
 # # Change directory to the parent directory of the bootstrap script.
 # cd "$(dirname "$0")/.."
 # # Set the DOTFILES_ROOT to the parent directory of the bootstrap script.
@@ -55,7 +73,7 @@ echo "Setting up macOS defaults"
 # the command that fails is part of an until or while loop, part of an
 # if statement, part of a && or || list, or if the command's return status
 # is being inve
-set -e
+# set -e
 
 # Make sure we can access bootstrap_utils.sh
 # source bootstrap_utils
@@ -72,17 +90,5 @@ set -e
 
 # Install Homebrew and Zap in preparation for more
 # 1. Install Homebrew
-echo "Installing Homebrew"
-echo ''
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>$HOME/.zprofile
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# 2. Install ZAP plugin manager for zsh (a very simple plugin manager)
-echo ''
-echo "Installing ZAP Plugin Mnagaer for zsh"
-echo ''
-zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1 --keep
 
 echo "Script done!! - Time to check things"
