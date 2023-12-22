@@ -5,3 +5,6 @@ tart list
 tart delete sonoma-1
 tart clone ghcr.io/cirruslabs/macos-sonoma-vanilla:latest sonoma-1
 tart run --dir=myhost:~/Developer/dotfiles sonoma-1
+
+# keeping this here purely for my testing purposes. I dont wnat it ececuted on my host
+# zsh <(curl -s https://raw.githubusercontent.com/murraysilber/dotfiles/main/bootstrap.sh) --branch main
