@@ -53,7 +53,14 @@ set -e
 # echo ''
 # success 'Dotfiles installed!'
 
-# Configure zsh
+# Now that we have the Command Line Tools for Xcode installed, we can
+# clone the full repo.
+cd ~
+git clone git@github.com:murraysilber/dotfiles.git
 
-# 1. Install ZAP plugin manager for zsh (a very simple plugin manager)
+# Install Homebrew and Zap in preparation for more
+# 1. Install Homebrew
+#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# 2. Install ZAP plugin manager for zsh (a very simple plugin manager)
 # zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1
