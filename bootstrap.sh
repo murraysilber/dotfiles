@@ -6,7 +6,10 @@
 echo "We are using SHELL: "$SHELL
 
 # 1. Install Command Line Tools for Xcode, necessary for using git clone
-#    Such a pain to not have a more elegant setup (or is there?)
+# Could I just create releases of my dotfiles using zip and then just get
+# the zip?? Then I can install Command Line Tools for Xcode as part of the
+# Homebrew install. Simpler?  Need to test this.
+
 echo "Checking Command Line Tools for Xcode"
 # Only run if the tools are not installed yet
 # To check that try to print the SDK path
@@ -53,6 +56,7 @@ set -e
 # echo ''
 # success 'Dotfiles installed!'
 
+# 2. Clone the git repo
 # Now that we have the Command Line Tools for Xcode installed, we can
 # clone the full repo.
 cd ~
@@ -61,9 +65,10 @@ echo "Cloning git repo"
 git clone -b main https://github.com/murraysilber/dotfiles.git $HOME/dotfiles
 echo ''
 
-# Lets setup macOS defaults. This is the way I like things. Your preferences might differ
+# Lets setup macOS defaults. This is the way I like things.
+# Your preferences might differ
 # Make sure we can access macos_defaults.sh
-source $HOME/dotfiles/install/macos_defaults.sh
+. $HOME/dotfiles/install/macos_defaults.sh
 
 # Install Homebrew and Zap in preparation for more
 # 1. Install Homebrew
@@ -80,5 +85,4 @@ echo "Installing ZAP Plugin Mnagaer for zsh"
 echo ''
 zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1 --keep
 
-# source the .zshrc to test if ZAP installed correctly. ZAP is opin
 echo "Script done!! - Time to check things"
