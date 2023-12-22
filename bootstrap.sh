@@ -2,31 +2,29 @@
 
 # bootstrap.sh installs things and does some general setup to get us ready to go.
 
-# are we using ZSH? Not writing any fancy check yet, just a visual guide
-echo "SHELL: "$SHELL
+install_command_line_tools() {
+
+    if [ $? -ne 0 ]; then
+        echo "Command Line Tools for Xcode not found. Installing from softwareupdate…"
+        # This temporary file prompts the 'softwareupdate' utility to list the Command Line Tools
+        touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
+        PROD=$(softwareupdate -l | grep "\*.*Command Line" | tail -n 1 | sed 's/^[^C]* //')
+        softwareupdate -i "$PROD" --verbose
+        echo "Command Line Tools for Xcode have been installed at:"
+        xcode-select -p
+    else
+        # Should see the location of the installed tools. Something like this:
+        # /Library/Developer/CommandLineTools
+        echo "Command Line Tools for Xcode have already been installed at:"
+        xcode-select -p
+    fi
+}
+
+# Are we using ZSH? Not writing any fancy check yet, just a visual guide
+echo "We are using SHELL: "$SHELL
 
 # 1. Install Command Line Tools for Xcode, necessary for using git clone
-#    Such a pain to not have a more elegant setup (or is there?)
-echo "Checking Command Line Tools for Xcode"
-# Only run if the tools are not installed yet
-# To check that try to print the SDK path
-xcode-select -p &>/dev/null
-if [ $? -ne 0 ]; then
-    echo "Command Line Tools for Xcode not found. Installing from softwareupdate…"
-    # This temporary file prompts the 'softwareupdate' utility to list the Command Line Tools
-    touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
-    PROD=$(softwareupdate -l | grep "\*.*Command Line" | tail -n 1 | sed 's/^[^C]* //')
-    softwareupdate -i "$PROD" --verbose
-    echo ""
-    echo "Command Line Tools for Xcode have been installed at:"
-    xcode-select -p
-else
-    # Should see the location of the installed tools. Something like this:
-    # /Library/Developer/CommandLineTools
-    echo ""
-    echo "Command Line Tools for Xcode have already been installed at:"
-    xcode-select -p
-fi
+install_command_line_tools
 
 # # Change directory to the parent directory of the bootstrap script.
 # cd "$(dirname "$0")/.."
@@ -58,7 +56,7 @@ set -e
 cd ~
 echo ''
 echo "Cloning git repo"
-git clone https://github.com/murraysilber/dotfiles.git
+git clone -b main --single-branch https://github.com/murraysilber/dotfiles.git $HOME/dotfiles
 echo ''
 
 # Install Homebrew and Zap in preparation for more
@@ -74,6 +72,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 echo ''
 echo "Installing ZAP Plugin Mnagaer for zsh"
 echo ''
-zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1
+zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1 --keep
 
+# source the .zshrc to test if ZAP installed correctly. ZAP is opin
 echo "Script done!! - Time to check things"
