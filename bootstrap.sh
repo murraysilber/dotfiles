@@ -3,7 +3,9 @@
 # bootstrap.sh installs things and does some general setup to get us ready to go.
 
 install_command_line_tools() {
-
+    # Only run if the tools are not installed yet
+    # To check that try to print the SDK path
+    xcode-select -p &>/dev/null
     if [ $? -ne 0 ]; then
         echo "Command Line Tools for Xcode not found. Installing from softwareupdate…"
         # This temporary file prompts the 'softwareupdate' utility to list the Command Line Tools
