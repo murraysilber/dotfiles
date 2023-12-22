@@ -61,6 +61,10 @@ echo "Cloning git repo"
 git clone -b main --single-branch https://github.com/murraysilber/dotfiles.git $HOME/dotfiles
 echo ''
 
+# Lets setup macOS defaults. This is the way I like things. Your preferences might differ
+# Make sure we can access macos_defaults.sh
+source ${HOME}/dotfiles/install/macos_defaults
+
 # Install Homebrew and Zap in preparation for more
 # 1. Install Homebrew
 echo "Installing Homebrew"
@@ -78,7 +82,3 @@ zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) 
 
 # source the .zshrc to test if ZAP installed correctly. ZAP is opin
 echo "Script done!! - Time to check things"
-
-# Lets setup macOS defaults. This is the way I like things. Your preferences might differ
-# Make sure we can access macos_defaults.sh
-source ${HOME}/dotfiles/install/macos_defaults
