@@ -40,6 +40,7 @@ defaults write com.apple.screencapture type -string "png"
 # Dock, Dashboard, and hot corners                                            #
 ###############################################################################
 
+# https://developer.apple.com/documentation/devicemanagement/dock
 # Remove the auto-hiding Dock delay
 defaults write com.apple.dock autohide-delay -float 0
 
@@ -56,9 +57,12 @@ defaults write com.apple.dock showhidden -bool true
 defaults write com.apple.dock static-only -bool true
 
 # Set the icon size of Dock items to 36 pixels,
-defaults write com.apple.dock tilesize -int 36
+defaults write com.apple.dock tilesize -int 32
 
-# Set the magnification for the dock
+# Enable Dock magnification
+defaults write com.apple.dock magnification -bool true
+
+# Set the magnification size for the dock
 defaults write com.apple.dock largesize -int 64
 
 # Don’t automatically rearrange Spaces based on most recent use
@@ -130,6 +134,9 @@ chflags nohidden ~/Library
 
 # Show the /Volumes folder
 sudo chflags nohidden /Volumes
+
+# Set Sidebar icon size to medium
+defaults write NSGlobalDomain "NSTableViewDefaultSizeMode" -int "2"
 
 ###############################################################################
 # Photos                                                                      #
