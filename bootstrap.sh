@@ -56,11 +56,24 @@ set -e
 # Now that we have the Command Line Tools for Xcode installed, we can
 # clone the full repo.
 cd ~
+echo ''
+echo "Cloning git repo"
 git clone https://github.com/murraysilber/dotfiles.git
+echo ''
 
 # Install Homebrew and Zap in preparation for more
 # 1. Install Homebrew
-#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo "Installing Homebrew"
+echo ''
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>/Users/$yourdevicename/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # 2. Install ZAP plugin manager for zsh (a very simple plugin manager)
-# zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1
+echo ''
+echo "Installing ZAP Plugin Mnagaer for zsh"
+echo ''
+zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1
+
+echo "Script done!! - Time to check things"
