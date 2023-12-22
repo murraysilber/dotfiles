@@ -77,9 +77,12 @@ defaults write com.apple.finder ShowStatusBar -bool true
 # Always show the Scroll Bars:
 defaults write -g AppleShowScrollBars -string “Always”
 
-# Use list view in all Finder windows:
-# Four-letter codes for the other view modes: `icnv`, `clmv`, `glyv`
-defaults write com.apple.finder FXPreferredViewStyle -string “Nlsv”
+# Preferred view style
+# Icon View   : `icnv`
+# List View   : `Nlsv`
+# Column View : `clmv`
+# Cover Flow  : `Flwv`
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # After configuring preferred view style, clear all `.DS_Store` files
 # to ensure settings are applied for every directory
@@ -122,11 +125,11 @@ defaults write com.apple.finder NewWindowTarget -string 'PfHm'
 #defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 
 # Show the ~/Library folder
-# chflags nohidden ~/Library
+chflags nohidden ~/Library
 # && xattr -d com.apple.FinderInfo ~/Library
 
 # Show the /Volumes folder
-# sudo chflags nohidden /Volumes
+sudo chflags nohidden /Volumes
 
 ###############################################################################
 # Photos                                                                      #
