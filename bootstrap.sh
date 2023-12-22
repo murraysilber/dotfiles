@@ -58,12 +58,12 @@ set -e
 cd ~
 echo ''
 echo "Cloning git repo"
-git clone -b main --single-branch https://github.com/murraysilber/dotfiles.git $HOME/dotfiles
+git clone -b main https://github.com/murraysilber/dotfiles.git $HOME/dotfiles
 echo ''
 
 # Lets setup macOS defaults. This is the way I like things. Your preferences might differ
 # Make sure we can access macos_defaults.sh
-source ${HOME}/dotfiles/install/macos_defaults.sh
+source $HOME/dotfiles/install/macos_defaults.sh
 
 # Install Homebrew and Zap in preparation for more
 # 1. Install Homebrew
