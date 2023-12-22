@@ -56,7 +56,7 @@ set -e
 # Now that we have the Command Line Tools for Xcode installed, we can
 # clone the full repo.
 cd ~
-git clone git@github.com:murraysilber/dotfiles.git
+git clone https://github.com/murraysilber/dotfiles.git
 
 # Install Homebrew and Zap in preparation for more
 # 1. Install Homebrew
