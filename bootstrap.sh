@@ -78,13 +78,8 @@ echo ''
 # --keep will keep existing .zshrc
 zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1 --keep
 
-# Make sure we can access bootstrap_utils.sh
-# source bootstrap_utils
-
-# Install all my dotfiles, I know we dont need all of them yet
-# but they can be there for when we need them. Otherwise I need to symlink each
-# file - thats a damn nightmare
-# install_dotfiles
-# create_env_file
-
+# finally, source the .zshrc
+echo "sourcing .zshrc"
+source $HOME/.zshrc
+echo ""
 echo "Script done!! - Time to check things"

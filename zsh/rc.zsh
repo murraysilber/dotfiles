@@ -9,6 +9,7 @@ plug "MAHcodes/distro-prompt"
 source_if_exists() {
     if test -r "$1"; then
         source "$1"
+        echo "Sourced " "$1"
     fi
 }
 
@@ -19,11 +20,9 @@ source_if_exists $DOTFILES/zsh/git.zsh
 source_if_exists ~/.fzf.zsh
 
 # Load and initialise things
-autoload -U colors && colors
-autoload -Uz compinit && compinit
 
 autoload -U zmv
-autoload -U promptinit && promptinit
+# autoload -U promptinit && promptinit
 autoload -U colors && colors
 autoload -Uz compinit && compinit
 

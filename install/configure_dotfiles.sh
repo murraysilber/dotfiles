@@ -95,12 +95,12 @@ link_file() {
     fi
 }
 
-prop() {
-    PROP_KEY=$1
-    PROP_FILE=$2
-    PROP_VALUE=$(eval echo "$(cat $PROP_FILE | grep "$PROP_KEY" | cut -d'=' -f2)")
-    echo $PROP_VALUE
-}
+# prop() {
+#     PROP_KEY=$1
+#     PROP_FILE=$2
+#     PROP_VALUE=$(eval echo "$(cat $PROP_FILE | grep "$PROP_KEY" | cut -d'=' -f2)")
+#     echo $PROP_VALUE
+# }
 
 configure_dotfiles() {
     info 'configuring dotfiles'
