@@ -43,9 +43,23 @@ echo ''
 # Lets setup macOS defaults. This is the way I like things.
 # Your preferences might differ
 echo "Setting up macOS defaults"
-. $HOME/dotfiles/install/macos_defaults.sh
+source $HOME/dotfiles/install/macos_defaults.sh
 
 # ------------------------------ 4 ------------------------------------- #
+
+# # Change directory to the parent directory of the bootstrap script.
+cd $HOME/dotfiles
+# # Set the DOTFILES_ROOT to the parent directory of the bootstrap script.
+DOTFILES_ROOT=$(pwd -P)
+echo "Dotfiles location: " $DOTFILES_ROOT
+
+# Exit immediately if a simple command exits with a non-zero status, unless
+# the command that fails is part of an until or while loop, part of an
+# if statement, part of a && or || list, or if the command's return status
+# is being inve
+set -e
+
+# ------------------------------ 5 ------------------------------------- #
 # Install Homebrew
 echo "Installing Homebrew"
 echo ''
@@ -57,23 +71,11 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # ------------------------------ 5 ------------------------------------- #
 # Install ZAP plugin manager for zsh (a very simple plugin manager)
 echo ''
-echo "Installing ZAP Plugin Mnagaer for zsh"
+echo "Installing ZAP Plugin Manager for zsh"
 echo ''
 zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1
 # --keep will keep existing .zshrc
 # zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1 --keep
-
-# # Change directory to the parent directory of the bootstrap script.
-# cd "$(dirname "$0")/.."
-# # Set the DOTFILES_ROOT to the parent directory of the bootstrap script.
-# DOTFILES_ROOT=$(pwd -P)
-# echo "Dotfiles location: " $DOTFILES_ROOT
-
-# Exit immediately if a simple command exits with a non-zero status, unless
-# the command that fails is part of an until or while loop, part of an
-# if statement, part of a && or || list, or if the command's return status
-# is being inve
-# set -e
 
 # Make sure we can access bootstrap_utils.sh
 # source bootstrap_utils
@@ -83,12 +85,5 @@ zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) 
 # file - thats a damn nightmare
 # install_dotfiles
 # create_env_file
-
-# echo ''
-# echo ''
-# success 'Dotfiles installed!'
-
-# Install Homebrew and Zap in preparation for more
-# 1. Install Homebrew
 
 echo "Script done!! - Time to check things"

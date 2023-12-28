@@ -56,6 +56,9 @@ defaults write com.apple.dock showhidden -bool true
 # Show only active apps on the dock
 defaults write com.apple.dock static-only -bool true
 
+# Do not show recently opened apps in the dock
+defaults write com.apple.dock "show-recents" -bool "false"
+
 # Set the icon size of Dock items to 36 pixels,
 defaults write com.apple.dock tilesize -int 32
 
