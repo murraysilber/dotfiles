@@ -74,9 +74,9 @@ source $HOME/dotfiles/install/install_homebrew.sh
 echo ''
 echo "Installing ZAP Plugin Manager for zsh"
 echo ''
-zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1
+
 # --keep will keep existing .zshrc
-# zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1 --keep
+zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1 --keep
 
 # Make sure we can access bootstrap_utils.sh
 # source bootstrap_utils
