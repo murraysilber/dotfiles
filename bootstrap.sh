@@ -50,8 +50,8 @@ source $HOME/dotfiles/install/macos_defaults.sh
 # # Change directory to the parent directory of the bootstrap script.
 cd $HOME/dotfiles
 # # Set the DOTFILES_ROOT to the parent directory of the bootstrap script.
-DOTFILES_ROOT=$(pwd -P)
-echo "Dotfiles location: " $DOTFILES_ROOT
+DOTFILES=$(pwd -P)
+echo "Dotfiles location: " $DOTFILES
 
 # Exit immediately if a simple command exits with a non-zero status, unless
 # the command that fails is part of an until or while loop, part of an
