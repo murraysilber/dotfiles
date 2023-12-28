@@ -59,14 +59,15 @@ echo "Dotfiles location: " $DOTFILES_ROOT
 # is being inve
 set -e
 
+echo "Configuring Dotfiles"
+source $HOME/dotfiles/install/configure_dotfiles.sh
+
 # ------------------------------ 5 ------------------------------------- #
 # Install Homebrew
 echo "Installing Homebrew"
 echo ''
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>$HOME/.zprofile
-eval "$(/opt/homebrew/bin/brew shellenv)"
+source $HOME/dotfiles/install/install_homebrew.sh
 
 # ------------------------------ 5 ------------------------------------- #
 # Install ZAP plugin manager for zsh (a very simple plugin manager)

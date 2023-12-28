@@ -22,4 +22,9 @@ source_if_exists ~/.fzf.zsh
 autoload -U colors && colors
 autoload -Uz compinit && compinit
 
+autoload -U zmv
+autoload -U promptinit && promptinit
+autoload -U colors && colors
+autoload -Uz compinit && compinit
+
 echo "Path is currently: " $PATH

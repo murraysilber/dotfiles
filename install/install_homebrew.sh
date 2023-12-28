@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # Install Homebrew
 # Take note of comment below, taken from Homebrew docs:
 # The one-liner installation method found on brew.sh uses the Bourne-again
