@@ -79,7 +79,7 @@ echo ''
 zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1 --keep
 
 # finally, source the .zshrc
-echo "sourcing .zshrc"
-source $HOME/.zshrc
-echo ""
+# echo "sourcing .zshrc"
+# source $HOME/.zshrc
+# echo ""
 echo "Script done!! - Time to check things"
