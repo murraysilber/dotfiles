@@ -1,5 +1,5 @@
-text = "CellBackground"
-use_thin_strokes = true
+# text = "CellBackground"
+# use_thin_strokes = true
 
 [bell]
 animation = "EaseOutExpo"
