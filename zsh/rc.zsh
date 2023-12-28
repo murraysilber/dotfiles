@@ -15,20 +15,6 @@ plug "zsh-users/zsh-syntax-highlighting"
 plug "MAHcodes/distro-prompt"
 plug "zap-zsh/fzf"
 
-# Source files if they exist
-# source_if_exists() {
-#     if test -r "$1"; then
-#         source "$1"
-#         echo "Sourced " "$1"
-#     fi
-# }
-
-# source_if_exists $DOTFILES/zsh/aliases.zsh
-# source_if_exists $DOTFILES/zsh/exports.zsh
-# source_if_exists $HOME/.env.sh
-# source_if_exists $DOTFILES/zsh/git.zsh
-# source_if_exists ~/.fzf.zsh
-
 # Load and initialise things
 
 autoload -U zmv

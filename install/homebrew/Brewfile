@@ -1,0 +1,7 @@
+tap "cirruslabs/cli"
+tap "homebrew/bundle"
+tap "homebrew/cask-fonts"
+tap "sdkman/tap"
+
+cask "alacritty"
+cask "font-meslo-lg-nerd-font"

@@ -69,7 +69,7 @@ echo ''
 
 source $HOME/dotfiles/install/install_homebrew.sh
 
-# ------------------------------ 5 ------------------------------------- #
+# ------------------------------ 6 ------------------------------------- #
 # Install ZAP plugin manager for zsh (a very simple plugin manager)
 echo ''
 echo "Installing ZAP Plugin Manager for zsh"
@@ -82,4 +82,9 @@ zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) 
 # echo "sourcing .zshrc"
 # source $HOME/.zshrc
 # echo ""
+# ------------------------------ 7 ------------------------------------- #
+# Install Apps using Homebrew
+echo "Installing apps using Homebrew"
+brew bundle --file=$HOME/dotfiles/homebrew/Brewfile
+
 echo "Script done!! - Time to check things"
