@@ -12,7 +12,7 @@ plug "$HOME/.env.sh"
 plug "zsh-users/zsh-autosuggestions"
 plug "zap-zsh/supercharge"
 plug "zsh-users/zsh-syntax-highlighting"
-plug "MAHcodes/distro-prompt"
+plug "zap-zsh/zap-prompt"
 plug "zap-zsh/fzf"
 
 # Load and initialise things

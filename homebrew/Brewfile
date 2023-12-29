@@ -3,6 +3,5 @@ tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "sdkman/tap"
 
-cask "font-meslo-lg-nerd-font"
 cask "font-jetbrains-mono-nerd-font"
 cask "alacritty"

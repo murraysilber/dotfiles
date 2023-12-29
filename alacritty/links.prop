@@ -1,1 +1,2 @@
 $DOTFILES/alacritty/alacritty.toml=$HOME/.config/alacritty/alacritty.toml
+$DOTFILES/alacritty/solarized_dark.toml=$HOME/.config/alacritty/solarized_dark.toml
