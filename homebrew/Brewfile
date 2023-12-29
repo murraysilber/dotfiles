@@ -5,3 +5,4 @@ tap "sdkman/tap"
 
 cask "alacritty"
 cask "font-meslo-lg-nerd-font"
+cask "font-jetbrains-mono-nerd-font"

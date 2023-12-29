@@ -40,7 +40,7 @@ TERM = "alacritty"
 size = 24.0
 
 [font.bold]
-family = "MesloLGS NF"
+family = "JetbrainsMono Nerd Font"
 style = "Bold"
 
 [font.glyph_offset]
@@ -48,11 +48,11 @@ x = 0
 y = 0
 
 [font.italic]
-family = "MesloLGS NF"
+family = "JetbrainsMono Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "MesloLGS NF"
+family = "JetbrainsMono Nerd Font"
 style = "Regular"
 
 [font.offset]
