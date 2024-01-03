@@ -1,0 +1,71 @@
+welcome() {
+  # TODO fix welcome message
+  echo -e "${m[@]}"
+  echo -e "This script will automate a lot of processes.\n"
+  echo -e "Though not recommended interrupting, exit this script at any time with Ctrl-C.\n"
+  sleep 2
+  echo -e "Press Ctrl-C to STOP ${EMOJI_STOP} now if you ${RED}don't${NC} wish to proceed. Starting in 5 seconds...\n"
+  sleep 4
+  echo -e "Starting automated install:\n"
+  echo -e "\n"
+}
+
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Logs
+# - The first line redirects and appends (-a) everything from the standard output stream to the log file and prints it to the screen.
+# - The second line redirects the standard error to log file.
+loggers() {
+  exec 1>> >(tee -a setup.log)
+  exec 2>>error.log
+}
+
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Is this Mac supported?
+is_mac_supported() {
+  echo 'Checking if your Mac is supported'
+  # check if macOS is Sonoma AND CPU is ARM Architecture
+  # TODO add check for Ventura as well, in fact, anything from Big Sur that supports ARM architecture. Need to decide Just how much testing I want to do.
+
+  if [[ "${CPU_ARCHITECTURE}" == "arm64" && "${OS_MAJOR_VERSION}" -eq 14 ]]; then
+    # TODO fix messaging if time permits. Make prettier and explain why
+    message "You are good to go"
+  else
+    message "stop" "Your Mac is unsupported"
+    exit 1
+  fi
+}
+
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Run Pre-flight Checks
+pre_flight_checks() {
+  is_mac_supported
+}
+
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Completion Messages
+# - Display Nicely Formatted Message
+message() {
+  if [[ "$1" = "info" ]]; then
+    local msg="\n\n${EMOJI_INFO} - ${RED}${2}${NC}"
+  elif [[ "$1" = "warning" ]]; then
+    local msg="\n\n${EMOJI_WARNING} - ${RED}${2}${NC}"
+  elif [[ "$1" = "fail" ]]; then
+    local msg="\n\n${EMOJI_FAIL} - ${RED}${2}${NC}"
+  elif [[ "$1" = "error" ]]; then
+    local msg="\n\n${EMOJI_ERROR} - ${RED}${2}${NC}"
+  elif [[ "$1" = "stop" ]]; then
+    local msg="\n\n${EMOJI_STOP}${RED}${2}${NC}"
+  else
+    local msg="\n\n${EMOJI_CHECKMARK}${GREEN}${1}${NC}"
+  fi
+
+  shift
+  printf "${msg}"
+}
+
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Section Header
+section() {
+  title=$(echo ${1} | tr [:lower:] [:upper:])
+  echo -e "\n\n|- ${title}\n================================================================================\n"
+}

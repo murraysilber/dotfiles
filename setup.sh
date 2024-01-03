@@ -10,4 +10,5 @@ curl -L -H "Accept: application/vnd.github.v3+json" --url ${URL} -o setup.zip
 unzip setup.zip -d setup
 cd setup/murraysilber-dotfiles*
 
-caffeinate zsh ./install.sh "$@"
+#caffeinate zsh ./install.sh "$@"
+caffeinate zsh ./install.sh
