@@ -1,17 +1,21 @@
 #!/bin/zsh
 
 #===============================================================================
-# PRE-LAUNCH SETUP
+# PRE-LAUNCH SETUP & CHECKS
 #===============================================================================
 # PARENT_PATH=$(dirname ${BASH_SOURCE[0]-$0}) # relative script path from execution location, same as "${BASH_SOURCE%/*}" or "${BASH_SOURCE}"
 
-source ${HOME}/install/lib/globals
-source ${HOME}/install/lib/functions
+source ${DOTFILES}/install/lib/globals
+source ${DOTFILES}/install/lib/functions
 # source ${PARENT_PATH}/install/install_homebrew.sh
 
-pre_flight_checks
-# handle_getopts "$@"
+# Set up install logging
 loggers
+# verify is your mac and macOS are supported.
+source ${DOTFILES}/install/bin/verify_mac_supported.sh
+pre_flight_checks
+
+# handle_getopts "$@"
 
 #===============================================================================
 # START RUNNING SETUP
@@ -26,7 +30,7 @@ welcome
 # Lets setup macOS defaults. This is the way I like things.
 # Your preferences might differ
 echo "Setting up macOS defaults"
-source ${HOME}/install/macos_defaults.sh
+source ${DOTFILES}/install/bin/macos_defaults.sh
 
 # DOTFILES
 # Copy dotfiles file system to home directory and configure symlinks
