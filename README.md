@@ -10,4 +10,5 @@ Copy this and execute in the terminal
 
 ```sh
 zsh <(curl -s https://raw.githubusercontent.com/murraysilber/dotfiles/main/install/bootstrap.sh) --branch main
+
 ```
