@@ -69,3 +69,7 @@ section() {
   title=$(echo ${1} | tr [:lower:] [:upper:])
   echo -e "\n\n|- ${title}\n================================================================================\n"
 }
+
+hello() {
+  echo -e "Hello World!!"
+}

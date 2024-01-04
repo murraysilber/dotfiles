@@ -7,7 +7,7 @@ export EDITOR="code"
 export TERMINAL="Alacritty"
 export BROWSER="brave"
 
-export ZDOTDIR="$HOME/zsh"
+export ZDOTDIR="$HOME/.config/zsh"
 export DOTFILES="$HOME/dotfiles"
 
 export HISTFILE="$ZDOTDIR/.zhistory" # History filepath

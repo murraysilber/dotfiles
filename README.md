@@ -9,5 +9,5 @@ This is a work in progress and is still pre-production ready.
 Copy this and execute in the terminal
 
 ```sh
-zsh <(curl -s https://raw.githubusercontent.com/murraysilber/dotfiles/main/setup.sh) --branch main
+zsh <(curl -s https://raw.githubusercontent.com/murraysilber/dotfiles/install/main/setup.sh) --branch main
 ```

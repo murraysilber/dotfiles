@@ -4,7 +4,8 @@
 # Take note of comment below, taken from Homebrew docs:
 # The one-liner installation method found on brew.sh uses the Bourne-again
 # shell at /bin/bash. Notably, zsh, fish, tcsh and csh will not work.
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# Using NONINTERACTIVE=1 for an unattended install (see Homebrew docs)
+NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Post Installation
 # Note - I dont need to execute the commented line below as I already have a .zprofile with the command set up:
