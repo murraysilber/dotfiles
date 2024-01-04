@@ -7,10 +7,11 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Post Installation
-# Note:  I dont need to execute this line as I already have a .zprofile set up
+# Note - I dont need to execute the commented line below as I already have a .zprofile with the command set up:
 # echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$yourdevicename/.zprofile
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # test if Homebrew was installed
 brew --version
+brew doctor
