@@ -11,7 +11,7 @@ unzip setup.zip -d setup
 cd setup/murraysilber-dotfiles*
 echo "$(pwd -P)"
 
-# move dotfiles folder to home
+# move all files to home
 CURRENT_WORKING_DIRECTORY=$(pwd -P)
 echo -e "CURRENT_WORKING_DIRECTORY ${CURRENT_WORKING_DIRECTORY} "
 cp -R ${CURRENT_WORKING_DIRECTORY}/dotfiles ${HOME}
