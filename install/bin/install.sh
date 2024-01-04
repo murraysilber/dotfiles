@@ -5,6 +5,9 @@
 #===============================================================================
 # PARENT_PATH=$(dirname ${BASH_SOURCE[0]-$0}) # relative script path from execution location, same as "${BASH_SOURCE%/*}" or "${BASH_SOURCE}"
 
+# Dotfiles location
+DOTFILES=${HOME}/dotfiles
+
 source ${DOTFILES}/install/lib/globals
 source ${DOTFILES}/install/lib/functions
 # source ${PARENT_PATH}/install/install_homebrew.sh
