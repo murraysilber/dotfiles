@@ -88,3 +88,4 @@ echo ''
 # brew bundle --file=$HOME/dotfiles/homebrew/Brewfile
 
 echo "Bootstrapping complete done!! - Time to install and configure things"
+caffeinate zsh ${HOME}/dotfiles/install/bin/install.sh
