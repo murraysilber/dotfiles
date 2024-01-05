@@ -46,4 +46,4 @@ cd $DOTFILES
 set -e
 
 echo "Configuring Dotfiles"
-source $HOME/dotfiles/install/configure_dotfiles.sh
+source ${DOTFILES}/install/bin/configure_dotfiles.sh
