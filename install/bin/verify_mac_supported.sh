@@ -24,6 +24,7 @@ is_mac_supported() {
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Run Pre-flight Checks
 pre_flight_checks() {
+  message "info" "Running pre-flight checks\n"
   is_mac_supported
 }
 

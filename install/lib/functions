@@ -27,9 +27,9 @@ loggers() {
 # - Display Nicely Formatted Message
 message() {
   if [[ "$1" = "info" ]]; then
-    local msg="\n\n${EMOJI_INFO} - ${RED}${2}${NC}"
+    local msg="\n\n${EMOJI_INFO} - ${NC}${2}${NC}"
   elif [[ "$1" = "warning" ]]; then
-    local msg="\n\n${EMOJI_WARNING} - ${RED}${2}${NC}"
+    local msg="\n\n${EMOJI_WARNING} - ${YELLOW}${2}${NC}"
   elif [[ "$1" = "fail" ]]; then
     local msg="\n\n${EMOJI_FAIL} - ${RED}${2}${NC}"
   elif [[ "$1" = "error" ]]; then
