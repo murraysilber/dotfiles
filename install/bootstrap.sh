@@ -23,7 +23,7 @@ install_command_line_tools() {
 }
 
 # Are we using ZSH? Not writing any fancy check yet, just a visual guide
-echo "We are using SHELL: "$SHELL
+echo "We are using SHELL: ""$SHELL"
 
 # ------------------------------ 1 ------------------------------------- #
 # Install Command Line Tools for Xcode.
@@ -39,25 +39,8 @@ install_command_line_tools
 # clone the full repo.
 echo ''
 echo "Cloning git repo"
-git clone -b main https://github.com/murraysilber/dotfiles.git $HOME/dotfiles
+git clone -b main https://github.com/murraysilber/dotfiles.git "$HOME"/dotfiles
 echo ''
-
-# ------------------------------ 4 ------------------------------------- #
-
-# # Change directory to the parent directory of the bootstrap script.
-# cd $HOME/dotfiles
-# # Set the DOTFILES_ROOT to the parent directory of the bootstrap script.
-# DOTFILES=$(pwd -P)
-# echo "Dotfiles location: " $DOTFILES
-
-# Exit immediately if a simple command exits with a non-zero status, unless
-# the command that fails is part of an until or while loop, part of an
-# if statement, part of a && or || list, or if the command's return status
-# is being inve
-# set -e
-
-# echo "Configuring Dotfiles"
-# source $HOME/dotfiles/install/configure_dotfiles.sh
 
 # ------------------------------ 5 ------------------------------------- #
 # Install Homebrew
@@ -85,4 +68,4 @@ echo ''
 # brew bundle --file=$HOME/dotfiles/homebrew/Brewfile
 
 echo "Bootstrapping done!! - Time to install and configure things"
-caffeinate zsh ${HOME}/dotfiles/install/bin/install.sh
+caffeinate zsh "${HOME}"/dotfiles/install/bin/install.sh

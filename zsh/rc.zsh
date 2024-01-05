@@ -1,6 +1,4 @@
-# Created by Zap installer
-# [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
-
+# ZAP Plgin Manager
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 
 # source
@@ -16,7 +14,6 @@ plug "zap-zsh/zap-prompt"
 plug "zap-zsh/fzf"
 
 # Load and initialise things
-
 autoload -U zmv
 # autoload -U promptinit && promptinit
 autoload -U colors && colors
