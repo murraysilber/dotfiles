@@ -43,6 +43,11 @@ set -e
 echo "Configuring Dotfiles"
 source "${DOTFILES}"/install/bin/configure_dotfiles.sh
 
+# INSTALL ZAP - ZSH PLUGIN MANAGER
+echo "Installing Zap"
+echo ''
+source "${DOTFILES}"/install/bin/install_zap.sh
+
 # INSTALL HOMEBREW
 echo "Installing Homebrew"
 echo ''

@@ -42,26 +42,6 @@ echo "Cloning git repo"
 git clone -b main https://github.com/murraysilber/dotfiles.git "$HOME"/dotfiles
 echo ''
 
-# ------------------------------ 5 ------------------------------------- #
-# Install Homebrew
-# echo "Installing Homebrew"
-# echo ''
-
-# source $HOME/dotfiles/install/install_homebrew.sh
-
-# ------------------------------ 6 ------------------------------------- #
-# Install ZAP plugin manager for zsh (a very simple plugin manager)
-# echo ''
-# echo "Installing ZAP Plugin Manager for zsh"
-# echo ''
-
-# --keep will keep existing .zshrc
-# zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1 --keep
-
-# finally, source the .zshrc
-# echo "sourcing .zshrc"
-# source $HOME/.zshrc
-# echo ""
 # ------------------------------ 7 ------------------------------------- #
 # Install Apps using Homebrew
 # echo "Installing apps using Homebrew"
