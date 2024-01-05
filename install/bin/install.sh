@@ -16,7 +16,6 @@ source ${DOTFILES}/install/lib/functions
 loggers
 # verify is your mac and macOS are supported.
 source ${DOTFILES}/install/bin/verify_mac_supported.sh
-pre_flight_checks
 
 # handle_getopts "$@"
 
@@ -36,19 +35,15 @@ echo "Setting up macOS defaults"
 source ${DOTFILES}/install/bin/macos_defaults.sh
 
 # DOTFILES
-# Copy dotfiles file system to home directory and configure symlinks
-#cp -R ${PARENT_PATH}/dotfiles ${HOME}
+
 # Change directory to the parent directory.
-# cd $HOME/dotfiles
-# # # Set the DOTFILES_ROOT to the parent directory of the bootstrap script.
-# DOTFILES=$(pwd -P)
-# echo "Dotfiles location: " $DOTFILES
+cd $DOTFILES
 
 # # Exit immediately if a simple command exits with a non-zero status, unless
 # # the command that fails is part of an until or while loop, part of an
 # # if statement, part of a && or || list, or if the command's return status
 # # is being inve
-# set -e
+set -e
 
-# echo "Configuring Dotfiles"
-# source $HOME/dotfiles/install/configure_dotfiles.sh
+echo "Configuring Dotfiles"
+source $HOME/dotfiles/install/configure_dotfiles.sh

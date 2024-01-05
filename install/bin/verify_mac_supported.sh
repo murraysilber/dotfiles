@@ -14,7 +14,7 @@ is_mac_supported() {
 
   if [[ "${CPU_ARCHITECTURE}" == "arm64" && "${OS_MAJOR_VERSION}" -eq 14 ]]; then
     # TODO fix messaging if time permits. Make prettier and explain why
-    message "You are good to go"
+    message "You are good to go\n"
   else
     message "stop" "Your Mac is unsupported"
     exit 1
