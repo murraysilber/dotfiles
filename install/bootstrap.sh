@@ -42,10 +42,5 @@ echo "Cloning git repo"
 git clone -b main https://github.com/murraysilber/dotfiles.git "$HOME"/dotfiles
 echo ''
 
-# ------------------------------ 7 ------------------------------------- #
-# Install Apps using Homebrew
-# echo "Installing apps using Homebrew"
-# brew bundle --file=$HOME/dotfiles/homebrew/Brewfile
-
 echo "Bootstrapping done!! - Time to install and configure things"
 caffeinate zsh "${HOME}"/dotfiles/install/bin/install.sh
