@@ -59,14 +59,14 @@ echo "Installing apps using Homebrew and mas"
 brew bundle --file="${DOTFILES}"/homebrew/Brewfile
 
 # finally, source the .z files
-echo "sourcing .zshenv"
-source $HOME/.zshenv
-echo ""
+# echo "sourcing .zshenv"
+# source $HOME/.zshenv
+# echo ""
 
-echo "sourcing .zprofile"
-source $HOME/.zshenv
-echo ""
+# echo "sourcing .zprofile"
+# source $HOME/.zshenv
+# echo ""
 
-echo "sourcing .zshenv"
-source $HOME/.zshenv
-echo ""
+# echo "sourcing .zshenv"
+# source $HOME/.zshenv
+# echo ""
