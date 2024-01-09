@@ -3,5 +3,30 @@ tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "sdkman/tap"
 
+brew "mackup"
+brew "neovim"
+brew "mas"
+brew "neofetch"
+brew "shellcheck"
+brew "shfmt"
+
+cask "the-unarchiver"
 cask "font-jetbrains-mono-nerd-font"
 cask "alacritty"
+cask "cheatsheet"
+cask "dash"
+cask "devtoys"
+cask "docker"
+cask "espanso"
+cask "logseq"
+cask "raycast"
+cask "visual-studio-code"
+cask "zettlr"
+cask "zotero"
+
+mas "1Password for Safari", id: 1569813296
+mas "Disk Speed Test", id: 425264550
+mas "FreeCell", id: 538059735
+mas "Kindle", id: 302584613
+mas "Microsoft Excel", id: 462058435
+mas "TunesArt", id: 444696268
