@@ -9,23 +9,25 @@ brew "mas"
 brew "neofetch"
 brew "shellcheck"
 brew "shfmt"
+brew "starship"
+brew "tmux"
 
 cask "the-unarchiver"
 cask "font-jetbrains-mono-nerd-font"
 cask "alacritty"
 cask "cheatsheet"
-cask "dash"
-cask "docker"
-cask "espanso"
-cask "logseq"
-cask "raycast"
-cask "visual-studio-code"
-cask "zettlr"
-cask "zotero"
-cask "1password"
+# cask "dash"
+# cask "docker"
+# cask "espanso"
+# cask "logseq"
+# cask "raycast"
+# cask "visual-studio-code"
+# cask "zettlr"
+# cask "zotero"
+# cask "1password"
 
-mas "1Password for Safari", id: 1569813296
-mas "Disk Speed Test", id: 425264550
-mas "FreeCell", id: 538059735
-mas "Kindle", id: 302584613
-mas "TunesArt", id: 444696268
+# mas "1Password for Safari", id: 1569813296
+# mas "Disk Speed Test", id: 425264550
+# mas "FreeCell", id: 538059735
+# mas "Kindle", id: 302584613
+# mas "TunesArt", id: 444696268

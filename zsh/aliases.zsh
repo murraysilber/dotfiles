@@ -7,6 +7,7 @@ alias l='ls -l'
 alias ll='ls -lahF'
 alias lls='ls -lahFtr'
 alias la='ls -A'
+alias lla='ls -la'
 alias lc='ls -CF'
 
 # Colorize grep output (good for log files)

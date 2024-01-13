@@ -1,0 +1,5 @@
+[user]
+name = murraysilber
+email = murraysilber@gmail.com
+[core]
+excludesfile = /Users/murray/.config/git/gitignore

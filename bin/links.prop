@@ -1,0 +1,3 @@
+$DOTFILES/bin/tmux-cht.sh=$HOME/.config/bin/tmux-cht.sh
+$DOTFILES/bin/b=$HOME/.config/bin/b
+$DOTFILES/bin/litra-automation.sh=$HOME/.config/bin/litra-automation.sh

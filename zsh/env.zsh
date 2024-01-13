@@ -10,6 +10,11 @@ export BROWSER="brave"
 export ZDOTDIR="$HOME/.config/zsh"
 export DOTFILES="$HOME/dotfiles"
 
-# export HISTFILE="$ZDOTDIR/.zsh_history" # History filepath
+# zsh history
 export HISTSIZE=10000 # Maximum events for internal history
 export SAVEHIST=10000 # Maximum events in history file
+
+# source my own paths
+if [[ $SHLVL == 1 && ! -o LOGIN ]]; then
+  source $HOME/.config/zsh/.zpath
+fi
