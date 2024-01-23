@@ -1,3 +1,6 @@
 $DOTFILES/tmux/tmux.conf=$HOME/.config/tmux/tumx.conf
-$DOTFILES/tmux/.tmux-cht-command=$HOME/.config/tmux/.tmux-cht-command
-$DOTFILES/tmux/.tmux-cht-languages=$HOME/.config/tmux/.tmux-cht-languages
+$DOTFILES/tmux/macos.conf=$HOME/.config/tmux/macos.conf
+$DOTFILES/tmux/statusline.conf=$HOME/.config/tmux/statusline.conf
+$DOTFILES/tmux/utility.conf=$HOME/.config/tmux/utility.conf
+$DOTFILES/tmux/.tmux-cht-command=$HOME/.config/tmux/tmux-cht-command
+$DOTFILES/tmux/.tmux-cht-languages=$HOME/.config/tmux/tmux-cht-languages

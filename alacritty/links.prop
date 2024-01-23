@@ -1,3 +1,2 @@
 $DOTFILES/alacritty/alacritty.toml=$HOME/.config/alacritty/alacritty.toml
-$DOTFILES/alacritty/solarized_dark.toml=$HOME/.config/alacritty/solarized_dark.toml
-$DOTFILES/alacritty/catppuccin-mocha.toml=$HOME/.config/alacritty/catppuccin-mocha.toml
+$DOTFILES/alacritty/gruvbox_material_medium_dark.toml=$HOME/.config/alacritty/gruvbox_material_medium_dark.toml
