@@ -152,8 +152,18 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 # Kill affected applications                                                  #
 ###############################################################################
 echo '######## WE MADE IT HERE #############'
-for app in "Dock" \ "Finder"; do
-  echo "${app}"
+
+for app in "Activity Monitor" \
+  "Address Book" \
+  "Dock" \
+  "Contacts" \
+  "Dock" \
+  "Finder" \
+  "Mail" \
+  "Messages" \
+  "Photos" \
+  "Safari"; do
   killall "${app}" &>/dev/null
 done
-echo "Done. Note that some of these changes require a logout or restart to take effect."
+
+echo "Done. Note that some of these changes require a logout/restart to take effect."
