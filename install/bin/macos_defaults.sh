@@ -155,6 +155,7 @@ echo '######## WE MADE IT HERE #############'
 for app in "Dock" \
   "Photos" \
   "Finder"; do
+  echo "${app}"
   killall "${app}" &>/dev/null
 done
-echo "Done. Note that some of these changes require a logout/restart to take effect."
+echo "Done. Note that some of these changes require a logout or restart to take effect."
