@@ -19,7 +19,7 @@ is_mac_supported() {
   os_minor_version=$(echo $mac_os_version | sed -E 's/([0-9]+)\.([0-9]+)\.?([0-9]+)?/\2/')
 
   echo 'Checking if your Mac is supported'
-  # TODO add check for Ventura as well, in fact, anything from Big Sur that supports ARM architecture (Apple Silcon). Need to decide Just how much testing I want to do and if I will ever need an OS older than Sonoma, or even a Mac with INtel CPU architecture.
+  # TODO add check for Ventura as well, in fact, anything from Big Sur that supports ARM architecture (Apple Silcon). Need to decide Just how much testing I want to do and if I will ever need an OS older than Sonoma, or even a Mac with Intel CPU architecture.
 
   if [[ "${cpu_architecture}" == "arm64" && "${os_major_version}" -eq 14 ]]; then
     # TODO fix messaging if time permits. Make prettier and explain why

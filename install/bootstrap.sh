@@ -1,10 +1,52 @@
-#!/bin/zsh
-
+#!/usr/bin/env bash
 # bootstrap.sh installs things and does some general setup to get us ready to go.
 
+#######################################
+# Verifies if the script will run on the target Mac.
+# Currently, only tested on Sonoma and on Apple Silicon.
+# Outputs (Output to STDOUT or STDERR):
+#   Feedback to the user on stdout
+#######################################
+is_mac_supported() {
+  local cpu_architecture
+  cpu_architecture=$(arch)
+  local mac_os_version
+  mac_os_version=$(sw_vers -productVersion)
+  local os_major_version
+  os_major_version=$(echo "$mac_os_version" | sed -E 's/([0-9]+)\.([0-9]+)\.?([0-9]+)?/\1/')
+  # local os_minor_version
+  # os_minor_version=$(echo "$mac_os_version" | sed -E 's/([0-9]+)\.([0-9]+)\.?([0-9]+)?/\2/')
+
+  echo 'Checking if your Mac is supported'
+  # TODO add check for Ventura as well, in fact, anything from Big Sur that supports ARM architecture (Apple Silcon). Need to decide Just how much testing I want to do and if I will ever need an OS older than Sonoma, or even a Mac with Intel CPU architecture.
+
+  if [[ "${cpu_architecture}" == "arm64" && "${os_major_version}" -eq 14 ]]; then
+    # TODO fix messaging if time permits. Make prettier and explain why
+    printf 'You are good to go\n'
+  else
+    printf "Your Mac is unsupported\nExiting the script now!!!!"
+    exit 1
+  fi
+}
+
+#######################################
+# Run Pre-flight Checks
+# Outputs (Output to STDOUT or STDERR):
+#   Feedback to the user on stdout
+#######################################
+pre_flight_checks() {
+  printf "Running pre-flight checks"
+  is_mac_supported
+}
+
+#######################################
+# Install xcode command line tools
+# Outputs (Output to STDOUT or STDERR):
+#   Feedback to the user on stdout
+#######################################
 install_command_line_tools() {
-  xcode-select -p &>/dev/null
-  if [ $? -ne 0 ]; then
+
+  if ! xcode-select -p &>/dev/null; then
     echo "Command Line Tools for Xcode not found. Installing from softwareupdate…"
     # This temporary file prompts the 'softwareupdate' utility to list the Command Line Tools
     touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
@@ -23,14 +65,15 @@ install_command_line_tools() {
 }
 
 # Are we using ZSH? Not writing any fancy check yet, just a visual guide
+# TODO Expand on this and stop boiotstrap process if not zsh
 echo "We are using SHELL: ""$SHELL"
+
+pre_flight_checks
 
 # ------------------------------ 1 ------------------------------------- #
 # Install Command Line Tools for Xcode.
 # Necessary for using git clone
-# Could I just create releases of my dotfiles using zip and then just get
-# the zip?? Then I can install Command Line Tools for Xcode as part of the
-# Homebrew install. Simpler?  Need to test this.
+# TODO Could I just create releases of my dotfiles using zip and then just get the zip?? Then I can install Command Line Tools for Xcode as part of the Homebrew install. Simpler?  Need to test this.
 install_command_line_tools
 
 # ------------------------------ 2 ------------------------------------- #
