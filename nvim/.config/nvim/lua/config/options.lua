@@ -48,7 +48,7 @@ opt.mouse = "a"
 opt.clipboard = 'unnamedplus'
 
 -- Always keep 8 lines above/below cursor unless at start/end of file
-opt.scrolloff = 8
+opt.scrolloff = 999
 
 -- Place a column line
 -- opt.colorcolumn = "80"
