@@ -1,0 +1,8 @@
+# so that I don't create weird recursion problems
+.dotfiles
+
+# Mac
+.DS_Store
+
+# VS Code
+.vscode

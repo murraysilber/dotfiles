@@ -1,0 +1,492 @@
+: 1705053957:0;cd.config
+: 1705054160:0;cat gitignore
+: 1705056774:0;cd neofetch
+: 1705056997:1;neofetch
+: 1705058494:2;brew install tmux
+: 1705058624:0;rm -Rf plugins
+: 1705058634:1;git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+: 1705063714:5;brew install yq
+: 1705064972:0;git add zpath.zsh
+: 1705064757:4;tmux-cht.sh
+: 1705064245:48;vim hello
+: 1705065724:33;vim alacritty.yml
+: 1705065223:0;git help
+: 1705069757:47;vim .zshenv
+: 1705069780:0;cd Developer/dotfiles
+: 1705070567:0;5C
+: 1705134923:0;tmux exit
+: 1705134926:0;rxit
+: 1705135654:438;vim catppuccin-frappe.tmuxtheme
+: 1705137063:0;xit
+: 1705059905:181;tmux new -s test1
+: 1705060832:3391;tmux new -s test
+: 1705064662:354;tmux new -s main1
+: 1705068339:0;cd .tmux
+: 1705069280:0;I
+: 1705137474:48;nano hello
+: 1705137569:0;cd catppuccin-tmux
+: 1705137702:0;code .
+: 1705137438:1808;vim README.md
+: 1705137382:0;detach
+: 1705139285:0;tmux kill-server
+: 1705137405:1880;tmux new -s main2
+: 1705139302:3;tmux new -s mai
+: 1705139318:101;tmux new -s main
+: 1705258632:212;gh auth login
+: 1705258930:0;git config --global user.email "murraysilber@gmail.com"\
+git config --global user.name "murraysilber"\
+
+: 1705259058:0;mkdir boot.dev
+: 1705259076:0;touch test.txt
+: 1705259124:1;rm test.txt
+: 1705259217:1;git clone https://github.com/murraysilber/bookbot\
+
+: 1705259417:0;git commit -m "update readme with a description"
+: 1705259808:0;git remote set-url origin git@github.com:murraysilber/bookbot.git
+: 1705259967:9;brew install pyenv
+: 1705260146:2;rm .zshrc
+: 1705260183:85;pyenv install -v 3.12.1\
+
+: 1705260289:1;pyenv global 3.12.1
+: 1705260309:0;python3 --version
+: 1705260321:0;which python3
+: 1705260550:0;echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/config/zsh/.zshrc\
+echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/config/zsh/.zshrc\
+echo 'eval "$(pyenv init -)"' >> ~/config/zsh/.zshrc
+: 1705260579:0;echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.config/zsh/.zshrc\
+echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.config/zsh/.zshrc\
+echo 'eval "$(pyenv init -)"' >> ~/.config/zsh/.zshrc
+: 1705260588:0;echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.config/zsh/.zshrc\
+echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.config/zsh/.zshrc\
+echo 'eval "$(pyenv init -)"' >> ~/.config/zsh/.zprofile
+: 1705260611:0;echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.config/zsh/.zprofile\
+echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.config/zsh/.zprofile\
+echo 'eval "$(pyenv init -)"' >> ~/.config/zsh/.zprofile
+: 1705260749:1;pyenv version
+: 1705260762:0;pyenv shimns
+: 1705260766:0;pyenv shims
+: 1705260773:0;pyenv
+: 1705260780:0;pyenv global
+: 1705260785:0;which python
+: 1705260792:1;python --version
+: 1705260851:0;touch main.py
+: 1705260958:0;git commit -m "created simple python test"
+: 1705262981:0;mkdir books
+: 1705263028:15;vim frankenstein.txt
+: 1705263223:0;git commit -m "added frankenstein book"
+: 1705263362:0;cd books
+: 1705263475:0;cat .gitignore
+: 1705299816:0;git remote -v
+: 1705300042:0;mv .gitconfig ~/.config/git
+: 1705300062:0;cd git
+: 1705308818:0;cd Developer/boot.dev
+: 1705308849:0;cat .git/refs/heads/main
+: 1705308956:0;cat .git/HEAD
+: 1705308972:0;git show HEAD
+: 1705309013:0;git diff HEAD~3
+: 1705315809:0;echo PATH=""
+: 1705315879:0;export PATH="/Users/murray/.pyenv/shims:/Users/murray/.local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/murray/.config/bin"
+: 1705315908:0;env
+: 1705316169:0;envman
+: 1705316261:0;cat PATH.env
+: 1705316273:0;cat alias.env
+: 1705316277:0;cat function.sh
+: 1705316280:0;cat load.sh
+: 1705316308:0;cat ENV.env
+: 1705318730:0;cd envman
+: 1705318756:0;rm -Rf envman
+: 1705139361:1;rm hello
+: 1705140144:11;brew install rectangle
+: 1705140507:0;cd Developer/dotfiles/
+: 1705140519:0;cd Rectangle
+: 1705140526:0;cat RectangleConfig.json
+: 1705140983:2;brew install --cask hyperkey
+: 1705147639:2177;vim .viminfo
+: 1705221759:0;python 3
+: 1705221764:36590;python3
+: 1705258431:0;git version
+: 1705258463:18;curl -sS https://webi.sh/gh | sh\
+
+: 1705258534:0;source ~/.config/envman/PATH.env
+: 1705318806:28;tmux attach -t main
+: 1705318879:0;cat gh-v2.42.0
+: 1705318883:0;cd gh-v2.42.0
+: 1705318896:1;cat gh
+: 1705318980:0;cd .config/git
+: 1705318987:0;cat .gitconfig
+: 1705319019:0;cd gh
+: 1705319026:0;cat config.yml
+: 1705319042:0;rm -Rf gh
+: 1705319064:3;rm gh
+: 1705319083:0;rm -Rf gh-v2.42.0
+: 1705319266:0;git config --list --show-origin | grep credential
+: 1705319310:0;git config --list --show-origin
+: 1705319323:0;git config
+: 1705319385:0;git config -l
+: 1705386174:0;tmux attach -t boot.dev
+: 1705387679:0;cat .zshenv
+: 1705387827:0;tmux detach
+: 1705387939:0;cat .zsh_history
+: 1705399045:0;which nvim
+: 1705399051:3;nvim version
+: 1705399061:0;nvim -version
+: 1705407126:0;cd Developer/boot.dev/bookbot
+: 1705426794:0;cd ~/Downloads
+: 1705427307:0;cd Developer/boot.dev/
+: 1705427309:0;lsa
+: 1705430090:0;cd ~/Developer/PythonTest
+: 1705432988:1;curl --remote-name "https://raw.githubusercontent.com/chrisgrieser/nvim-kickstart-python/main/kickstart-python.lua"
+: 1705434173:15;nvim -u kickstart-python.lua foobar.py
+: 1705434325:0;c;ear
+: 1705406109:69;nvim main,py
+: 1705407911:0;cat lazy-lock.json
+: 1705408415:0;cd ../..
+: 1705408420:0;cd .
+: 1705408476:0;cd mason
+: 1705408482:0;cd packages
+: 1705408710:4;brew install zoxide
+: 1705408805:0;z zsh
+: 1705411944:0;cd bookbot
+: 1705399172:0;which vim
+: 1705399295:0;mkdir -p ~/.config/nvim && cd ~/.config/nvim
+: 1705399676:7;brew install wget
+: 1705400516:0;cd kickstart
+: 1705400544:0;cd custom
+: 1705400786:0;cd ~/.local
+: 1705400812:0;cat webi
+: 1705401346:1;rm webi
+: 1705401354:0;cd opt
+: 1705401650:0;find . -type f -name "*nvim*\
+
+: 1705401697:0;find . -type d -name "nvim*\
+
+: 1705401704:38;grep -r nvim .
+: 1705402231:0;code init.lua
+: 1705403021:0;cd alacritty
+: 1705403028:13;vim alacritty.toml
+: 1705403056:34;vim tmux.conf
+: 1705403095:0;cd ../nvim
+: 1705403243:0;cd ~/Developer
+: 1705403256:0;mkdir PythonTest
+: 1705404475:0;cd PythonTest
+: 1705472153:0;cd .config/
+: 1705472167:0;mv nvim nvim.old
+: 1705472509:0;mkdir lua
+: 1705475447:0;cd Developer
+: 1705475465:2;rm main.py
+: 1705475493:2;rm v0.1.0-alpha.zip
+: 1705475582:0;rm -Rf ElixirPlay
+: 1705475598:0;rm -Rf Ruby*
+: 1705475613:0;rm -Rf Ocml_play
+: 1705475629:0;cd vim-for-vscode-1.1.1
+: 1705475655:0;cd ShellTest
+: 1705475667:0;rm -Rf ShellTest
+: 1705475905:4332;nvim query-snapshots.py
+: 1705441346:12;brew install node
+: 1705441362:1;node -v
+: 1705441366:0;npm -v
+: 1705558310:0;git --version
+: 1705558633:3;gcc
+: 1705569708:37;nvim .zshenv
+: 1705569759:0;cd .config/alacritty
+: 1705569773:76;nvim catppuccin-mocha.toml
+: 1705569991:0;tmux help
+: 1705570029:0;tmux -h
+: 1705570037:0;tmux
+: 1705570047:0;help tmux
+: 1705570058:0;tmux -T
+: 1705570936:0;cz Developer
+: 1705570941:0;z Desktop
+: 1705570944:0;z Dev
+: 1705573854:0;cat .aliases
+: 1705578345:0;cd .local
+: 1705578360:0;cd lazy
+: 1705578375:0;cd LazyVim
+: 1705578413:0;cd lazyvim
+: 1705578432:0;cat init.lua
+: 1705578602:0;cd ~/.local/share/nvim/lazy/LazyVim/
+: 1705578608:65;vim lua/lazyvim/plugins/editor.lua
+: 1705579059:0;cd ~/.config/nvim
+: 1705579064:0;mvim
+: 1705579147:7;brew install ripgrep fd
+: 1705609686:0;\
+mv ~/.config/nvim{,.bak1}\
+\
+#\
+mv ~/.local/share/nvim{,.bak1}\
+mv ~/.local/state/nvim{,.bak1}\
+mv ~/.cache/nvim{,.bak1}
+: 1705609848:0;touch init.lua
+: 1705656993:0;cd tmux
+: 1705656996:0;tree
+: 1705669395:0;python main.py
+: 1705672135:0;cd boot.dev
+: 1705672153:3;git clone git@github.com:murraysilber/boot.dev.learn.python.git
+: 1705672479:0;mkdir dictionaries
+: 1705672488:0;mv challenge_1.py dictionaries
+: 1705672507:0;mv README.md dictionaries
+: 1705672673:0;git commit -m "Add Dictionaries - CHallenge 1"
+: 1705672727:0;git config --global --edit
+: 1705672777:0;git commit --amend --reset-author
+: 1705743178:0;git commit -m "Add Dictionaries - Challenges"
+: 1705743221:0;git config --gloabal user.name "Murraysilber"
+: 1705743241:0;git config --global user.name "murraysilber"
+: 1705743269:0;git config --gloabal user.email "murraysilber@gmail.com"
+: 1705743284:0;git config --global user.email "murraysilber@gmail.com"
+: 1705743303:0;git commit --amend --reset-author\
+
+: 1705743315:0;git status
+: 1705743440:0;cd __pycache__
+: 1705743472:0;cd .git
+: 1705743477:0;cd info
+: 1705743500:0;touch .gitignore
+: 1705743512:10;vim .gitignore
+: 1705743547:0;git commit -m "Add challnge questions"
+: 1705743593:0;git log
+: 1705743698:0;cd dictionaries
+: 1705743705:0;rm -Rf __pycache__
+: 1705743793:0;git commit -m "cleanup"
+: 1705743851:0;mkdir sets
+: 1705743934:0;cler
+: 1705744098:0;git commit -m "Added challenges for sets"
+: 1705746760:0;git commit -m "Added completed challenges for sets"
+: 1705746823:0;cd sets
+: 1705821326:6;ping google.com
+: 1705821387:117;python
+: 1705821518:0;mkdir exceptions
+: 1705821523:0;cd exceptions
+: 1705821615:0;git commit -m "Added challenges for Exceptions"
+: 1705822275:1;rm challenge_2_test.py
+: 1705823146:0;python challenge_2.py
+: 1705823427:0;git commit -m "Added completed challenges for Exceptions"
+: 1705823509:0;mkdir course_challenges
+: 1705823511:0;cd course_challenges
+: 1705823535:0;touch challenge_3.py
+: 1705823540:0;touch challenge_4.py
+: 1705823545:0;touch challenge_5.py
+: 1705823550:0;touch challenge_6.py
+: 1705823556:0;touch challenge_7.py
+: 1705823564:0;touch challenge_8.py
+: 1705823598:0;touch challenge_3_test.py
+: 1705823603:0;touch challenge_4_test.py
+: 1705823608:0;touch challenge_5_test.py
+: 1705823614:0;touch challenge_6_test.py
+: 1705823619:0;touch challenge_7_test.py
+: 1705823623:0;touch challenge_8_test.py
+: 1705823999:0;python challenge_1.py
+: 1705824860:0;python challenge_2_test.py
+: 1705825223:0;python challenge_3_test.py
+: 1705826949:0;python challenge_4_test.py
+: 1705827639:1;python challenge_5_test.py
+: 1705827903:3;rm challenge_6_test.py
+: 1705828228:0;python challenge_6_test.py
+: 1705828407:0;python challenge_6.py
+: 1705828960:0;python challenge_7_test.py
+: 1705829519:0;python challenge_8_test.py
+: 1705835250:0;git commit -m "Added Course Challenges"
+: 1705835483:3;git clone git@github.com:murraysilber/boot.dev.learn.oop.git
+: 1705835501:0;rm -Rf bookbot
+: 1705835741:0;mkdir classes
+: 1705835744:0;cd classes
+: 1705835765:0;touch challenge_1.py
+: 1705835768:0;touch challenge_2.py
+: 1705835777:0;touch challenge_1_test.py
+: 1705835783:0;touch challenge_2_test.py
+: 1705835788:0;touch README.md
+: 1705904686:1;python challenge_1_test.py
+: 1705904772:0;cleasr
+: 1705904782:0;cd boot.dev.learn.oop
+: 1705904804:0;git commit -m "added completed challenge 1"
+: 1705904826:0;cd boot.dev.learn.python
+: 1705904840:0;z boot.dev
+: 1705904863:0;z python
+: 1705904866:0;z oop
+: 1705904877:0;z classes
+: 1705911876:0;git commit -m "Added challenge 2 question"
+: 1705928576:0;git commit -m "Added challenge 2 answers"
+: 1705928633:0;mkdir encapsulation
+: 1705928646:0;touch encapsulation/challenge_1.py
+: 1705928650:0;touch encapsulation/challenge_2.py
+: 1705928654:0;touch encapsulation/challenge_2_test.py
+: 1705928659:0;touch encapsulation/challenge_1_test.py
+: 1705928668:0;touch encapsulation/README.md
+: 1705928673:0;git add .
+: 1705928707:0;git commit -m "Added encapsulation challenges"
+: 1705928709:4;git push origin main
+: 1705928863:0;cd encapsulation
+: 1705994140:0;go --version
+: 1705994223:0;cd .config/tmux
+: 1705994236:0;cat tmux.conf
+: 1705994249:0;cat statusline.conf
+: 1705994254:43;nvim statusline.conf
+: 1705994305:0;Âƒ€I
+: 1705994310:0;Âƒ€r
+: 1705434450:0;cd .config
+: 1705434455:0;cd zsh
+: 1705434679:20;vim .aliases
+: 1705434705:7;vim
+: 1705434724:0;source .zshrc
+: 1705434726:3;vi
+: 1705435117:0;mkdir nvim
+: 1705435387:69;vim init.lua
+: 1705435532:0;mv init.lua nvim
+: 1705435543:0;cd nvim
+: 1705437738:0;rm -Rf nvim
+: 1705437761:1;git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+: 1705437872:5;brew reinstall tree-sitter
+: 1705437963:0;cd Developer/PythonTest
+: 1705439719:6;vim main.py
+: 1705439750:2;nvim init.lua
+: 1705481464:0;cd .local/bin
+: 1705481471:0;cd share
+: 1705481482:0;cd state
+: 1705481498:0;rm -Rf .tmux
+: 1705558991:2;nvim main.py
+: 1705564278:0;\
+mv ~/.config/nvim{,.bak}\
+\
+#\
+mv ~/.local/share/nvim{,.bak}\
+mv ~/.local/state/nvim{,.bak}\
+mv ~/.cache/nvim{,.bak}
+: 1705564366:0;brew list
+: 1705564403:1;brew uninstall nvim
+: 1705564407:1;brew uninstall tree-sitter
+: 1705564415:0;brew clean
+: 1705564456:3;brew install tree-sitter
+: 1705564466:5;brew install nvim
+: 1705564652:1;git clone https://github.com/LazyVim/starter ~/.config/nvim
+: 1705564661:0;rm -rf ~/.config/nvim/.git
+: 1705565647:2;rm kickstart-python.lua
+: 1705566649:0;cd .config/nvim
+: 1705566673:0;cd ../plugins
+: 1705566704:0;cd config
+: 1705566713:24;nvim options.lua
+: 1705566746:60;nvim lazy.lua
+: 1705567019:0;cd lua
+: 1705567023:0;cd plugins
+: 1705567062:0;nv
+: 1705567135:126;nvim test.md
+: 1705567266:1;rm test.md
+: 1705567766:39;nvim colorscheme.lua
+: 1705568315:205;nvim
+: 1705570997:0;z Developer
+: 1705571003:0;cd BPM-Housekeeping
+: 1705571134:0;echo $TERM
+: 1705571177:0;type ls
+: 1705571949:44;nvim .aliases
+: 1705571995:0;l
+: 1705572887:0;echo -e "\e[32mhello\e[0m"
+: 1705573386:0;pwd
+: 1705573511:0;cat .zpath
+: 1705573586:18;nvim .zshrc
+: 1705573825:0;tmux new ls
+: 1705994592:0;pomo help
+: 1705994620:1;cat pomo
+: 1705994672:0;cd text
+: 1705994676:0;cd en
+: 1705994687:0;cat start.md
+: 1705994697:0;cat init.md
+: 1705994709:0;cat pomo.md
+: 1705994765:0;cat print.md
+: 1705995231:0;go list
+: 1705995240:0;go help modules
+: 1705996475:0;export PATH=""
+: 1705996479:0;export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+: 1705996523:18;vim .zshrc
+: 1705997281:0;go
+: 1705997294:7;brew install go
+: 1705997444:0;go clean pomo
+: 1705997448:0;go clean
+: 1705997463:0;cd /opt/homebrew/Cellar/go/1.21.6/libexec/src
+: 1705997587:0;cd rwxrob
+: 1705997594:0;cd pomo@v0.2.3
+: 1705997674:0;echo $PATH
+: 1705997835:1;brew uninstall dep
+: 1705997941:23;b
+: 1705998000:0;rm -Rf pkg
+: 1705998199:0;cd pkg
+: 1705998200:0;la
+: 1705998204:0;cd mod
+: 1705998210:0;cd github.com
+: 1705998226:0;rm -Rf .
+: 1705998232:3;rm -Rf *
+: 1705998276:0;cd go/pkg/mod/github.com/mattn/go-colorable@v0.1.13
+: 1705998600:0;cat .zshrc
+: 1705998627:2;brew cleanup
+: 1705998633:2;brew doctor
+: 1705998643:16;brew install golang
+: 1705998700:0;mkdir go
+: 1705998711:0;mkdir src
+: 1705998717:0;mkdir bin
+: 1705998721:0;mkdir pkg
+: 1705998793:4;sudo chmod -R 755 go
+: 1705998898:0;cd src
+: 1705998942:2;rm -r hello.go
+: 1705998957:6;vim main.go
+: 1705998996:0;cd go/src/hello
+: 1705998998:0;go run hello.go
+: 1705999036:0;go run main.go
+: 1705999067:0;go install .
+: 1705999092:0;main
+: 1705999094:0;hello
+: 1705999151:0;rm -Rf go
+: 1705999165:2;brew uninstall go
+: 1705999177:0;cd /opt
+: 1705999182:0;cd homebrew
+: 1705999405:0;which go
+: 1705999486:0;cd\\
+
+: 1705999639:0;cd Downloads
+: 1705999662:0;ls
+: 1705999677:0;cd pom-main
+: 1705999681:0;pom
+: 1705999685:0;go pom
+: 1705999696:0;cat README.md
+: 1705999709:1;cd ..
+: 1705999730:0;go run pomo-darwin-arm64
+: 1705999843:0;mkdir hello
+: 1705999847:0;cd hello
+: 1705999878:0;go mod init example/hello
+: 1705999896:7;vim hello.go
+: 1705999913:1;go run .
+: 1706000094:0;rm -Rf hello
+: 1706000207:0;cat .zprofile
+: 1706001760:0;/Users/murray/.config/bin/pomo-darwin-arm64 ; exit;
+: 1706001784:0;/Users/murray/.config/bin/pomo ; exit;
+: 1705995695:0;echo $GOPATH
+: 1705995851:1;go env
+: 1705995984:0;cd .config/zsh
+: 1705995989:43;vim .zprofile
+: 1705996037:8;vim .zpath
+: 1706000421:0;go help
+: 1706000433:0;go gopath
+: 1706000445:0;gopath
+: 1706000454:0;go version
+: 1706000578:2;go install github.com/rwxrob/pomo/cmd/pomo@latest
+: 1706000693:1;go mod init pomo
+: 1706000719:0;cd go
+: 1706000722:0;cd bin
+: 1706000733:0;go pomo
+: 1706000739:0;go run pomo
+: 1706000810:0;cd /usr/local/go/src/pomo
+: 1706000813:0;cd /usr/local/go/src/
+: 1706000822:0;cd pomo
+: 1706001714:0;cd .config/bin
+: 1706001730:0;chmod +x pomo-darwin-arm64
+: 1706001732:0;lla
+: 1706001738:5;./pomo-darwin-arm64
+: 1706001798:0;./pomo
+: 1706001834:0;tmux ls
+: 1706001873:0;clear
+: 1706001902:0;cd
+: 1706001904:0;pomo
+: 1706001935:0;ps -ef |grep jav
+: 1706001937:0;ps -ef |grep java
+: 1706001950:0;ps -ef |grep go
+: 1706001956:0;exit
+: 1706002173:0;pomo 25
+: 1706002282:1;pomo start
+: 1706002290:0;tmux attach -t boot_dev
+: 1706002297:2939;tmux new -s boot.dev
+: 1706006399:0;/usr/local/bin/pomo ; exit;
