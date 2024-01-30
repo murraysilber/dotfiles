@@ -1,5 +1,0 @@
-$DOTFILES/zsh/rc.zsh=$HOME/.config/zsh/.zshrc
-$DOTFILES/zsh/profile.zsh=$HOME/.config/zsh/.zprofile
-$DOTFILES/zsh/env.zsh=$HOME/.zshenv
-$DOTFILES/zsh/zpath.zsh=$HOME/.config/zsh/.zpath
-$DOTFILES/zsh/aliases.zsh=$HOME/.config/zsh/.aliases
