@@ -8,27 +8,17 @@
 # Dotfiles location
 DOTFILES="${HOME}"/dotfiles
 
-source "${DOTFILES}"/install/lib/globals
-source "${DOTFILES}"/install/lib/functions
+# source "${DOTFILES}"/install/lib/globals
+#source "${DOTFILES}"/install/lib/functions
 
 # Set up install logging
-loggers
-# verify is your mac and macOS are supported.
-source "${DOTFILES}"/install/bin/verify_mac_supported.sh
-
-# handle_getopts "$@"
+# loggers
 
 #===============================================================================
 # START RUNNING SETUP
 #===============================================================================
-welcome
+#welcome
 #header
-
-# Configure my macOS defaults
-# Lets setup macOS defaults. This is the way I like things.
-# Your preferences might differ
-echo "Setting up macOS defaults"
-source "${DOTFILES}"/install/bin/macos_defaults.sh
 
 # CONFIGURE DOTFILES
 # Change directory to the parent directory.
@@ -40,6 +30,17 @@ cd "$DOTFILES"
 # is being inve
 set -e
 
+# Configure my macOS defaults
+# Lets setup macOS defaults. This is the way I like things.
+# Your preferences might differ
+echo "Setting up macOS defaults"
+source "${DOTFILES}"/install/bin/macos_defaults.sh
+
+# INSTALL HOMEBREW
+echo "Installing Homebrew"
+echo ''
+source "${DOTFILES}"/install/bin/install_homebrew.sh
+
 echo "Configuring Dotfiles"
 source "${DOTFILES}"/install/bin/configure_dotfiles.sh
 
@@ -48,16 +49,12 @@ echo "Installing Zap"
 echo ''
 source "${DOTFILES}"/install/bin/install_zap.sh
 
-# INSTALL HOMEBREW
-echo "Installing Homebrew"
-echo ''
-source "${DOTFILES}"/install/bin/install_homebrew.sh
-
 # INSTALL APPS
 # Install Apps using Homebrew & mas
-echo "Installing apps using Homebrew and mas"
-brew bundle --file="${DOTFILES}"/homebrew/Brewfile
+# echo "Installing apps using Homebrew and mas"
+# brew bundle --file="${DOTFILES}"/homebrew/Brewfile
 
+echo 'Lets check that we are good to go'
 # finally, source the .z files
 # echo "sourcing .zshenv"
 # source $HOME/.zshenv
