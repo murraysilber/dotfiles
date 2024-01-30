@@ -1,3 +1,5 @@
 setup.log
 error.log
 .DS_Store
+.zsh_history
+.zsh_sessions
