@@ -22,6 +22,7 @@ configure_dotfiles() {
   info 'configuring dotfiles'
   info 'install stow to manage dotfiles'
   brew install stow
+  info 'run stow to configure dotfiles'
   source "${DOTFILES}"/install/bin/sstow.sh
 }
 

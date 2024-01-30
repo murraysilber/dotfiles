@@ -38,7 +38,6 @@ source "${DOTFILES}"/install/bin/macos_defaults.sh
 
 # INSTALL HOMEBREW
 echo "Installing Homebrew"
-echo ''
 source "${DOTFILES}"/install/bin/install_homebrew.sh
 
 echo "Configuring Dotfiles"
