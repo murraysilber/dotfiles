@@ -48,10 +48,14 @@ echo "Installing Zap"
 echo ''
 source "${DOTFILES}"/install/bin/install_zap.sh
 
+# Set Wallpaper
+echo "Setting my wallpaper"
+source "${DOTFILES}"/install/bin/set_wallpaper.sh
+
 # INSTALL APPS
 # Install Apps using Homebrew & mas
-# echo "Installing apps using Homebrew and mas"
-# brew bundle --file="${DOTFILES}"/homebrew/Brewfile
+echo "Installing apps using Homebrew and mas"
+brew bundle --file="${HOME}"/.config/homebrew/Brewfile
 
 echo 'Lets check that we are good to go'
 # finally, source the .z files
