@@ -8,7 +8,8 @@ return {
         -- https://github.com/linrongbin16/lsp-progress.nvim
         'linrongbin16/lsp-progress.nvim', -- LSP loading progress
     },
-    opts = {
+
+  opts = {
         options = {
             -- For more themes, see https://github.com/nvim-lualine/lualine.nvim/blob/master/THEMES.md
             theme = "gruvbox-material", -- "auto, tokyonight, catppuccin, codedark, nord"
@@ -28,6 +29,8 @@ return {
                     symbols = {
                         modified = '[+]', -- Text to show when the file is modified.
                         readonly = '[-]', -- Text to show when the file is non-modifiable or readonly.
+                        unnamed = '[No Name]', -- Text to show for unnamed buffers.
+                        newfile = '[New]',     -- Text to show for newly created file before first write
                     }
                 }
             }
