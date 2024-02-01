@@ -1,6 +1,39 @@
 #!/usr/bin/env bash
 # bootstrap.sh installs things and does some general setup to get us ready to go.
 
+
+#######################################
+# Displays a nicely formatted message  
+# Outputs (Output to STDOUT or STDERR):
+#   Formatted feedback to the user on stdout
+#######################################
+message() {
+
+  # Color Outputs
+GREEN="\033[0;32m"
+RED="\033[0;31m"
+YELLOW="\033[0;33m"
+NC="\033[0m"
+
+  if [[ "$1" = "info" ]]; then
+    local msg="\n\n${EMOJI_INFO} - ${NC}${2}${NC}"
+  elif [[ "$1" = "warning" ]]; then
+    local msg="\n\n${EMOJI_WARNING} - ${YELLOW}${2}${NC}"
+  elif [[ "$1" = "fail" ]]; then
+    local msg="\n\n${EMOJI_FAIL} - ${RED}${2}${NC}"
+  elif [[ "$1" = "error" ]]; then
+    local msg="\n\n${EMOJI_ERROR} - ${RED}${2}${NC}"
+  elif [[ "$1" = "stop" ]]; then
+    local msg="\n\n${EMOJI_STOP}${RED}${2}${NC}"
+  else
+    local msg="\n\n${EMOJI_CHECKMARK}${GREEN}${1}${NC}"
+  fi
+
+  shift
+  printf "${msg}"
+}
+
+
 #######################################
 # Verifies if the script will run on the target Mac.
 # Currently, only tested on Sonoma and on Apple Silicon.
