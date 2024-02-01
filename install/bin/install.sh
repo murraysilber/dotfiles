@@ -3,16 +3,9 @@
 #===============================================================================
 # PRE-LAUNCH SETUP & CHECKS
 #===============================================================================
-# PARENT_PATH=$(dirname ${BASH_SOURCE[0]-$0}) # relative script path from execution location, same as "${BASH_SOURCE%/*}" or "${BASH_SOURCE}"
 
 # Dotfiles location
 DOTFILES="${HOME}"/dotfiles
-
-# source "${DOTFILES}"/install/lib/globals
-#source "${DOTFILES}"/install/lib/functions
-
-# Set up install logging
-# loggers
 
 #===============================================================================
 # START RUNNING SETUP
@@ -38,6 +31,7 @@ source "${DOTFILES}"/install/bin/macos_defaults.sh
 
 # INSTALL HOMEBREW
 echo "Installing Homebrew"
+echo ""
 source "${DOTFILES}"/install/bin/install_homebrew.sh
 
 echo "Configuring Dotfiles"
