@@ -1,5 +1,4 @@
-setup.log
-error.log
+*.log
 .DS_Store
 .zsh_history
 .zsh_sessions
