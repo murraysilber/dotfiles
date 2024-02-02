@@ -10,6 +10,9 @@ return {
         -- https://github.com/saadparwaiz1/cmp_luasnip
         'saadparwaiz1/cmp_luasnip',
 
+        -- https://github.com/jalvesaq/cmp-zotcite
+        'jalvesaq/cmp-zotcite',
+
         -- LSP completion capabilities
         -- https://github.com/hrsh7th/cmp-nvim-lsp
         'hrsh7th/cmp-nvim-lsp',
@@ -27,8 +30,13 @@ return {
     config = function()
         local cmp = require('cmp')
         local luasnip = require('luasnip')
+        local zotcite = require('zotcite')
         require('luasnip.loaders.from_vscode').lazy_load()
         luasnip.config.setup({})
+
+        zotcite.config.setup({
+            filetypes = { "pandoc", "markdown", "rmd", "quarto" },
+        })
 
         cmp.setup({
             snippet = {
@@ -42,9 +50,9 @@ return {
             mapping = cmp.mapping.preset.insert {
                 ['<C-j>'] = cmp.mapping.select_next_item(), -- next suggestion
                 ['<C-k>'] = cmp.mapping.select_prev_item(), -- previous suggestion
-                ['<C-b>'] = cmp.mapping.scroll_docs(-4), -- scroll backward
-                ['<C-f>'] = cmp.mapping.scroll_docs(4), -- scroll forward
-                ['<C-Space>'] = cmp.mapping.complete {}, -- show completion suggestions
+                ['<C-b>'] = cmp.mapping.scroll_docs(-4),    -- scroll backward
+                ['<C-f>'] = cmp.mapping.scroll_docs(4),     -- scroll forward
+                ['<C-Space>'] = cmp.mapping.complete {},    -- show completion suggestions
                 ['<CR>'] = cmp.mapping.confirm {
                     behavior = cmp.ConfirmBehavior.Replace,
                     select = true,
@@ -71,10 +79,11 @@ return {
                 end, { 'i', 's' }),
             },
             sources = cmp.config.sources({
-                { name = "nvim_lsp" }, -- lsp
-                { name = "luasnip" }, -- snippets
-                { name = "buffer" }, -- text within current buffer
-                { name = "path" }, -- file system paths
+                { name = "nvim_lsp" },    -- lsp
+                { name = 'cmp_zotcite' }, -- Zotero
+                { name = "luasnip" },     -- snippets
+                { name = "buffer" },      -- text within current buffer
+                { name = "path" },        -- file system paths
             }),
             window = {
                 -- Add borders to completions popups

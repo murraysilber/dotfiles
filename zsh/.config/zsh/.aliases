@@ -27,6 +27,11 @@ alias rm='rm -iv'
 alias vim="nvim"
 # alias vi="nvim"
 
+# +------+
+# | Skim |
+# +------+
+# alias skim='/Applications/Skim.app/Contents/MacOS/Skim'
+
 # +-------+
 # | fonts |
 # +-------+

@@ -1,38 +1,33 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 # bootstrap.sh installs things and does some general setup to get us ready to go.
 
-
 #######################################
-# Displays a nicely formatted message  
+# Displays a nicely formatted message
 # Outputs (Output to STDOUT or STDERR):
 #   Formatted feedback to the user on stdout
 #######################################
 message() {
 
   # Color Outputs
-GREEN="\033[0;32m"
-RED="\033[0;31m"
-YELLOW="\033[0;33m"
-NC="\033[0m"
+  local GREEN="\033[0;32m"
+  local RED="\033[0;31m"
+  local YELLOW="\033[0;33m"
+  local NC="\033[0m"
+  local BLUE="\033[00;34m"
 
-  if [[ "$1" = "info" ]]; then
-    local msg="\n\n${EMOJI_INFO} - ${NC}${2}${NC}"
+  if [[ "$1" = "success" ]]; then
+    local msg="\n${NC}[${GREEN} OK ${NC}] ${2}${NC}"
   elif [[ "$1" = "warning" ]]; then
-    local msg="\n\n${EMOJI_WARNING} - ${YELLOW}${2}${NC}"
+    local msg="\n${NC}[${YELLOW}WARN${NC}] ${2}${NC}"
   elif [[ "$1" = "fail" ]]; then
-    local msg="\n\n${EMOJI_FAIL} - ${RED}${2}${NC}"
-  elif [[ "$1" = "error" ]]; then
-    local msg="\n\n${EMOJI_ERROR} - ${RED}${2}${NC}"
-  elif [[ "$1" = "stop" ]]; then
-    local msg="\n\n${EMOJI_STOP}${RED}${2}${NC}"
-  else
-    local msg="\n\n${EMOJI_CHECKMARK}${GREEN}${1}${NC}"
+    local msg="\n${NC}[${RED}FAIL${NC}] ${2}${NC}"
+  elif [[ "$1" = "info" ]]; then
+    local msg="\n${NC}[${BLUE}INFO${NC}] ${2}${NC}"
   fi
 
   shift
-  printf "${msg}"
+  printf "%s" "$msg"
 }
-
 
 #######################################
 # Verifies if the script will run on the target Mac.
@@ -68,7 +63,7 @@ is_mac_supported() {
 #   Feedback to the user on stdout
 #######################################
 pre_flight_checks() {
-  printf "Running pre-flight checks"
+  message "info" "Running pre-flight checks"
   is_mac_supported
 }
 
