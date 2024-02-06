@@ -10,9 +10,6 @@ return {
         -- https://github.com/saadparwaiz1/cmp_luasnip
         'saadparwaiz1/cmp_luasnip',
 
-        -- https://github.com/jalvesaq/cmp-zotcite
-        'jalvesaq/cmp-zotcite',
-
         -- LSP completion capabilities
         -- https://github.com/hrsh7th/cmp-nvim-lsp
         'hrsh7th/cmp-nvim-lsp',
@@ -30,13 +27,8 @@ return {
     config = function()
         local cmp = require('cmp')
         local luasnip = require('luasnip')
-        local zotcite = require('zotcite')
         require('luasnip.loaders.from_vscode').lazy_load()
         luasnip.config.setup({})
-
-        zotcite.config.setup({
-            filetypes = { "pandoc", "markdown", "rmd", "quarto" },
-        })
 
         cmp.setup({
             snippet = {
@@ -80,7 +72,6 @@ return {
             },
             sources = cmp.config.sources({
                 { name = "nvim_lsp" },    -- lsp
-                { name = 'cmp_zotcite' }, -- Zotero
                 { name = "luasnip" },     -- snippets
                 { name = "buffer" },      -- text within current buffer
                 { name = "path" },        -- file system paths
