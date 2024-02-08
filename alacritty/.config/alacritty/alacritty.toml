@@ -8,6 +8,7 @@
 ## A cross-platform, OpenGL terminal emulator.
 ## https://alacritty.org
 
+
 import = ["~/.config/alacritty/gruvbox_dark.toml"]
 
 [bell]
