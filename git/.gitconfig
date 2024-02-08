@@ -1,0 +1,5 @@
+[core]
+excludesfile = /Users/murray/.config/git/.gitignore_global
+[user]
+name = Murray Silber
+email = murraysilber@gmail.com

@@ -1,0 +1,8 @@
+*~
+.*.swp
+
+# Mac
+.DS_Store
+
+# VS Code
+.vscode
