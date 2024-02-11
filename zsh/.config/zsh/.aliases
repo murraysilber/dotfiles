@@ -1,13 +1,13 @@
+#!/bin/zsh
+
 # +----+
 # | ls |
 # +----+
-alias ls='ls --color=auto'
 alias l='ls -l'
-alias ll='ls -lahF --color=auto'
-alias lls='ls -lahFtr'
 alias la='ls -A'
 alias lc='ls -CF'
-alias lla='ls -la --color=auto'
+alias ll='ls -al --color=auto'
+alias lls='ls -lahFtr'
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
@@ -24,8 +24,7 @@ alias rm='rm -iv'
 # +-----+
 # | Vim |
 # +-----+
-alias nv="nvim"
- alias vi="vim"
+alias v="vim"
 
 # +-------+
 # | fonts |

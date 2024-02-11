@@ -1,3 +1,7 @@
+# .zshenv is always sourced.
+# Most ${ENV_VAR} variables should be saved here.
+# It is loaded before .zshrc
+
 ###############################
 # EXPORT ENVIRONMENT VARIABLE #
 ###############################
