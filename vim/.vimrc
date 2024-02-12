@@ -1,4 +1,4 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""     "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 "               ██╗   ██╗██╗███╗   ███╗██████╗  ██████╗
 "               ██║   ██║██║████╗ ████║██╔══██╗██╔════╝
@@ -50,8 +50,10 @@ set nobackup
 " Do not let cursor scroll below or above N number of lines when scrolling.
 set scrolloff=10
 
-" Do not wrap lines. Allow long lines to extend as far as the line goes.
-set nowrap
+" Wrap lines. 
+set wrap
+set colorcolumn=90
+" set columns=120
 
 " While searching though a file incrementally highlight matching characters as you type.
 set incsearch
@@ -113,7 +115,7 @@ set showmatch
 let python_highlight_all = 1
 let g:python_highlight_all = 1
 
-set showcmd             " show command in bottom bar
+" set showcmd             " show command in bottom bar
 
 " base default color changes (gruvbox dark friendly)
 hi StatusLine ctermfg=black ctermbg=NONE
