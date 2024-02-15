@@ -24,6 +24,7 @@ size = 24.0
 
 [font.bold]
 family = "JetbrainsMono Nerd Font"
+# family = "UbuntuMono Nerd Font"
 style = "Bold"
 
 [font.glyph_offset]

@@ -84,7 +84,7 @@ set history=1000
 set backspace=indent,eol,start
 
 " make gutter less annoying
-hi SignColumn ctermbg=NONE
+" hi SignColumn ctermbg=NONE
 
 " enable relative line numbers, add no to turn off
 set relativenumber
@@ -152,8 +152,8 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'conradirwin/vim-bracketed-paste'
   Plug 'morhetz/gruvbox'
   Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-  Plug 'vim-pandoc/vim-pandoc'
-  Plug 'rwxrob/vim-pandoc-syntax-simple'
+  " Plug 'vim-pandoc/vim-pandoc'
+  " Plug 'rwxrob/vim-pandoc-syntax-simple'
   Plug 'dense-analysis/ale'
   Plug 'itchyny/lightline.vim'
   call plug#end()
