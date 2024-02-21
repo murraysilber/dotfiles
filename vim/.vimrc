@@ -18,8 +18,8 @@ endif
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
 
-" Enable type file detection. Vim will be able to try to detect the type of file in use.
-filetype on
+" Disable type file detection.
+filetype off
 
 " Enable plugins and load plugin for the detected file type.
 filetype plugin on
@@ -35,14 +35,30 @@ if has("syntax")
   syntax enable
 endif
 
-" Set shift width to 4 spaces.
-set shiftwidth=4
+" Set shift width to 2 spaces.
+set shiftwidth=2
 
-" Set tab width to 4 columns.
-set tabstop=4
+" Set tab width to 2 columns.
+set tabstop=2
 
 " Use space characters instead of tabs.
 set expandtab
+
+set smartindent
+
+set smarttab
+
+if v:version >= 800
+  " stop vim from silently messing with files that it shouldn't
+  set nofixendofline
+
+  " better ascii friendly listchars
+  set listchars=space:*,trail:*,nbsp:*,extends:>,precedes:<,tab:\|>
+
+  " i hate automatic folding
+  set foldmethod=manual
+  set nofoldenable
+endif
 
 " Do not save backup files.
 set nobackup
@@ -50,7 +66,7 @@ set nobackup
 " Do not let cursor scroll below or above N number of lines when scrolling.
 set scrolloff=10
 
-" Wrap lines. 
+" Wrap lines.
 set wrap
 set colorcolumn=90
 " set columns=120
@@ -88,6 +104,7 @@ set backspace=indent,eol,start
 
 " enable relative line numbers, add no to turn off
 set relativenumber
+set number
 
 " for dark themes.
 " set background=dark
@@ -115,6 +132,27 @@ set showmatch
 let python_highlight_all = 1
 let g:python_highlight_all = 1
 
+" Highlight bad whitespace for Python adn C files
+hi BadWhitespace ctermbg=236 ctermfg=darkred
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+" Some pep8 stuff
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+
+" Enable folding with the space key
+nnoremap <space> za
+
 " set showcmd             " show command in bottom bar
 
 " base default color changes (gruvbox dark friendly)
@@ -138,6 +176,49 @@ hi Todo ctermbg=236 ctermfg=darkred
 hi IncSearch ctermbg=236 cterm=NONE ctermfg=darkred
 hi MatchParen ctermbg=236 ctermfg=darkred
 
+" color overrides
+au FileType * hi StatusLine ctermfg=black ctermbg=NONE
+au FileType * hi StatusLineNC ctermfg=black ctermbg=NONE
+au FileType * hi Normal ctermbg=NONE
+au FileType * hi Special ctermfg=cyan
+au FileType * hi LineNr ctermfg=239 ctermbg=NONE
+au FileType * hi SpecialKey ctermfg=black ctermbg=NONE
+au FileType * hi ModeMsg ctermfg=black cterm=NONE ctermbg=NONE
+au FileType * hi MoreMsg ctermfg=black ctermbg=NONE
+au FileType * hi NonText ctermfg=black ctermbg=NONE
+au FileType * hi vimGlobal ctermfg=black ctermbg=NONE
+au FileType * hi goComment ctermfg=black ctermbg=NONE
+au FileType * hi ErrorMsg ctermbg=234 ctermfg=darkred cterm=NONE
+au FileType * hi Error ctermbg=234 ctermfg=darkred cterm=NONE
+au FileType * hi SpellBad ctermbg=234 ctermfg=darkred cterm=NONE
+au FileType * hi SpellRare ctermbg=234 ctermfg=darkred cterm=NONE
+au FileType * hi Search ctermbg=236 ctermfg=darkred
+au FileType * hi vimTodo ctermbg=236 ctermfg=166
+au FileType * hi Todo ctermbg=236 ctermfg=166
+au FileType * hi IncSearch ctermbg=236 cterm=NONE ctermfg=darkred
+au FileType * hi MatchParen ctermbg=236 ctermfg=darkred
+au FileType markdown,pandoc hi Title ctermfg=yellow ctermbg=NONE
+au FileType markdown,pandoc hi Operator ctermfg=yellow ctermbg=NONE
+au FileType markdown,pandoc set tw=0
+au FileType markdown,pandoc set wrap
+au FileType yaml hi yamlBlockMappingKey ctermfg=NONE
+au FileType yaml set sw=2
+au FileType bash set sw=2
+au FileType c set sw=8
+au FileType markdown,pandoc noremap j gj
+au FileType markdown,pandoc noremap k gk
+au FileType sh set noet
+
+set cinoptions+=:0
+
+" Edit/Reload vimrc configuration file
+nnoremap confe :e $HOME/.vimrc<CR>
+nnoremap confr :source $HOME/.vimrc<CR>
+
+" turn col and row position on in bottom right
+set ruler " see ruf for formatting
+set ruf=%30(%=%#LineNr#%.50F\ [%{strlen(&ft)?&ft:'none'}]\ %l:%c\ %p%%%)
+
 " PLUGINS ---------------------------------------------------------------- {{{
 
 " Plugin code goes here.
@@ -152,10 +233,11 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
   Plug 'conradirwin/vim-bracketed-paste'
   Plug 'morhetz/gruvbox'
   Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-  " Plug 'vim-pandoc/vim-pandoc'
-  " Plug 'rwxrob/vim-pandoc-syntax-simple'
+  Plug 'vim-pandoc/vim-pandoc'
+  Plug 'rwxrob/vim-pandoc-syntax-simple'
   Plug 'dense-analysis/ale'
-  Plug 'itchyny/lightline.vim'
+  " Plug 'itchyny/lightline.vim'
+  Plug 'jiangmiao/auto-pairs'
   call plug#end()
 
   let g:ale_sign_error = '☠'
@@ -204,25 +286,19 @@ set background=dark
 " MAPPINGS --------------------------------------------------------------- {{{
 
 " Mappings code goes here.
-" Set the backslash as the leader key.
+" Set the space as the leader key.
 let mapleader = " "
-
+autocmd FileType python map <buffer> <F3> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <F3> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 " }}}
 
 
 " VIMSCRIPT -------------------------------------------------------------- {{{
 
-" This will enable code folding.
-" Use the marker method of folding.
-augroup filetype_vim
-    autocmd!
-    autocmd FileType vim setlocal foldmethod=marker
-augroup END
 
-" More Vimscripts code goes here.
+
 
 " }}}
-
 
 " STATUS LINE ------------------------------------------------------------ {{{
 
