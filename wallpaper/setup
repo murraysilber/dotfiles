@@ -1,0 +1,11 @@
+#!/bin/sh
+
+my_dir="$HOME/.config/wallpaper"
+
+if [ ! -d "$my_dir" ]; then
+  echo "$my_dir" does not exist.
+  echo Creating "$my_dir"
+  mkdir "$my_dir"
+fi
+
+ln -sf "$PWD/african_sunset.jpeg" "$HOME/.config/wallpaper/african_sunset.jpeg"

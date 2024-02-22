@@ -11,6 +11,7 @@
 
 " designed for vim 8+
 
+
 if has("eval")                               " vim-tiny lacks 'eval'
   let skip_defaults_vim = 1
 endif
@@ -132,7 +133,7 @@ set showmatch
 let python_highlight_all = 1
 let g:python_highlight_all = 1
 
-" Highlight bad whitespace for Python adn C files
+" Highlight bad whitespace for Python and C files
 hi BadWhitespace ctermbg=236 ctermfg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
@@ -156,8 +157,8 @@ nnoremap <space> za
 " set showcmd             " show command in bottom bar
 
 " base default color changes (gruvbox dark friendly)
-hi StatusLine ctermfg=black ctermbg=NONE
-hi StatusLineNC ctermfg=black ctermbg=NONE
+hi StatusLine ctermfg=green ctermbg=NONE
+" hi StatusLineNC ctermfg=black ctermbg=NONE
 hi Normal ctermbg=NONE
 hi Special ctermfg=cyan
 hi LineNr ctermfg=black ctermbg=NONE
@@ -177,8 +178,8 @@ hi IncSearch ctermbg=236 cterm=NONE ctermfg=darkred
 hi MatchParen ctermbg=236 ctermfg=darkred
 
 " color overrides
-au FileType * hi StatusLine ctermfg=black ctermbg=NONE
-au FileType * hi StatusLineNC ctermfg=black ctermbg=NONE
+au FileType * hi StatusLine ctermfg=green ctermbg=NONE
+" au FileType * hi StatusLineNC ctermfg=black ctermbg=NONE
 au FileType * hi Normal ctermbg=NONE
 au FileType * hi Special ctermfg=cyan
 au FileType * hi LineNr ctermfg=239 ctermbg=NONE
@@ -217,7 +218,10 @@ nnoremap confr :source $HOME/.vimrc<CR>
 
 " turn col and row position on in bottom right
 set ruler " see ruf for formatting
-set ruf=%30(%=%#LineNr#%.50F\ [%{strlen(&ft)?&ft:'none'}]\ %l:%c\ %p%%%)
+" set ruf=%30(%=%#LineNr#%.50F\ [%{strlen(&ft)?&ft:'none'}]\ %l:%c\ %p%%%)
+
+set ttimeout        " time out for key codes
+set ttimeoutlen=100 " wait up to 100ms after Esc for special key
 
 " PLUGINS ---------------------------------------------------------------- {{{
 
@@ -302,24 +306,52 @@ autocmd FileType python imap <buffer> <F3> <esc>:w<CR>:exec '!python3' shellesca
 
 " STATUS LINE ------------------------------------------------------------ {{{
 
-" Status bar code goes here.
-" Clear status line when vimrc is reloaded.
-" set statusline=
-
-" Status line left side.
-" set statusline+=\ %f\ %M\ %Y\ %R
-
-" Use a divider to separate the left side from the right side.
-" set statusline+=%=
-
-" Status line right side.
-" set statusline+=\ row:\ %l\ col:\ %c\ percent:\ %p%%
-
-" Show the status on the second to last line.
+set statusline=
 set laststatus=2
-set noshowmode
-let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
-      \ }
+
+set statusline+=%#DiffAdd#%{(mode()=='n')?'\ \ NORMAL\ ':''}
+set statusline+=%#DiffChange#%{(mode()=='i')?'\ \ INSERT\ ':''}
+set statusline+=%#DiffDelete#%{(mode()=='r')?'\ \ RPLACE\ ':''}
+set statusline+=%#Cursor#%{(mode()=='v')?'\ \ VISUAL\ ':''}
+set statusline+=\ %n\           " buffer number
+set statusline+=%#Visual#       " colour
+set statusline+=%{&paste?'\ PASTE\ ':''}
+set statusline+=%{&spell?'\ SPELL\ ':''}
+set statusline+=%#CursorIM#     " colour
+set statusline+=%R                        " readonly flag
+set statusline+=%M                        " modified [+] flag
+set statusline+=%#Cursor#               " colour
+set statusline+=%#CursorLine#     " colour
+set statusline+=\ %t\                   " short file name
+set statusline+=\%{b:gitbranch}
+set statusline+=%=                          " right align
+set statusline+=%#CursorLine#   " colour
+set statusline+=\ %Y\                   " file type
+set statusline+=%#CursorIM#     " colour
+set statusline+=\ %3l:%-2c\         " line + column
+set statusline+=%#Cursor#       " colour
+set statusline+=\ %3p%%\                " percentage
+
+function! StatuslineGitBranch()
+  let b:gitbranch=""
+  if &modifiable
+    try
+      lcd %:p:h
+    catch
+      return
+    endtry
+    let l:gitrevparse=system("git rev-parse --abbrev-ref HEAD")
+    lcd -
+    if l:gitrevparse!~"fatal: not a git repository"
+      let b:gitbranch="(".substitute(l:gitrevparse, '\n', '', 'g').") "
+    endif
+  endif
+endfunction
+
+augroup GetGitBranch
+  autocmd!
+  autocmd VimEnter,WinEnter,BufEnter * call StatuslineGitBranch()
+augroup END
+
 
 " }}}

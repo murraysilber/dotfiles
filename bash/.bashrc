@@ -13,10 +13,6 @@ if _have dircolors; then
   fi
 fi
 
-# Starship Prompt
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
-eval "$(starship init bash)"
-
 # Aliases
 
 # +----+
@@ -59,3 +55,7 @@ alias boot='cd ~/Developer/boot.dev'
 # easier to read disk
 alias df='df -h'     # human-readable sizes
 alias free='free -m' # show sizes in MB
+
+# Starship Prompt
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+eval "$(starship init bash)"
