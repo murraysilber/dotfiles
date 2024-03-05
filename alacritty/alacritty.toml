@@ -20,10 +20,10 @@ duration = 0
 TERM = "xterm-256color"
 
 [font]
-size = 24.0
+size = 22.0
 
 [font.bold]
-family = "JetbrainsMono Nerd Font"
+family = "BitstromWera Nerd Font"
 # family = "UbuntuMono Nerd Font"
 style = "Bold"
 
@@ -32,16 +32,16 @@ x = 0
 y = 0
 
 [font.italic]
-family = "JetbrainsMono Nerd Font"
+family = "BitstromWera Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "JetbrainsMono Nerd Font"
+family = "BitstromWera Nerd Font"
 style = "Regular"
 
 [font.offset]
 x = 0
-y = 0
+y = 2
 
 [[keyboard.bindings]]
 action = "ToggleFullscreen"
