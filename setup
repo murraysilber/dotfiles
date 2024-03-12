@@ -23,6 +23,9 @@ if [ ! -d "$config_dir" ]; then
   mkdir -v "$config_dir"
 fi
 
+# Are we in the dotfiles directory?
+cd "${HOME}"/dotfiles
+
 # Make magic happen
 for i in macos wallpaper; do
   cd $i && ./setup.sh
