@@ -9,18 +9,22 @@
 
 set -e
 
-# ln -sf "$PWD/.inputrc" "$HOME/.inputrc"
-# ln -sf "$PWD/scripts" "$HOME/Scripts"
-
 # for i in bash tmux alacritty neofetch rectangle starship wallpaper bin; do
 #   cd $i && ./setup
 #   cd -
 # done
 
-# Need to create base directory for housing symlinks and scripts.
-mkdir -v "${HOME}"/.config
+# Need to create base directory for housing symlinks and scripts (.config)
+config_dir="$HOME/.config"
 
+if [ ! -d "$config_dir" ]; then
+  echo "$config_dir" does not exist.
+  echo Creating "$config_dir"
+  mkdir -v "$config_dir"
+fi
+
+# Make magic happen
 for i in macos wallpaper; do
-  cd $i && ./setup
+  cd $i && ./setup.sh
   cd -
 done

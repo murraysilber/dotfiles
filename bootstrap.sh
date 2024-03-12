@@ -114,5 +114,5 @@ git clone -b main https://github.com/murraysilber/dotfiles.git "$HOME"/dotfiles
 echo ''
 
 echo "Bootstrapping done!! - Time to install and configure things"
-cd "${HOME}"/dotfiles
-caffeinate zsh setup.sh
+#cd "${HOME}"/dotfiles
+caffeinate zsh "${HOME}"/dotfiles/setup
