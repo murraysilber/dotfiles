@@ -5,7 +5,7 @@ wallpaper_dir="$HOME/.config/wallpaper"
 if [ ! -d "$wallpaper_dir" ]; then
   echo "$wallpaper_dir" does not exist.
   echo Creating "$wallpaper_dir"
-  mkdir "$wallpaper_dir"
+  mkdir -v "$wallpaper_dir"
 fi
 
 cp "$PWD/african_sunset.jpeg" "$HOME/.config/wallpaper"

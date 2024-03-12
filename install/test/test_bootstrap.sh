@@ -8,4 +8,4 @@ tart run --dir=myhost:~/Developer/dotfiles sonoma-1
 
 # keeping this here purely for my testing purposes. I dont want it executed on my host
 
-# zsh <(curl -s https://raw.githubusercontent.com/murraysilber/dotfiles/main/install/bootstrap.sh) --branch main
+# zsh <(curl -s https://raw.githubusercontent.com/murraysilber/dotfiles/main/bootstrap.sh) --branch main
