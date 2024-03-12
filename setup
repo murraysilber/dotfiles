@@ -4,7 +4,12 @@ set -e
 # ln -sf "$PWD/.inputrc" "$HOME/.inputrc"
 # ln -sf "$PWD/scripts" "$HOME/Scripts"
 
-for i in bash tmux alacritty neofetch rectangle starship wallpaper bin; do
+# for i in bash tmux alacritty neofetch rectangle starship wallpaper bin; do
+#   cd $i && ./setup
+#   cd -
+# done
+
+for i in wallpaper alacritty; do
   cd $i && ./setup
   cd -
 done

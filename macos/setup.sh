@@ -37,6 +37,13 @@ defaults write com.apple.screencapture location -string "${HOME}/Pictures"
 defaults write com.apple.screencapture type -string "png"
 
 ###############################################################################
+# Desktop                                           #
+###############################################################################
+
+# Keep desktops organised statically
+defaults write com.apple.dock "mru-spaces" -bool false
+
+###############################################################################
 # Dock, Dashboard, and hot corners                                            #
 ###############################################################################
 

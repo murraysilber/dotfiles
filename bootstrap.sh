@@ -93,7 +93,7 @@ install_command_line_tools() {
 }
 
 # Are we using ZSH? Not writing any fancy check yet, just a visual guide
-# TODO Expand on this and stop boiotstrap process if not zsh
+# TODO Expand on this and stop bootstrap process if not zsh
 echo "We are using SHELL: ""$SHELL"
 
 pre_flight_checks
@@ -114,4 +114,4 @@ git clone -b main https://github.com/murraysilber/dotfiles.git "$HOME"/dotfiles
 echo ''
 
 echo "Bootstrapping done!! - Time to install and configure things"
-caffeinate zsh "${HOME}"/dotfiles/install/bin/install.sh
+caffeinate zsh "${HOME}"/dotfiles/setup.sh
