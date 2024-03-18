@@ -10,5 +10,3 @@ fi
 
 ln -sf "$PWD/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
 ln -sf "$PWD/gruvbox_dark.toml" "$HOME/.config/alacritty/gruvbox_dark.toml"
-
-brew install alacritty

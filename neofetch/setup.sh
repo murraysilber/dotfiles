@@ -9,5 +9,3 @@ if [ ! -d "$neofetch_dir" ]; then
 fi
 
 ln -sf "$PWD/config.conf" "$HOME/.config/neofetch/config.conf"
-
-brew install neofetch

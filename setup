@@ -26,7 +26,12 @@ fi
 cd "${HOME}"/dotfiles
 
 # Make magic happen
-for i in macos wallpaper homebrew zsh zap neofetch alacritty; do
+for i in macos wallpaper homebrew zsh zap neofetch alacritty rectangle; do
   cd $i && ./setup.sh
   cd -
 done
+
+# INSTALL APPS
+# Install Apps using Homebrew & mas
+echo "Installing apps using Homebrew and mas"
+brew bundle --file="${HOME}"/.config/homebrew/Brewfile

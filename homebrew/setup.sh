@@ -16,3 +16,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # test if Homebrew was installed
 brew --version
 brew doctor
+
+# Brewfile
+ln -sf "$PWD/Brewfile" "$HOME/.config/homebrew/Brewfile"
