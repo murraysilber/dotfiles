@@ -18,4 +18,11 @@ brew --version
 brew doctor
 
 # Brewfile
+brew_dir="$HOME/.config/homebrew"
+
+if [ ! -d "$brew_dir" ]; then
+  echo "$brew_dir" does not exist.
+  echo Creating "$brew_dir"
+  mkdir -v "$brew_dir"
+fi
 ln -sf "$PWD/Brewfile" "$HOME/.config/homebrew/Brewfile"

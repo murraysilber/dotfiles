@@ -89,7 +89,7 @@ run_pre_flight_checks() {
 install_command_line_tools() {
 
   if ! xcode-select -p &>/dev/null; then
-    message "info" "Command Line Tools for Xcode not found. Installing from softwareupdate…"
+    message "info" "Command Line Tools for Xcode not found. Installing from softwareupdate…\n"
     # This temporary file prompts the 'softwareupdate' utility to list the Command Line Tools
     touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
     PROD=$(softwareupdate -l | grep "\*.*Command Line" | tail -n 1 | sed 's/^[^C]* //')
