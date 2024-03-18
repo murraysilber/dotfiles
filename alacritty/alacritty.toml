@@ -24,12 +24,7 @@ size = 22.0
 
 [font.bold]
 family = "BitstromWera Nerd Font"
-# family = "UbuntuMono Nerd Font"
 style = "Bold"
-
-[font.glyph_offset]
-x = 0
-y = 0
 
 [font.italic]
 family = "BitstromWera Nerd Font"
@@ -38,6 +33,10 @@ style = "Italic"
 [font.normal]
 family = "BitstromWera Nerd Font"
 style = "Regular"
+
+[font.glyph_offset]
+x = 0
+y = 0
 
 [font.offset]
 x = 0

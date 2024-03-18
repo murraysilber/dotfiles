@@ -10,10 +10,6 @@ export PATH="$PATH:$GOPATH"
 export MY_SCRIPTS="$HOME/.config/bin"
 export PATH="$PATH:$MY_SCRIPTS"
 
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d "$PYENV_ROOT/bin" ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
 # This file is only here because some brain-dead
 # applications require it.
 

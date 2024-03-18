@@ -4,7 +4,7 @@ tap "homebrew/cask-fonts"
 tap "sdkman/tap"
 
 # brew "mackup"
-brew "neovim"
+# brew "neovim"
 # brew "mas"
 brew "neofetch"
 # brew "shellcheck"

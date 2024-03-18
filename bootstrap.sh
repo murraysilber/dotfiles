@@ -25,8 +25,7 @@ message() {
     local msg="\n${NC}[${BLUE}INFO${NC}] ${2}${NC}"
   fi
 
-  shift
-  printf "%s" "$msg"
+  printf "$msg"
 }
 
 #######################################
@@ -45,16 +44,30 @@ is_mac_supported() {
   # local os_minor_version
   # os_minor_version=$(echo "$mac_os_version" | sed -E 's/([0-9]+)\.([0-9]+)\.?([0-9]+)?/\2/')
 
-  echo 'Checking if your Mac is supported'
+  message "info" "Checking if your Mac is supported..."
+  message "info" "Supported Macs run v${os_major_version}.x on ${cpu_architecture} architecture"
   # TODO add check for Ventura as well, in fact, anything from Big Sur that supports ARM architecture (Apple Silcon). Need to decide Just how much testing I want to do and if I will ever need an OS older than Sonoma, or even a Mac with Intel CPU architecture.
 
   if [[ "${cpu_architecture}" == "arm64" && "${os_major_version}" -eq 14 ]]; then
     # TODO fix messaging if time permits. Make prettier and explain why
-    printf 'You are good to go\n'
+    message "success" "Your Mac is supported: v${mac_os_version} on ${cpu_architecture}"
   else
-    printf "Your Mac is unsupported\nExiting the script now!!!!"
+    message "warning" "Your Mac is unsupported: v${mac_os_version} on ${cpu_architecture}. Exiting the script now!!!!"
     exit 1
   fi
+}
+
+#######################################
+# Checks and Verifies that we are using an appropriate shell.
+# Currently, only for info purposes.
+# Outputs (Output to STDOUT or STDERR):
+#   Feedback to the user on stdout
+#######################################
+is_supported_shell() {
+  # Are we using ZSH? Not writing any fancy check yet, just a visual guide
+  # TODO Expand on this and stop bootstrap process if not zsh
+  message "info" "Checking which SHELL we are using..."
+  message "info" "We are using ${SHELL}"
 }
 
 #######################################
@@ -62,8 +75,9 @@ is_mac_supported() {
 # Outputs (Output to STDOUT or STDERR):
 #   Feedback to the user on stdout
 #######################################
-pre_flight_checks() {
-  message "info" "Running pre-flight checks"
+run_pre_flight_checks() {
+  message "info" "Running pre-flight checks..."
+  is_supported_shell
   is_mac_supported
 }
 
@@ -75,44 +89,46 @@ pre_flight_checks() {
 install_command_line_tools() {
 
   if ! xcode-select -p &>/dev/null; then
-    echo "Command Line Tools for Xcode not found. Installing from softwareupdate…"
+    message "info" "Command Line Tools for Xcode not found. Installing from softwareupdate…"
     # This temporary file prompts the 'softwareupdate' utility to list the Command Line Tools
     touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
     PROD=$(softwareupdate -l | grep "\*.*Command Line" | tail -n 1 | sed 's/^[^C]* //')
     softwareupdate -i "$PROD" --verbose
-    echo ""
-    echo "Command Line Tools for Xcode have been installed at:"
+    message "success" "Command Line Tools for Xcode have been installed at: "
     xcode-select -p
   else
     # Should see the location of the installed tools. Something like this:
     # /Library/Developer/CommandLineTools
-    echo ""
-    echo "Command Line Tools for Xcode have already been installed at:"
+    message "info" "Command Line Tools for Xcode have already been installed at: "
     xcode-select -p
   fi
 }
 
-# Are we using ZSH? Not writing any fancy check yet, just a visual guide
-# TODO Expand on this and stop bootstrap process if not zsh
-echo "We are using SHELL: ""$SHELL"
+# ----------------1--------------------- #
+# Run all pre-flight checks to ensure that
+# the Mac meets our pre-requisites
+run_pre_flight_checks
 
-pre_flight_checks
-
-# ------------------------------ 1 ------------------------------------- #
+# ----------------2--------------------- #
 # Install Command Line Tools for Xcode.
 # Necessary for using git clone
 # TODO Could I just create releases of my dotfiles using zip and then just get the zip?? Then I can install Command Line Tools for Xcode as part of the Homebrew install. Simpler?  Need to test this.
 install_command_line_tools
 
-# ------------------------------ 2 ------------------------------------- #
+# -----------------3-------------------- #
 # Clone the git repo
-# Now that we have the Command Line Tools for Xcode installed, we can
-# clone the full repo.
-echo ''
-echo "Cloning git repo"
+# Now that we have the Command Line Tools
+# for Xcode installed, we can clone the full repo.
+message "info" "Cloning git repo...."
 git clone -b main https://github.com/murraysilber/dotfiles.git "$HOME"/dotfiles
-echo ''
+if [ $? -eq 0 ]; then
+  message "success" "Repo cloned successfully"
+else
+  message "fail" "Repo was not cloned successfully"
+  message "warning" "Script will now exit..."
+  exit 1
+fi
 
-echo "Bootstrapping done!! - Time to install and configure things"
-#cd "${HOME}"/dotfiles
-caffeinate zsh "${HOME}"/dotfiles/setup
+message "info" "Bootstrapping done!! - Time to install and configure things..."
+cd "${HOME}"/dotfiles
+caffeinate zsh "${PWD}"/setup
