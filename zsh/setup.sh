@@ -8,8 +8,8 @@ if [ ! -d "$zsh_dir" ]; then
   mkdir -v "$zsh_dir"
 fi
 
-ln -sf "$PWD/.zshenv" "$HOME/.zshenv"
-ln -sf "$PWD/.zprofile" "$HOME/.config/zsh/.zprofile"
-ln -sf "$PWD/.zshrc" "$HOME/.config/zsh/.zshrc"
-ln -sf "$PWD/.zpath" "$HOME/.config/zsh/.zpath"
-ln -sf "$PWD/.aliases" "$HOME/.config/zsh/.aliases"
+ln -sf "$HOME/dotfiles/zsh/.zshenv" "$HOME/.zshenv"
+ln -sf "$HOME/dotfiles/zsh/.zprofile" "$HOME/.config/zsh/.zprofile"
+ln -sf "$HOME/dotfiles/zsh/.zshrc" "$HOME/.config/zsh/.zshrc"
+ln -sf "$HOME/dotfiles/zsh/.zpath" "$HOME/.config/zsh/.zpath"
+ln -sf "$HOME/dotfiles/zsh/.aliases" "$HOME/.config/zsh/.aliases"

@@ -8,4 +8,4 @@ if [ ! -d "$neofetch_dir" ]; then
   mkdir -v "$neofetch_dir"
 fi
 
-ln -sf "$PWD/config.conf" "$HOME/.config/neofetch/config.conf"
+ln -sf "$HOME/dotfiles/neofetch/config.conf" "$neofetch_dir/config.conf"

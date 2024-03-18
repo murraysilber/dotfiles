@@ -8,6 +8,6 @@ if [ ! -d "$rectangle_dir" ]; then
   mkdir -v "$rectangle_dir"
 fi
 
-ln -sf "$PWD/RectangleConfig.json" "$HOME/.config/rectangle/RectangleConfig.json"
+ln -sf "$HOME/dotfiles/rectangle/RectangleConfig.json" "$rectangle_dir/RectangleConfig.json"
 
 brew install --cask rectangle

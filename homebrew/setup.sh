@@ -25,4 +25,4 @@ if [ ! -d "$brew_dir" ]; then
   echo Creating "$brew_dir"
   mkdir -v "$brew_dir"
 fi
-ln -sf "$PWD/Brewfile" "$HOME/.config/homebrew/Brewfile"
+ln -sf "$HOME/dotfiles/homebrew/Brewfile" "$brew_dir/Brewfile"

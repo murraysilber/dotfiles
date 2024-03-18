@@ -8,5 +8,5 @@ if [ ! -d "$alacritty_dir" ]; then
   mkdir -v "$alacritty_dir"
 fi
 
-ln -sf "$PWD/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
-ln -sf "$PWD/gruvbox_dark.toml" "$HOME/.config/alacritty/gruvbox_dark.toml"
+ln -sf "$HOME/dotfiles/alacritty/alacritty.toml" "$alacritty_dir/alacritty.toml"
+ln -sf "$HOME/dotfiles/alacritty/gruvbox_dark.toml" "$alacritty_dir/gruvbox_dark.toml"
