@@ -8,7 +8,7 @@ if [ ! -d "$wallpaper_dir" ]; then
   mkdir -v "$wallpaper_dir"
 fi
 
-cp "$PWD/african_sunset.jpeg" "$HOME/.config/wallpaper"
+cp "$HOME/dotfiles/wallpaper/african_sunset.jpeg" "$HOME/.config/wallpaper"
 
 # Get the absolute path to the image
 IMAGE_PATH="${HOME}/.config/wallpaper/african_sunset.jpeg"
