@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env zsh
 ############################
 # This script creates symlinks from the home directory to any desired dotfiles in $HOME/dotfiles
 # And also installs applies MacOS defaults I prefer
@@ -27,8 +27,9 @@ cd "${HOME}"/dotfiles
 
 # Make magic happen
 for i in macos wallpaper homebrew zsh zap neofetch alacritty rectangle; do
-  cd $i && ./setup.sh
-  cd -
+  source "${DOTFILES}"/"${i}"/setup.sh
+  # cd $i && ./setup.sh
+  # cd -
 done
 
 # INSTALL APPS
