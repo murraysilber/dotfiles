@@ -27,7 +27,7 @@ cd "${HOME}"/dotfiles
 
 # Make magic happen
 for i in macos wallpaper homebrew zsh zap neofetch alacritty rectangle; do
-  source "${DOTFILES}"/"${i}"/setup.sh
+  source "$DOTFILES/$i/setup.sh"
   # cd $i && ./setup.sh
   # cd -
 done
