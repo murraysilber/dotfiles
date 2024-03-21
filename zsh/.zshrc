@@ -4,7 +4,8 @@
 # source
 plug "$HOME/.config/zsh/.aliases"
 plug "$HOME/.env.sh"
-plug "$HOME/.config/bin/litra-automation.sh"
+# plug "$HOME/.config/bin/litra-automation.sh"
+plug "/opt/homebrew/opt/asdf/libexec/asdf.sh"
 
 #plugins
 plug "zsh-users/zsh-autosuggestions"
