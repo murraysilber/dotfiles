@@ -8,5 +8,5 @@ if [ ! -d "$bin_dir" ]; then
   mkdir "$bin_dir"
 fi
 
-ln -sf "$HOME/dotfiles/bin/b" "$bin_dir/.config/bin/b"
-ln -sf "$HOME/dotfiles/bin/pomo" "$bin_dir/.config/bin/pomo"
+ln -sf "$HOME/dotfiles/bin/b" "$bin_dir/b"
+ln -sf "$HOME/dotfiles/bin/pomo" "$bin_dir/pomo"
