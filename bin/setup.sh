@@ -1,12 +1,12 @@
 #!/bin/sh
 
-my_dir="$HOME/.config/bin"
+bin_dir="$HOME/.config/bin"
 
-if [ ! -d "$my_dir" ]; then
-  echo "$my_dir" does not exist.
-  echo Creating "$my_dir"
-  mkdir "$my_dir"
+if [ ! -d "$bin_dir" ]; then
+  echo "$bin_dir" does not exist.
+  echo Creating "$bin_dir"
+  mkdir "$bin_dir"
 fi
 
-ln -sf "$PWD/b" "$HOME/.config/bin/b"
-ln -sf "$PWD/pomo" "$HOME/.config/bin/pomo"
+ln -sf "$HOME/dotfiles/bin/b" "$bin_dir/.config/bin/b"
+ln -sf "$HOME/dotfiles/bin/pomo" "$bin_dir/.config/bin/pomo"
