@@ -1,3 +1,4 @@
 export PATH="$HOME/.config/bin:$PATH"
+export PATH="$HOME/.config/bin/pomodoro:$PATH"
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH"

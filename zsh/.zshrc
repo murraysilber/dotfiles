@@ -26,4 +26,7 @@ autoload -Uz compinit && compinit
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"
 
+# fzf
+eval "$(fzf --zsh)"
+
 echo "Path: " $PATH

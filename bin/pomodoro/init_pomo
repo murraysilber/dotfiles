@@ -1,0 +1,5 @@
+#!/bin/sh
+
+pomo init
+pomo delete interval
+pomo start 25m

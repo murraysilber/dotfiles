@@ -11,6 +11,9 @@
 
 " designed for vim 8+
 
+" fzf
+set rtp+=/opt/homebrew/opt/fzf
+
 
 if has("eval")                               " vim-tiny lacks 'eval'
   let skip_defaults_vim = 1
