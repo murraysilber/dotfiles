@@ -1,5 +1,11 @@
 #!/usr/bin/env zsh
-# bootstrap.sh installs things and does some general setup to get us ready to go.
+############################
+# This script sets up a Mac from scratch
+# 1. Dotfiles - pulls them from github and sets up symlinks
+# 2. Sets up MacOS defaults I prefer
+# 3. Installs specific apps intentionally that I use.
+# 4. And also installs other Apps using Homebrew
+############################
 
 #######################################
 # Displays a nicely formatted message
@@ -131,4 +137,30 @@ fi
 
 message "info" "Bootstrapping done!! - Time to install and configure things..."
 cd "${HOME}"/dotfiles
-caffeinate zsh "${PWD}"/setup
+
+set -e
+
+# Need to create base directory for housing symlinks and scripts (.config)
+config_dir="$HOME/.config"
+
+if [ ! -d "$config_dir" ]; then
+  echo "$config_dir" does not exist.
+  echo Creating "$config_dir"
+  mkdir -v "$config_dir"
+fi
+
+# Are we in the dotfiles directory?
+cd "${HOME}"/dotfiles
+
+# Make magic happen
+for i in macos wallpaper homebrew zsh neofetch alacritty starship rectangle tmux zap bin; do
+  echo "$HOME/dotfiles/$i/setup.sh"
+  source "$HOME/dotfiles/$i/setup.sh"
+  # cd $i && ./setup.sh
+  # cd -
+done
+
+# INSTALL APPS
+# Install Apps using Homebrew & mas
+echo "Installing apps using Homebrew and mas"
+brew bundle --file="${HOME}"/.config/homebrew/Brewfile

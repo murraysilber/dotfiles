@@ -43,6 +43,7 @@ cask "raycast"
 cask "spotify"
 cask "visual-studio-code"
 cask "zotero"
+cask "texifier"
 
 # mas "Citrix Secure Access", id: 1338991513
 # mas "Disk Speed Test", id: 425264550
