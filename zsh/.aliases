@@ -9,7 +9,9 @@ alias lc='ls -CF'
 alias ll='ls -al --color=auto'
 alias lls='ls -lahFtr'
 
-# Colorize grep output (good for log files)
+# +------+
+# | grep |
+# +------+
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -46,3 +48,6 @@ alias pscpu='ps auxf | sort -nr -k 3 | head -5'
 # | cd |
 # +----+
 alias dboot='cd ~/Developer/boot.dev'
+
+# My bin files
+alias ip='~/.config/bin/pomodoro/init_pomo'

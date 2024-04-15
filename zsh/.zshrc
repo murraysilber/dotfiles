@@ -13,6 +13,18 @@ plug "zap-zsh/supercharge"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "zap-zsh/fzf"
 
+
+# vim cursor
+zle-line-finish zle-line-init zle-keymap-select () {
+    if [ $TERM != linux ]; then
+        if [ $KEYMAP = vicmd ]; then
+            echo -ne "\e[2 q"
+        else
+            echo -ne "\e[5 q"
+        fi
+    fi
+}
+
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
 
