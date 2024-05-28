@@ -16,10 +16,6 @@ export BROWSER="brave"
 export ZDOTDIR="$HOME/.config/zsh"
 export DOTFILES="$HOME/dotfiles"
 
-#ASDF
-export ASDF_CONFIG_FILE="$HOME/.config/asdf/.asdfrc"
-export ASDF_DEFAULT_TOOL_VERSIONS_FILENAME=.tool_versions
-
 # zsh history
 export HISTSIZE=10000 # Maximum events for internal history
 export SAVEHIST=10000 # Maximum events in history file

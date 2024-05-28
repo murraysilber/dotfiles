@@ -5,7 +5,6 @@
 plug "$HOME/.config/zsh/.aliases"
 plug "$HOME/.env.sh"
 # plug "$HOME/.config/bin/litra-automation.sh"
-plug "$HOME/.asdf/asdf.sh"
 
 #plugins
 plug "zsh-users/zsh-autosuggestions"
@@ -25,8 +24,6 @@ zle-line-finish zle-line-init zle-keymap-select () {
     fi
 }
 
-# append completions to fpath
-fpath=(${ASDF_DIR}/completions $fpath)
 
 # Load and initialise things
 autoload -U zmv
