@@ -9,6 +9,5 @@ if [ ! -d "$alacritty_dir" ]; then
 fi
 
 ln -sf "$HOME/dotfiles/alacritty/alacritty.toml" "$alacritty_dir/alacritty.toml"
-ln -sf "$HOME/dotfiles/alacritty/gruvbox_dark.toml" "$alacritty_dir/gruvbox_dark.toml"
 
 brew install --cask alacritty
