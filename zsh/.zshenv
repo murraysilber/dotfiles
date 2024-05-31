@@ -1,6 +1,6 @@
 # .zshenv is always sourced.
 # Most ${ENV_VAR} variables should be saved here.
-# It is loaded before .zshrc
+# It's loaded before .zshrc
 # https://www.baeldung.com/linux/zsh-configuration-files
 
 ###############################
@@ -16,11 +16,9 @@ export BROWSER="brave"
 export ZDOTDIR="$HOME/.config/zsh"
 export DOTFILES="$HOME/dotfiles"
 
-# zsh history
-export HISTSIZE=10000 # Maximum events for internal history
-export SAVEHIST=10000 # Maximum events in history file
+export PATH="$HOME/.config/bin:$PATH"
+export PATH="$HOME/.config/bin/pomodoro:$PATH"
 
-# source my own paths
-if [[ $SHLVL == 1 && ! -o LOGIN ]]; then
-  source $HOME/.config/zsh/.zpath
-fi
+#GoLang
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH"

@@ -11,3 +11,5 @@ if [ ! -d "$tmux_dir" ]; then
 fi
 
 ln -sf "$HOME/dotfiles/tmux/tmux.conf" "$tmux_dir/tmux.conf"
+
+brew install tmux

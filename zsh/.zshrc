@@ -1,29 +1,8 @@
-# ZAP Plgin Manager
-[ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
-
-# source
-plug "$HOME/.config/zsh/.aliases"
-plug "$HOME/.env.sh"
-# plug "$HOME/.config/bin/litra-automation.sh"
-
-#plugins
-plug "zsh-users/zsh-autosuggestions"
-plug "zap-zsh/supercharge"
-plug "zsh-users/zsh-syntax-highlighting"
-plug "zap-zsh/fzf"
-
-
-# vim cursor
-zle-line-finish zle-line-init zle-keymap-select () {
-    if [ $TERM != linux ]; then
-        if [ $KEYMAP = vicmd ]; then
-            echo -ne "\e[2 q"
-        else
-            echo -ne "\e[5 q"
-        fi
-    fi
-}
-
+# Source zsh additional functionality. Installed using Homebrew. I dont want a zsh plugin manager.
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source "$HOME/.config/zsh/.aliases"
+# source "$HOME/.env.sh"
 
 # Load and initialise things
 autoload -U zmv
@@ -31,11 +10,25 @@ autoload -U zmv
 autoload -U colors && colors
 autoload -Uz compinit && compinit
 
+# history setup
+HISTFILE=$HOME/.zhistory
+SAVEHIST=1000
+HISTSIZE=999
+setopt share_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_verify
+
+# completion using arrow keys (based on history)
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+
+# ---- FZF -----
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --zsh)"
+
 # Starship Prompt
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"
-
-# fzf
-eval "$(fzf --zsh)"
 
 echo "Path: " $PATH

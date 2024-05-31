@@ -137,7 +137,6 @@ fi
 
 message "info" "Bootstrapping done!! - Time to install and configure things..."
 cd "${HOME}"/dotfiles
-
 set -e
 
 # Need to create base directory for housing symlinks and scripts (.config)
@@ -153,7 +152,7 @@ fi
 cd "${HOME}"/dotfiles
 
 # Make magic happen
-for i in macos wallpaper homebrew zsh neofetch alacritty starship rectangle tmux zap bin; do
+for i in macos wallpaper homebrew zsh neofetch alacritty starship rectangle tmux bin; do
   echo "$HOME/dotfiles/$i/setup.sh"
   source "$HOME/dotfiles/$i/setup.sh"
   # cd $i && ./setup.sh
