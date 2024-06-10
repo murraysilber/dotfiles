@@ -113,27 +113,27 @@ install_command_line_tools() {
 # ----------------1--------------------- #
 # Run all pre-flight checks to ensure that
 # the Mac meets our pre-requisites
-run_pre_flight_checks
+# run_pre_flight_checks
 
 # ----------------2--------------------- #
 # Install Command Line Tools for Xcode.
 # Necessary for using git clone
 # TODO Could I just create releases of my dotfiles using zip and then just get the zip?? Then I can install Command Line Tools for Xcode as part of the Homebrew install. Simpler?  Need to test this.
-install_command_line_tools
+#install_command_line_tools
 
 # -----------------3-------------------- #
 # Clone the git repo
 # Now that we have the Command Line Tools
 # for Xcode installed, we can clone the full repo.
-message "info" "Cloning git repo...."
-git clone -b main https://github.com/murraysilber/dotfiles.git "$HOME"/dotfiles
-if [ $? -eq 0 ]; then
-  message "success" "Repo cloned successfully"
-else
-  message "fail" "Repo was not cloned successfully"
-  message "warning" "Script will now exit..."
-  exit 1
-fi
+#message "info" "Cloning git repo...."
+#git clone -b main https://github.com/murraysilber/dotfiles.git "$HOME"/dotfiles
+#if [ $? -eq 0 ]; then
+#  message "success" "Repo cloned successfully"
+#else
+#  message "fail" "Repo was not cloned successfully"
+#  message "warning" "Script will now exit..."
+#  exit 1
+#fi
 
 message "info" "Bootstrapping done!! - Time to install and configure things..."
 cd "${HOME}"/dotfiles
@@ -152,7 +152,7 @@ fi
 cd "${HOME}"/dotfiles
 
 # Make magic happen
-for i in macos wallpaper homebrew zsh neofetch alacritty starship rectangle tmux bin; do
+for i in macos wallpaper zsh neofetch alacritty starship rectangle tmux bin; do
   echo "$HOME/dotfiles/$i/setup.sh"
   source "$HOME/dotfiles/$i/setup.sh"
   # cd $i && ./setup.sh

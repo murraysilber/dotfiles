@@ -60,9 +60,9 @@ dynamic_padding = false
 opacity = 1.0
 startup_mode = "Windowed"
 
-[window.dimensions]
-columns = 110
-lines = 30
+# [window.dimensions]
+#  fcolumns = 110
+# lines = 30
 
 [window.padding]
 x = 20
