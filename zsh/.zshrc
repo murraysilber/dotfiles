@@ -31,4 +31,7 @@ eval "$(fzf --zsh)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"
 
+# Mise - polyglot tool version manager
+eval "$(mise activate zsh)"
+
 echo "Path: " $PATH

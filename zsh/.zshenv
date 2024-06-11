@@ -18,7 +18,3 @@ export DOTFILES="$HOME/dotfiles"
 
 export PATH="$HOME/.config/bin:$PATH"
 export PATH="$HOME/.config/bin/pomodoro:$PATH"
-
-#GoLang
-export GOPATH="$HOME/go"
-export PATH="$PATH:$GOPATH"
