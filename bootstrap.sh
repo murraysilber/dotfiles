@@ -75,6 +75,10 @@ is_mac_supported
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# test if Homebrew was installed
+brew --version
+brew doctor
+
 # install git (dont want to use macos provided git)
 brew install git
 
@@ -108,7 +112,7 @@ cd "${HOME}"/dotfiles
 brew install font-jetbrains-mono-nerd-font
 
 # Run installers
-for i in zsh macos wallpaper fastfetch alacritty starship rectangle tmux bin mise; do
+for i in zsh macos wallpaper alacritty starship rectangle tmux bin mise; do
   echo "$HOME/dotfiles/$i/setup.sh"
   source "$HOME/dotfiles/$i/setup.sh"
   # cd $i && ./setup.sh
