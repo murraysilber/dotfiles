@@ -78,7 +78,6 @@
     ],
     "explorer.confirmDelete": false,
     "better-comments.highlightPlainText": true,
-    "java.codeGeneration.generateComments": true,
     "editor.wordWrap": "wordWrapColumn",
     "editor.accessibilitySupport": "off",
     "redhat.telemetry.enabled": true,
@@ -132,7 +131,7 @@
     "workbench.enableExperiments": false,
     "workbench.panel.defaultLocation": "right",
     "workbench.sideBar.location": "right",
-    "workbench.colorTheme": "Gruvbox Material Dark",
+    "workbench.colorTheme": "Gruvbox Dark Medium",
     "workbench.colorCustomizations": {
         "scrollbarSlider.background": "#b58900",
         "scrollbarSlider.hoverBackground": "#b58900",
@@ -185,8 +184,6 @@
     "spellright.language": [
         "English"
     ],
-    "gruvboxMaterial.darkPalette": "original",
-    "workbench.preferredDarkColorTheme": "Gruvbox Material Dark",
     "latex-utilities.countWord.format": "${wordsBody} Words",
     "cSpell.language": "en-GB",
     "cSpell.userWords": [
