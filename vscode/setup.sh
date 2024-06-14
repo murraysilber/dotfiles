@@ -7,7 +7,7 @@ vscode_dir="$HOME/Library/Application\ Support/Code/User"
 if [ ! -d "$vscode_dir" ]; then
   echo "$vscode_dir" does not exist.
   echo Creating "$vscode_dir"
-  mkdir -v "$vscode_dir"
+  mkdir -pv "$vscode_dir"
 fi
 
 ln -sf "$HOME/dotfiles/vscode/settings.json" "$vscode_dir/settings.json"
