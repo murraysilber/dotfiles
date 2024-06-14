@@ -2,7 +2,7 @@
 
 brew install --cask visual-studio-code
 
-vscode_dir="$HOME/Library/Application\ Support/Code/User"
+vscode_dir="$HOME/Library/Application Support/Code/User"
 
 if [ ! -d "$vscode_dir" ]; then
   echo "$vscode_dir" does not exist.
