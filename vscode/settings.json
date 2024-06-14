@@ -1,0 +1,199 @@
+{
+    /**
+	 * Better Defaults
+	 **/
+    "editor.copyWithSyntaxHighlighting": false,
+    "editor.emptySelectionClipboard": false,
+    "window.newWindowDimensions": "inherit",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "files.trimTrailingWhitespace": true,
+    "diffEditor.renderSideBySide": false,
+    "editor.snippetSuggestions": "top",
+    "editor.detectIndentation": false,
+    "window.nativeFullScreen": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "editor.tabCompletion": "on",
+    "editor.insertSpaces": true,
+    "telemetry.telemetryLevel": "off",
+    "editor.tabSize": 4,
+    "editor.fontSize": 18,
+    /**
+	 * Language specific tab size defaults
+	 */
+    "[shellscript]": {
+        "editor.tabSize": 2
+    },
+    "[sass]": {
+        "editor.tabSize": 2
+    },
+    "[css]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "[html]": {
+        "editor.tabSize": 4
+    },
+    "[javascript]": {
+        "editor.tabSize": 2
+    },
+    "[python]": {
+        "editor.tabSize": 4
+    },
+    "[cpp]": {
+        "editor.tabSize": 4
+    },
+    "[java]": {
+        "editor.tabSize": 4
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "Lua.format.defaultConfig": {
+        "indent_style": "space",
+        "indent_size": "4"
+    },
+    "editor.tokenColorCustomizations": {
+        "[Material Theme Darker High Contrast]": {
+            "comments": "#d4922f"
+        }
+    },
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "editor.suggestSelection": "first",
+    "editor.fontFamily": "JetBrainsMono Nerd Font",
+    "editor.formatOnSave": true,
+    "markdown.preview.fontSize": 18,
+    "editor.semanticHighlighting.enabled": true,
+    "editor.bracketPairColorization.enabled": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "better-comments.multilineComments": true,
+    "explorer.confirmDragAndDrop": false,
+    "editor.wordWrapColumn": 80,
+    "editor.rulers": [
+        80
+    ],
+    "explorer.confirmDelete": false,
+    "better-comments.highlightPlainText": true,
+    "java.codeGeneration.generateComments": true,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.accessibilitySupport": "off",
+    "redhat.telemetry.enabled": true,
+    "hediet.vscode-drawio.theme": "atlas",
+    /**
+	 * Word wrapping for Markdown files
+	 */
+    "files.associations": {
+        "*.md": "markdown",
+        "*.toml": "toml"
+    },
+    "[mdx]": {
+        "editor.wordWrap": "bounded",
+        "editor.wordWrapColumn": 100,
+        "editor.fontSize": 22
+    },
+    "xml.server.binary.trustedHashes": [
+        "df9d4e4bb37d291396983519e0fc0115e7dfef3ed755e359a2480e3e86b1ed4d"
+    ],
+    "git.autofetch": true,
+    "vsicons.dontShowNewVersionMessage": true,
+    "prettier.tabWidth": 4,
+    "prettier.useTabs": true,
+    "java.jdt.ls.java.home": "",
+    "blockhighlight.background": [
+        "200",
+        "100",
+        "255",
+        ".05"
+    ],
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.language.colorizedBracketPairs": [],
+    "[xml]": {
+        "editor.defaultFormatter": "redhat.vscode-xml"
+    },
+    "window.zoomLevel": 1,
+    "hediet.vscode-drawio.resizeImages": null,
+    /**
+	 * Terminal Settings
+	 */
+    "terminal.integrated.lineHeight": 1.1,
+    "terminal.integrated.defaultLocation": "view",
+    "terminal.external.osxExec": "Alacritty.app",
+    "terminal.integrated.fontSize": 18,
+    "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+    /**
+    * Workbench Settings
+    */
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.enableExperiments": false,
+    "workbench.panel.defaultLocation": "right",
+    "workbench.sideBar.location": "right",
+    "workbench.colorTheme": "Gruvbox Material Dark",
+    "workbench.colorCustomizations": {
+        "scrollbarSlider.background": "#b58900",
+        "scrollbarSlider.hoverBackground": "#b58900",
+        "editor.scrollbar.horizontal": "visible",
+        "terminalCursor.foreground": "#93a1a1",
+        "editorRuler.foreground": "#636162"
+    },
+    /**
+	 * Minimap settings
+	 */
+    "editor.minimap.autohide": true,
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.scale": 2,
+    "editor.minimap.enabled": false,
+    "editor.minimap.showSlider": "mouseover",
+    "editor.minimap.side": "right",
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    /** Shell formatting settings*/
+    "shellformat.path": "/opt/homebrew/bin/shfmt",
+    "shellformat.effectLanguages": [
+        "shellscript",
+        "dockerfile",
+        "dotenv",
+        "hosts",
+        "jvmoptions",
+        "ignore",
+        "gitignore",
+        "properties",
+        "spring-boot-properties",
+        "azcli",
+        "bats"
+    ],
+    "shellformat.flag": "-i 2 -ci -bn",
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "breadcrumbs.enabled": false,
+    "breadcrumbs.filePath": "off",
+    "markdown-preview-enhanced.usePandocParser": true,
+    "markdown-preview-enhanced.pandocArguments": [],
+    "markdown-preview-enhanced.latexEngine": "PDFLaTex",
+    "extensions.autoUpdate": false,
+    "window.openFilesInNewWindow": "on",
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.texcount.autorun": "onSave",
+    "spellright.language": [
+        "English"
+    ],
+    "gruvboxMaterial.darkPalette": "original",
+    "workbench.preferredDarkColorTheme": "Gruvbox Material Dark",
+    "latex-utilities.countWord.format": "${wordsBody} Words",
+    "cSpell.language": "en-GB",
+    "cSpell.userWords": [
+        "Citer",
+        "Pandoc",
+        "Silber",
+        "Zotero"
+    ],
+    "editor.renderWhitespace": "all",
+}

@@ -112,7 +112,7 @@ cd "${HOME}"/dotfiles
 brew install font-jetbrains-mono-nerd-font
 
 # Run installers
-for i in zsh macos wallpaper alacritty starship rectangle tmux bin mise shell-tools; do
+for i in zsh macos wallpaper alacritty starship rectangle tmux bin mise shell-tools vscode; do
   echo "$HOME/dotfiles/$i/setup.sh"
   source "$HOME/dotfiles/$i/setup.sh"
   # cd $i && ./setup.sh
