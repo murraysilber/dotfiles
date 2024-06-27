@@ -2,7 +2,7 @@
 
 ## DON'T USE JUST YET!!!!
 
-This is a work in progress and is still pre-production ready.
+This is a work in progress and is not production ready.
 
 ## Do this first
 
