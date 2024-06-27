@@ -53,11 +53,8 @@ fi
 # Are we in the dotfiles directory?
 cd "${HOME}"/dotfiles
 
-# Install font of choice for Terminal and VS Code
-brew install font-jetbrains-mono-nerd-font
-
 # Run installers
-for i in zsh macos wallpaper alacritty starship rectangle tmux bin mise shell-tools vscode; do
+for i in zsh macos wallpaper alacritty starship rectangle tmux bin shell-tools vscode apps mise; do
   echo "$HOME/dotfiles/$i/setup.sh"
   source "$HOME/dotfiles/$i/setup.sh"
   # cd $i && ./setup.sh
