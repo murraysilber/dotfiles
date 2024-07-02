@@ -13,7 +13,8 @@ fi
 alias ls="command ls ${colorflag}"
 
 # List all files colorized in long format, including dot files
-alias la="ls -lahF ${colorflag}"
+alias la="ls -la ${colorflag}"
+alias ll="ls -lahF ${colorflag}"
 
 # +------+
 # | grep |

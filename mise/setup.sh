@@ -15,6 +15,6 @@ brew install xz      #needed for installing Python
 brew install mise
 
 # Install default languages
-# mise use --global ruby@3.3
-# mise use --global python
-# mise use --global go@latest
+mise use --global
+mise use --global
+mise use --global

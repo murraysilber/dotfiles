@@ -17,6 +17,8 @@ apps=(
   "alfred"
   "font-jetbrains-mono-nerd-font"
   "logseq"
+  "docker"
+  "hyperkey"
 )
 
 # docker, mactex,	zotero
@@ -28,5 +30,27 @@ for app in "${apps[@]}"; do
   else
     echo "Installing $app..."
     brew install --cask "$app"
+  fi
+done
+
+# Define an array of packages to install using Homebrew.
+packages=(
+  "git"
+  "tree"
+  "black"
+  "gum"
+  "tart"
+  "cirrus"
+  "fastfetch"
+  "latexindent"
+)
+
+# Loop over the array to install each application.
+for package in "${packages[@]}"; do
+  if brew list --formula | grep -q "^$package\$"; then
+    echo "$package is already installed. Skipping..."
+  else
+    echo "Installing $package..."
+    brew install "$package"
   fi
 done
