@@ -4,6 +4,7 @@
 tart list
 tart delete sonoma
 tart clone ghcr.io/cirruslabs/macos-sonoma-vanilla:latest sonoma
+tart set sonoma --disk-size 65
 tart run --dir=myhost:~/dotfiles sonoma
 
 # keeping this here purely for my testing purposes. I dont want it executed on my host
