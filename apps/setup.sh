@@ -19,6 +19,7 @@ apps=(
   "logseq"
   "docker"
   "hyperkey"
+  "mactex"
 )
 
 # docker, mactex,	zotero
@@ -43,6 +44,10 @@ packages=(
   "cirrus"
   "fastfetch"
   "latexindent"
+  "tree"
+  "fzf"
+  "jq"
+  "wget"
 )
 
 # Loop over the array to install each application.

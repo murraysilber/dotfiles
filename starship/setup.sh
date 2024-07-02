@@ -8,6 +8,6 @@ if [ ! -d "$starship_dir" ]; then
   mkdir -v "$starship_dir"
 fi
 
-ln -sf "$PWD/starship.toml" "$HOME/.config/starship/starship.toml"
+ln -sf "$HOME/dotfiles/starship/starship.toml" "$HOME/.config/starship/starship.toml"
 
 brew install starship
