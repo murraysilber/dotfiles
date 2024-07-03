@@ -28,8 +28,12 @@ bindkey '^[[B' history-search-forward
 eval "$(fzf --zsh)"
 
 # Starship Prompt
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
-eval "$(starship init zsh)"
+# export STARSHIP_CONFIG=~/.config/starship/starship.toml
+# eval "$(starship init zsh)"
+
+# Homegrown Prompt
+setopt PROMPT_SUBST
+source "$HOME/dotfiles/zsh/.zprompt"
 
 # Mise - polyglot tool version manager
 eval "$(mise activate zsh)"
