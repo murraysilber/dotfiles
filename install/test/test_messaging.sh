@@ -27,3 +27,5 @@ message "info" "Info message using message function"
 message "warning" "Warning message using message function"
 message "fail" "Failure message using message function"
 message "success" "Success message using message function"
+
+echo -e "\n\nMessage test complete"
