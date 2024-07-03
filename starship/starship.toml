@@ -18,6 +18,8 @@ symbol = " "
 
 [directory]
 read_only = " 󰌾"
+truncation_length = 6
+truncation_symbol = '…/'
 
 [docker_context]
 symbol = " "

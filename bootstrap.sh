@@ -24,9 +24,6 @@ fi
 brew --version
 brew doctor
 
-# install git (dont want to use macos provided git)
-brew install git
-
 # clone dotfiles repo from github
 echo "Cloning git repo...."
 git clone -b main https://github.com/murraysilber/dotfiles.git "$dotfiledir"

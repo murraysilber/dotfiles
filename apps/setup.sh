@@ -21,7 +21,7 @@ apps=(
   "hyperkey"
 )
 
-# docker, mactex,	zotero
+# mactex,	zotero
 
 # Loop over the array to install each application.
 for app in "${apps[@]}"; do
