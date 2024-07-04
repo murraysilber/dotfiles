@@ -33,7 +33,7 @@ prompt_venv() {
   if [[ -n "$VIRTUAL_ENV" ]]; then
     # Extract the last directory name in the $VIRTUAL_ENV path
     venv_name=$(basename "$VIRTUAL_ENV")
-    printf "\n%b(%s)\n" "${steel_blue}" "${venv_name}"
+    printf "\n%b(%s%s)\n" "${yellow}" "  " "${venv_name}"
   fi
 }
 
@@ -74,7 +74,8 @@ PS1+="%{${bold}%}"$'\n' # newline
 PS1+="%{${aqua}%}%~"  # working directory
 PS1+="\$(prompt_git)" # Git repository details
 PS1+=$'\n'
-PS1+="%{${green}%}❯ %{${reset}%}" # `❯` (and reset color)
+#PS1+="%{${green}%}❯ %{${reset}%}" # `❯` (and reset color)
+PS1+="%(?:%{${green}%}❯ :%{${red}%}❯ )"
 
 export PS1
 
