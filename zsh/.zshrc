@@ -11,17 +11,18 @@ autoload -U colors && colors
 autoload -Uz compinit && compinit
 
 # history setup
-HISTFILE=$HOME/.zhistory
-SAVEHIST=1000
-HISTSIZE=999
-setopt share_history
-setopt hist_expire_dups_first
-setopt hist_ignore_dups
-setopt hist_verify
+export HISTSIZE=50000
+export HISTFILE=$HOME/.zhistory
+export SAVEHIST=$HISTSIZE
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_FIND_NO_DUPS
 
 # completion using arrow keys (based on history)
-bindkey '^[[A' history-search-backward
-bindkey '^[[B' history-search-forward
+bindkey -e
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
 
 # ---- FZF -----
 # Set up fzf key bindings and fuzzy completion

@@ -11,6 +11,7 @@ if [ ! -d "$vscode_dir" ]; then
 fi
 
 ln -sf "$HOME/dotfiles/vscode/settings.json" "$vscode_dir/settings.json"
+ln -sf "$HOME/dotfiles/vscode/keybindings.json" "$vscode_dir/keybindings.json"
 
 # Install my extensions
 code --install-extension golang.go
