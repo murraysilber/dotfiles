@@ -1,6 +1,6 @@
 #!/bin/sh
 
-brew install --cask visual-studio-code
+# brew install --cask visual-studio-code
 
 vscode_dir="$HOME/Library/Application Support/Code/User"
 
@@ -14,11 +14,11 @@ ln -sf "$HOME/dotfiles/vscode/settings.json" "$vscode_dir/settings.json"
 ln -sf "$HOME/dotfiles/vscode/keybindings.json" "$vscode_dir/keybindings.json"
 
 # Install my extensions
-code --install-extension golang.go
-code --install-extension ms-python.python
-code --install-extension jdinhlife.gruvbox
-code --install-extension sainnhe.gruvbox-material
-code --install-extension vscode-icons-team.vscode-icons
+#code --install-extension golang.go
+#code --install-extension ms-python.python
+#code --install-extension jdinhlife.gruvbox
+#code --install-extension sainnhe.gruvbox-material
+#code --install-extension vscode-icons-team.vscode-icons
 
 # code --install-extension aaron-bond.better-comments
 # code --install-extension akashagarwal.markdown-meaningful-wordcount

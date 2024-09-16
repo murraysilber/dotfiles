@@ -3,6 +3,7 @@
 	 * Better Defaults
 	 **/
     "editor.copyWithSyntaxHighlighting": false,
+    "diffEditor.ignoreTrimWhitespace": false,
     "editor.emptySelectionClipboard": false,
     "window.newWindowDimensions": "inherit",
     "editor.multiCursorModifier": "ctrlCmd",
@@ -17,7 +18,25 @@
     "editor.insertSpaces": true,
     "telemetry.telemetryLevel": "off",
     "editor.tabSize": 4,
-    "editor.fontSize": 18,
+    /**
+    * Workbench Settings
+    */
+    /** "workbench.activityBar.location": "hidden",  */
+    "workbench.layoutControl.enabled": false,
+    "workbench.statusBar.visible": true,
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.enableExperiments": false,
+    "workbench.panel.defaultLocation": "right",
+    "workbench.sideBar.location": "right",
+    "workbench.colorTheme": "Gruvbox Dark Medium",
+    "workbench.colorCustomizations": {
+        "scrollbarSlider.background": "#b58900",
+        "scrollbarSlider.hoverBackground": "#b58900",
+        "editor.scrollbar.horizontal": "visible",
+        "terminalCursor.foreground": "#93a1a1",
+        "editorRuler.foreground": "#636162"
+    },
     /**
 	 * Language specific tab size defaults
 	 */
@@ -63,6 +82,7 @@
         "**/.settings": true,
         "**/.factorypath": true
     },
+    "editor.overviewRulerBorder": false,
     "editor.suggestSelection": "first",
     "editor.fontFamily": "JetBrainsMono Nerd Font",
     "editor.formatOnSave": true,
@@ -98,7 +118,6 @@
         "df9d4e4bb37d291396983519e0fc0115e7dfef3ed755e359a2480e3e86b1ed4d"
     ],
     "git.autofetch": true,
-    "vsicons.dontShowNewVersionMessage": true,
     "prettier.tabWidth": 4,
     "prettier.useTabs": true,
     "java.jdt.ls.java.home": "",
@@ -118,27 +137,11 @@
     /**
 	 * Terminal Settings
 	 */
-    "terminal.integrated.lineHeight": 1.1,
+    "terminal.integrated.lineHeight": 1.0,
     "terminal.integrated.defaultLocation": "view",
-    "terminal.external.osxExec": "Alacritty.app",
-    "terminal.integrated.fontSize": 18,
-    "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
-    /**
-    * Workbench Settings
-    */
-    "workbench.editor.enablePreview": false,
-    "workbench.editor.enablePreviewFromQuickOpen": false,
-    "workbench.enableExperiments": false,
-    "workbench.panel.defaultLocation": "right",
-    "workbench.sideBar.location": "right",
-    "workbench.colorTheme": "Gruvbox Dark Medium",
-    "workbench.colorCustomizations": {
-        "scrollbarSlider.background": "#b58900",
-        "scrollbarSlider.hoverBackground": "#b58900",
-        "editor.scrollbar.horizontal": "visible",
-        "terminalCursor.foreground": "#93a1a1",
-        "editorRuler.foreground": "#636162"
-    },
+    "terminal.external.osxExec": "kitty.app",
+    "terminal.integrated.fontFamily": "MesloLGM Nerd Font",
+    "terminal.integrated.fontSize": 20,
     /**
 	 * Minimap settings
 	 */
@@ -193,4 +196,7 @@
         "Zotero"
     ],
     "editor.renderWhitespace": "all",
+    "editor.fontSize": 21,
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.lineHeight": 0
 }

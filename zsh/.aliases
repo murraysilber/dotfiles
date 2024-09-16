@@ -61,3 +61,9 @@ alias gpu='git push -u origin HEAD'
 
 # My bin files
 alias ip='~/.config/bin/pomodoro/init_pomo'
+alias dotz='cd ~/dotfiles'
+alias b='~/.config/bin/brew-tools'
+
+#Python venv
+alias av='source $PWD/.venv/bin/activate' #activate venv
+alias cv='python -m venv .venv'

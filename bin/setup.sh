@@ -16,6 +16,6 @@ if [ ! -d "$pomo_dir" ]; then
   mkdir "$pomo_dir"
 fi
 
-ln -sf "$HOME/dotfiles/bin/b" "$bin_dir/b"
+ln -sf "$HOME/dotfiles/bin/brew-tools" "$bin_dir/brew-tools"
 ln -sf "$HOME/dotfiles/bin/pomodoro/init_pomo" "$bin_dir/pomodoro/init_pomo"
 ln -sf "$HOME/dotfiles/bin/pomodoro/pomo" "$bin_dir/pomodoro/pomo"

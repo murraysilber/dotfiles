@@ -9,7 +9,7 @@
 
 # default apps
 export EDITOR="vim"
-export TERMINAL="Alacritty"
+export TERMINAL="kitty"
 export BROWSER="brave"
 
 # Default Locations

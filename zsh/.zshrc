@@ -28,10 +28,6 @@ bindkey '^n' history-search-forward
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --zsh)"
 
-# Starship Prompt
-# export STARSHIP_CONFIG=~/.config/starship/starship.toml
-# eval "$(starship init zsh)"
-
 # Homegrown Prompt
 setopt PROMPT_SUBST
 source "$HOME/dotfiles/zsh/.zprompt"

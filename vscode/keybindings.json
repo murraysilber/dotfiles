@@ -72,6 +72,48 @@
         "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
     },
     {
+        /** Rename File */
+        "key": "r",
+        "command": "renameFile",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        /** Copy File */
+        "key": "c",
+        "command": "filesExplorer.copy",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        /** Cut File */
+        "key": "x",
+        "command": "filesExplorer.cut",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        /** Paste File */
+        "key": "p",
+        "command": "filesExplorer.paste",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        /** Delete File */
+        "key": "d",
+        "command": "deleteFile",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        /** Create New File */
+        "key": "a",
+        "command": "explorer.newFile",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        /** Create New Folder */
+        "key": "shift+a",
+        "command": "explorer.newFolder",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
         "key": "cmd+n",
         "command": "explorer.newFile",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
@@ -151,7 +193,7 @@
     {
         "key": "cmd+.",
         "command": "workbench.action.showAllEditors",
-        "when": "editorTextFocus|| !inputFocus",
+        "when": "editorTextFocus|| !inputFocus"
     },
     /**
     * Coding - Show Hover
@@ -159,10 +201,10 @@
     {
         "key": "shift-k",
         "command": "editor.action.showHover",
-        "when": "editorTextFocus",
+        "when": "editorTextFocus"
     },
     {
-        "key": "shift-c",
+        "key": "ctrl-c",
         "command": "workbench.action.closeActiveEditor",
         "when": "editorTextFocus"
     }
