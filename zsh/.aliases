@@ -66,4 +66,5 @@ alias b='~/.config/bin/brew-tools'
 
 #Python venv
 alias av='source $PWD/.venv/bin/activate' #activate venv
-alias cv='python -m venv .venv'
+alias cv='python -m venv .venv'           #create venv
+alias dv='deactivate'                     #deactivate venv
