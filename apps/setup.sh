@@ -19,6 +19,7 @@ apps=(
   "logseq"
   "docker"
   "hyperkey"
+  "zotero"
 )
 
 # mactex,	zotero
