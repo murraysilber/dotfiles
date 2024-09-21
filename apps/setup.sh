@@ -13,7 +13,6 @@ apps=(
   "1password"
   "1password-cli"
   "spotify"
-  "rectangle"
   "alfred"
   "font-jetbrains-mono-nerd-font"
   "logseq"

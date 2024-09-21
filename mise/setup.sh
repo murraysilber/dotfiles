@@ -14,7 +14,5 @@ brew install libyaml #needed for installing Ruby
 brew install xz      #needed for installing Python
 brew install mise
 
-# Install default languages
-mise use --global
-mise use --global
-mise use --global
+# Install default languages from config.toml
+mise install
