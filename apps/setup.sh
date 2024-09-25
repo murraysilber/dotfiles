@@ -19,6 +19,7 @@ apps=(
   "docker"
   "hyperkey"
   "zotero"
+  "betterdisplay"
 )
 
 # mactex,	zotero
