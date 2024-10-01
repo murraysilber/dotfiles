@@ -1,6 +1,13 @@
 # Source zsh additional functionality. Installed using Homebrew. I dont want a zsh plugin manager.
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Always start tmux when creating a shell. Attach to existing session if it exists or create a new one.
+
+if command -v tmux &>/dev/null && [[ -z "$TMUX" ]]; then
+  tmux new-session -A -s main
+fi
+
 source "$HOME/.config/zsh/.aliases"
 # source "$HOME/.env.sh"
 
