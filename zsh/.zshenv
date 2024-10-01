@@ -9,8 +9,8 @@
 
 # default apps
 export EDITOR="vim"
-export TERMINAL="kitty"
-export BROWSER="brave"
+export TERMINAL="wezterm"
+export BROWSER="chrome"
 
 # Default Locations
 export ZDOTDIR="$HOME/.config/zsh"
