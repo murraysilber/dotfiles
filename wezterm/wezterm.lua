@@ -12,29 +12,93 @@
 local wezterm = require 'wezterm'
 
 -- This will hold the configuration.
-config = wezterm.config_builder()
+local config = wezterm.config_builder()
 
-config = {
+-- Set the color scheme depending on the system setting
+function get_appearance()
+    if wezterm.gui then
+        return wezterm.gui.get_appearance()
+    end
+    return 'Dark'
+end
 
-    -- General Options
-    automatically_reload_config = true,
-    enable_tab_bar = false,
-    window_close_confirmation = "NeverPrompt",
-    window_decorations = "RESIZE",
-    native_macos_fullscreen_mode = false,
+function scheme_for_appearance(appearance)
+    if appearance:find 'Dark' then
+        return 'Gruvbox dark, medium (base16)'
+    else
+        return 'Gruvbox light, hard (base16)'
+    end
+end
 
-    -- Terminal Text Appearance
-    color_scheme = 'Gruvbox dark, medium (base16)',
-    font = wezterm.font("JetBrainsMono Nerd Font"),
-    font_size = 24,
-    line_height = 1.0,
-    window_padding = {
-        left = 10,
-        right = 10,
-        top = 10,
-        bottom = 10,
+config.color_scheme = scheme_for_appearance(get_appearance())
+
+-- Set all padding
+config.window_padding = { left = 10, right = 10, top = 10, bottom = 10 }
+
+-- Font configuration
+config.font = wezterm.font 'JetBrainsMono Nerd Font'
+config.freetype_load_target = 'Light'
+config.freetype_render_target = 'HorizontalLcd'
+config.font_size = 24
+config.line_height = 1.0
+
+-- Remove the title bar from the window
+config.window_decorations = "RESIZE"
+config.window_close_confirmation = "NeverPrompt"
+
+-- Use zsh by default
+-- config.default_prog = { '/usr/bin/zsh' }
+
+-- Don't hide cursor when typing
+config.hide_mouse_cursor_when_typing = false
+
+-- General configs
+config.automatically_reload_config = true
+config.enable_tab_bar = false
+
+-- URLs in Markdown files are not handled properly by default
+-- Source: https://github.com/wez/wezterm/issues/3803#issuecomment-1608954312
+config.hyperlink_rules = {
+    -- Matches: a URL in parens: (URL)
+    {
+        regex = '\\((\\w+://\\S+)\\)',
+        format = '$1',
+        highlight = 1,
+    },
+    -- Matches: a URL in brackets: [URL]
+    {
+        regex = '\\[(\\w+://\\S+)\\]',
+        format = '$1',
+        highlight = 1,
+    },
+    -- Matches: a URL in curly braces: {URL}
+    {
+        regex = '\\{(\\w+://\\S+)\\}',
+        format = '$1',
+        highlight = 1,
+    },
+    -- Matches: a URL in angle brackets: <URL>
+    {
+        regex = '<(\\w+://\\S+)>',
+        format = '$1',
+        highlight = 1,
+    },
+    -- Then handle URLs not wrapped in brackets
+    {
+        -- Before
+        --regex = '\\b\\w+://\\S+[)/a-zA-Z0-9-]+',
+        --format = '$0',
+        -- After
+        regex = '[^(]\\b(\\w+://\\S+[)/a-zA-Z0-9-]+)',
+        format = '$1',
+        highlight = 1,
+    },
+    -- implicit mailto link
+    {
+        regex = '\\b\\w+@[\\w-]+(\\.[\\w-]+)+\\b',
+        format = 'mailto:$0',
     },
 }
 
--- and finally, return the configuration to wezterm
+-- Return the configuration to wezterm
 return config
