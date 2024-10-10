@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 # Installs all my macOS preferences, just the way I like it.
+# https://macos-defaults.com/ - useful info..great site.
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
@@ -17,45 +18,67 @@ while true; do
 done 2>/dev/null &
 
 ###############################################################################
-# General Stuff                                                               #
+# General                                                                     #
 ###############################################################################
 
 # Puts the mac into dark mode. This will only take effect after a restart.
 defaults write "Apple Global Domain" "AppleInterfaceStyle" "Dark"
 
 ###############################################################################
-# Screen related                                                              #
+# Screen Related                                                              #
 ###############################################################################
 
 # Require password after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -int 1
 
+###############################################################################
+# Screenshots                                                                 #
+###############################################################################
+
 # Save screenshots to the Pictures folder
 defaults write com.apple.screencapture location -string "${HOME}/Pictures"
 
-# Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
-defaults write com.apple.screencapture type -string "png"
+# Save screenshots in JPG format (other options: BMP, GIF, JPG, PDF, TIFF)
+defaults write com.apple.screencapture type -string "jpg"
 
 ###############################################################################
-# Desktop                                           #
+# Desktop                                                                     #
 ###############################################################################
 
-# Keep desktops organised statically
+# Keep desktops organised statically, do NOT rearrange spaces automatically
 defaults write com.apple.dock "mru-spaces" -bool false
 
 ###############################################################################
-# Dock, Dashboard, and hot corners                                            #
+# Safari                                                                      #
+###############################################################################
+
+# Show full website URL
+defaults write com.apple.Safari "ShowFullURLInSmartSearchField" -bool "true" && killall Safari
+
+###############################################################################
+# Mission Control                                                             #
+###############################################################################
+
+# Spaces do not span all displays (each display has its own spaces)
+defaults write com.apple.spaces "spans-displays" -bool false
+
+# Don’t automatically rearrange Spaces based on most recent use
+defaults write com.apple.dock mru-spaces -bool false
+
+###############################################################################
+# Dock                                                                        #
 ###############################################################################
 
 # https://developer.apple.com/documentation/devicemanagement/dock
+
+# Automatically hide and show the Dock
+defaults write com.apple.dock autohide -bool true
+
 # Remove the auto-hiding Dock delay
 defaults write com.apple.dock autohide-delay -float 0
 
 # Remove the animation when hiding/showing the Dock
 defaults write com.apple.dock autohide-time-modifier -float 0
-
-# Automatically hide and show the Dock
-defaults write com.apple.dock autohide -bool true
 
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
@@ -66,7 +89,7 @@ defaults write com.apple.dock static-only -bool true
 # Do not show recently opened apps in the dock
 defaults write com.apple.dock "show-recents" -bool "false"
 
-# Set the icon size of Dock items to 36 pixels,
+# Set the icon size of Dock items to 32 pixels,
 defaults write com.apple.dock tilesize -int 32
 
 # Enable Dock magnification
@@ -75,8 +98,8 @@ defaults write com.apple.dock magnification -bool true
 # Set the magnification size for the dock
 defaults write com.apple.dock largesize -int 64
 
-# Don’t automatically rearrange Spaces based on most recent use
-defaults write com.apple.dock mru-spaces -bool false
+#kill dock to
+killall "Dock"
 
 ###############################################################################
 # Finder                                                                      #
@@ -148,6 +171,9 @@ sudo chflags nohidden /Volumes
 # Set Sidebar icon size to medium
 defaults write NSGlobalDomain "NSTableViewDefaultSizeMode" -int "2"
 
+# kill Finder
+killall "Finder"
+
 ###############################################################################
 # Photos                                                                      #
 ###############################################################################
@@ -158,11 +184,9 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
-echo '######## WE MADE IT HERE #############'
 
 # for app in "Activity Monitor" \
 #   "Address Book" \
-#   "Dock" \
 #   "Contacts" \
 #   "Dock" \
 #   "Finder" \
@@ -172,8 +196,5 @@ echo '######## WE MADE IT HERE #############'
 #   "Safari"; do
 #   killall "${app}" &>/dev/null
 # done
-
-killall "Dock"
-killall "Finder"
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."
