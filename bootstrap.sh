@@ -51,7 +51,7 @@ fi
 cd "${HOME}"/dotfiles
 
 # Run installers
-for i in zsh macos wallpaper kitty wezterm rectangle tmux bin shell-tools vscode apps mise; do
+for i in zsh macos wallpaper kitty wezterm rectangle tmux bin shell-tools vscode newvim apps mise; do
   echo "$HOME/dotfiles/$i/setup.sh"
   source "$HOME/dotfiles/$i/setup.sh"
   # cd $i && ./setup.sh
