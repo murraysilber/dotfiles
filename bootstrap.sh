@@ -15,7 +15,7 @@ dotfiledir="${HOME}/dotfiles"
 
 # Attempt to set up Homebrew PATH automatically for this session
 if [ -x "/opt/homebrew/bin/brew" ]; then
-  # For Apple Silicon Macs
+  For Apple Silicon Macs
   echo "Configuring Homebrew in PATH for Apple Silicon Mac..."
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
@@ -51,7 +51,7 @@ fi
 cd "${HOME}"/dotfiles
 
 # Run installers
-for i in zsh macos wallpaper kitty wezterm rectangle tmux bin shell-tools vscode newvim apps mise; do
+for i in wallpaper macos zsh wezterm tmux shell-tools rectangle vscode apps mise; do
   echo "$HOME/dotfiles/$i/setup.sh"
   source "$HOME/dotfiles/$i/setup.sh"
   # cd $i && ./setup.sh

@@ -20,9 +20,8 @@ apps=(
   "hyperkey"
   "zotero"
   "betterdisplay"
+  "google-chrome"
 )
-
-# mactex,	zotero
 
 # Loop over the array to install each application.
 for app in "${apps[@]}"; do
@@ -40,12 +39,9 @@ packages=(
   "tree"
   "black"
   "gum"
-  "tart"
-  "cirrus"
   "fastfetch"
   "latexindent"
   "tree"
-  "fzf"
   "jq"
   "wget"
 )

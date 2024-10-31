@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# brew install --cask visual-studio-code
+brew install --cask visual-studio-code
 
 vscode_dir="$HOME/Library/Application Support/Code/User"
 
