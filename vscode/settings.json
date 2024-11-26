@@ -24,12 +24,11 @@
     /** "workbench.activityBar.location": "hidden",  */
     "workbench.layoutControl.enabled": false,
     "workbench.statusBar.visible": true,
-    "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.enableExperiments": false,
     "workbench.panel.defaultLocation": "right",
     "workbench.sideBar.location": "right",
-    "workbench.colorTheme": "Gruvbox Dark Medium",
+    "workbench.colorTheme": "Ayu Mirage",
     "workbench.colorCustomizations": {
         "scrollbarSlider.background": "#b58900",
         "scrollbarSlider.hoverBackground": "#b58900",
@@ -130,7 +129,7 @@
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
     "editor.language.colorizedBracketPairs": [],
     "[xml]": {
-        "editor.defaultFormatter": "redhat.vscode-xml"
+        "editor.defaultFormatter": "DotJoshJohnson.xml"
     },
     "window.zoomLevel": 1,
     "hediet.vscode-drawio.resizeImages": null,
@@ -191,6 +190,7 @@
     "cSpell.language": "en-GB",
     "cSpell.userWords": [
         "Citer",
+        "dotfiles",
         "Pandoc",
         "Silber",
         "Zotero"

@@ -245,7 +245,7 @@
 			"modifierFlags": 1966080
 		},
 		"larger": {
-			"keyCode": 37,
+			"keyCode": 24,
 			"modifierFlags": 1966080
 		},
 		"lastThird": {
@@ -289,7 +289,7 @@
 			"modifierFlags": 1966080
 		},
 		"smaller": {
-			"keyCode": 1,
+			"keyCode": 27,
 			"modifierFlags": 1966080
 		},
 		"toggleTodo": {
