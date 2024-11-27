@@ -6,7 +6,7 @@ brew upgrade
 brew upgrade --cask
 brew cleanup
 
-# Define an array of applications to install using Homebrew Cask.
+# Applications to install using Homebrew Cask.
 apps=(
   "firefox"
   "brave-browser"
@@ -19,7 +19,6 @@ apps=(
   "docker"
   "hyperkey"
   "zotero"
-  "betterdisplay"
   "google-chrome"
 )
 
@@ -33,11 +32,10 @@ for app in "${apps[@]}"; do
   fi
 done
 
-# Define an array of packages to install using Homebrew.
+# Packages to install using Homebrew.
 packages=(
   "git"
   "tree"
-  "black"
   "gum"
   "fastfetch"
   "latexindent"

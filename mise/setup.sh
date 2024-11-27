@@ -11,7 +11,6 @@ fi
 ln -sf "$HOME/dotfiles/mise/config.toml" "$mise_dir/config.toml"
 
 brew install libyaml #needed for installing Ruby
-brew install xz      #needed for installing Python
 brew install mise
 
 # Install default languages from config.toml
