@@ -193,7 +193,9 @@
         "dotfiles",
         "Pandoc",
         "Silber",
-        "Zotero"
+        "venv",
+        "Zotero",
+        "zprompt"
     ],
     "editor.renderWhitespace": "all",
     "editor.fontSize": 21,

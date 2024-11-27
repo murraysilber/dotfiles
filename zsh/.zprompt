@@ -60,8 +60,8 @@ else
 fi
 
 PS1="\$(prompt_venv)" # virtual environment
-PS1=$'\n'
-# PS1+="%{${bold}%}"$'\n'   # newline
+PS1+=$'\n'
+# PS1+="%{${bold}%}"$'\n' # newline
 
 # Highlight the hostname when connected via SSH.
 if [[ "${SSH_TTY}" ]]; then
