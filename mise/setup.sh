@@ -10,8 +10,10 @@ fi
 
 ln -sf "$HOME/dotfiles/mise/config.toml" "$mise_dir/config.toml"
 
-brew install libyaml #needed for installing Ruby
 brew install mise
+
+# Install Gleam Plugin
+mise plugin install plugin https://github.com/asdf-community/asdf-gleam
 
 # Install default languages from config.toml
 mise install
