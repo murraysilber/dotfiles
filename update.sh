@@ -26,13 +26,7 @@ if [[ -d "$dotfile_dir" ]]; then
 
     # Run updates
     echo "Updating macOS defaults and wallpaper"
-    # Update macOS defaults and wallpaper
-    for i in wallpaper macos; do
-      echo "$HOME/dotfiles/$i/setup.sh"
-      source "$HOME/dotfiles/$i/setup.sh"
-      # cd $i && ./setup.sh
-      # cd -
-    done
+    source "$dotfile_dir/macos/setup.sh"
 
     # Install new apps and upgrade existing casks and formulae installed by Homebrew
     source "$dotfile_dir/apps/setup.sh"

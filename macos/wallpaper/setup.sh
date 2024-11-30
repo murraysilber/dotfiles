@@ -8,8 +8,8 @@ if [ ! -d "$wallpaper_dir" ]; then
   mkdir -v "$wallpaper_dir"
 fi
 
-cp "$HOME/dotfiles/wallpaper/gruvbox-3.jpg" "$HOME/.config/wallpaper"
-cp "$HOME/dotfiles/wallpaper/solar.png" "$HOME/.config/wallpaper"
+cp "$HOME/dotfiles/macos/wallpaper/gruvbox-3.jpg" "$HOME/.config/wallpaper"
+cp "$HOME/dotfiles/macos/wallpaper/solar.png" "$HOME/.config/wallpaper"
 
 # Get the absolute path to the image
 IMAGE_PATH="${HOME}/.config/wallpaper/solar.png"
