@@ -8,12 +8,10 @@ if [ ! -d "$mise_dir" ]; then
   mkdir -v "$mise_dir"
 fi
 
-ln -sf "$HOME/dotfiles/mise/config.toml" "$mise_dir/config.toml"
-
-brew install mise
+ln -sf "$HOME/dotfiles/apps/mise/config.toml" "$mise_dir/config.toml"
 
 # Install Gleam Plugin
-mise plugin install plugin https://github.com/asdf-community/asdf-gleam
+mise plugins install gleam https://github.com/asdf-community/asdf-gleam
 
 # Install default languages from config.toml
 mise install

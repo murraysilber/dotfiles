@@ -1,12 +1,8 @@
 # install additional apps
 
-# Update Homebrew and Upgrade any already-installed formulae
-brew update
-brew upgrade
-brew upgrade --cask
-brew cleanup
+echo "we are in apps setup"
 
-# Applications to install using Homebrew Cask.
+# Casks to install. If already installed, cask will be skipped
 apps=(
   "firefox"
   "brave-browser"
@@ -17,9 +13,11 @@ apps=(
   "font-jetbrains-mono-nerd-font"
   "logseq"
   "docker"
-  "hyperkey"
   "zotero"
   "google-chrome"
+  "wezterm"
+  "visual-studio-code"
+  "rectangle"
 )
 
 # Loop over the array to install each application.
@@ -32,8 +30,9 @@ for app in "${apps[@]}"; do
   fi
 done
 
-# Packages to install using Homebrew.
+# Formulae to install using Homebrew. If already installed, formula will be skipped
 packages=(
+  "zsh"
   "git"
   "tree"
   "gum"
@@ -42,6 +41,12 @@ packages=(
   "tree"
   "jq"
   "wget"
+  "tmux"
+  "mise"
+  "uv"
+  "zsh-autosuggestions"
+  "zsh-syntax-highlighting"
+  "fzf"
 )
 
 # Loop over the array to install each application.
@@ -52,4 +57,19 @@ for package in "${packages[@]}"; do
     echo "Installing $package..."
     brew install "$package"
   fi
+done
+
+# Upgrade any already-installed casks and formulae
+echo "Upgrading installed apps......"
+brew upgrade
+brew upgrade --cask
+brew cleanup
+
+# Run app updates
+for i in tmux rectangle mise wezterm uv vscode neovim; do
+  echo "$HOME/dotfiles/apps/$i/setup.sh"
+  # shellcheck disable=SC1090
+  source "$HOME/dotfiles/apps/$i/setup.sh"
+  # cd $i && ./setup.sh
+  # cd -
 done

@@ -10,6 +10,4 @@ if [ ! -d "$tmux_dir" ]; then
   mkdir -v "$tmux_dir"
 fi
 
-ln -sf "$HOME/dotfiles/tmux/tmux.conf" "$tmux_dir/tmux.conf"
-
-brew install tmux
+ln -sf "$HOME/dotfiles/apps/tmux/tmux.conf" "$tmux_dir/tmux.conf"

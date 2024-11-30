@@ -194,6 +194,7 @@
         "Pandoc",
         "Silber",
         "venv",
+        "wezterm",
         "Zotero",
         "zprompt"
     ],

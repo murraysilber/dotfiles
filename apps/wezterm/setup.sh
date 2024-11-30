@@ -8,6 +8,4 @@ if [ ! -d "$wezterm_dir" ]; then
   mkdir -v "$wezterm_dir"
 fi
 
-ln -sf "$HOME/dotfiles/wezterm/wezterm.lua" "$wezterm_dir/wezterm.lua"
-
-brew install --cask wezterm
+ln -sf "$HOME/dotfiles/apps/wezterm/wezterm.lua" "$wezterm_dir/wezterm.lua"

@@ -9,9 +9,10 @@ if [ ! -d "$wallpaper_dir" ]; then
 fi
 
 cp "$HOME/dotfiles/wallpaper/gruvbox-3.jpg" "$HOME/.config/wallpaper"
+cp "$HOME/dotfiles/wallpaper/solar.png" "$HOME/.config/wallpaper"
 
 # Get the absolute path to the image
-IMAGE_PATH="${HOME}/.config/wallpaper/gruvbox-3.jpg"
+IMAGE_PATH="${HOME}/.config/wallpaper/solar.png"
 
 osascript <<EOF
 tell application "System Events"

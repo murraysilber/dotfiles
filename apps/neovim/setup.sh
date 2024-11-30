@@ -8,6 +8,4 @@ if [ ! -d "$nvim_dir" ]; then
   mkdir -v "$nvim_dir"
 fi
 
-ln -sf "$HOME/dotfiles/neovim/init.lua" "$nvim_dir/init.lua"
-
-brew install neovim
+ln -sf "$HOME/dotfiles/apps/neovim/init.lua" "$nvim_dir/init.lua"

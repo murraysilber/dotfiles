@@ -8,6 +8,4 @@ if [ ! -d "$uv_dir" ]; then
   mkdir -v "$uv_dir"
 fi
 
-ln -sf "$HOME/dotfiles/uv/uv.toml" "$uv_dir/uv.toml"
-
-brew install uv
+ln -sf "$HOME/dotfiles/apps/uv/uv.toml" "$uv_dir/uv.toml"

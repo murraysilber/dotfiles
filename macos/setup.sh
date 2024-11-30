@@ -53,7 +53,7 @@ defaults write com.apple.dock "mru-spaces" -bool false
 ###############################################################################
 
 # Show full website URL
-defaults write com.apple.Safari "ShowFullURLInSmartSearchField" -bool "true" && killall Safari
+#defaults write com.apple.Safari "ShowFullURLInSmartSearchField" -bool "true" && killall Safari
 
 ###############################################################################
 # Mission Control                                                             #
