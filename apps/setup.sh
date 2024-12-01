@@ -18,6 +18,7 @@ apps=(
   "wezterm"
   "visual-studio-code"
   "rectangle"
+  "zettlr"
 )
 
 # Loop over the array to install each application.
@@ -47,6 +48,7 @@ packages=(
   "zsh-autosuggestions"
   "zsh-syntax-highlighting"
   "fzf"
+  "neovim"
 )
 
 # Loop over the array to install each application.
