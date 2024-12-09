@@ -28,7 +28,6 @@
     "workbench.enableExperiments": false,
     "workbench.panel.defaultLocation": "right",
     "workbench.sideBar.location": "right",
-    "workbench.colorTheme": "Ayu Mirage",
     "workbench.colorCustomizations": {
         "scrollbarSlider.background": "#b58900",
         "scrollbarSlider.hoverBackground": "#b58900",
@@ -202,5 +201,6 @@
     "editor.fontSize": 21,
     "workbench.iconTheme": "material-icon-theme",
     "editor.lineHeight": 0,
-    "vim.leader": "<space>"
+    "vim.leader": "<space>",
+    "workbench.colorTheme": "Gruvbox Dark Medium"
 }
