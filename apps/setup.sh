@@ -49,6 +49,7 @@ packages=(
   "zsh-syntax-highlighting"
   "fzf"
   "neovim"
+  "brew install lua-language-server"
 )
 
 # Loop over the array to install each application.

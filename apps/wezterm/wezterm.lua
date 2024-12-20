@@ -39,8 +39,8 @@ config.window_padding = { left = 10, right = 10, top = 10, bottom = 10 }
 config.font = wezterm.font 'JetBrainsMono Nerd Font'
 config.freetype_load_target = 'Light'
 config.freetype_render_target = 'HorizontalLcd'
-config.font_size = 24
-config.line_height = 1.0
+config.font_size = 26
+config.line_height = 1.1
 
 -- Remove the title bar from the window
 config.window_decorations = "RESIZE"

@@ -1,5 +1,13 @@
 print("Advent of neovim")
 
+-- Bootstrap Lazy
+require("config.lazy")
+
+-- set default indentation. Use after/ftplugin to create options for each file type
+vim.opt.shiftwidth = 4
+
+-- Use system clipboard
+vim.opt.clipboard = "unnamedplus"
 
 -- source the current file
 vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
@@ -18,11 +26,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', {clear = true}),
   callback = function()
     vim.highlight.on_yank()
-  end,  
+  end,
 })
 
+          vim.o.background = "dark" -- or "light" for light mode
 
-vim.o.background = "dark" -- or "light" for light mode
-
--- Bootstrap lazy.nvim
-require("config.lazy")
