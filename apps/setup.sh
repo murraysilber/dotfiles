@@ -49,7 +49,7 @@ packages=(
   "zsh-syntax-highlighting"
   "fzf"
   "neovim"
-  "brew install lua-language-server"
+  "lua-language-server"
 )
 
 # Loop over the array to install each application.
@@ -69,7 +69,7 @@ brew upgrade --cask
 brew cleanup
 
 # Run app updates
-for i in tmux rectangle mise wezterm uv vscode neovim; do
+for i in tmux rectangle mise wezterm uv vscode nvim; do
   echo "$HOME/dotfiles/apps/$i/setup.sh"
   # shellcheck disable=SC1090
   source "$HOME/dotfiles/apps/$i/setup.sh"
