@@ -23,11 +23,10 @@ vim.keymap.set("v", "<space>x", ":lua<CR>")
 -- See ':help vim.highlight.on._yank()'
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = "highlight when yanking (copying) text",
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', {clear = true}),
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
   callback = function()
     vim.highlight.on_yank()
   end,
 })
 
-          vim.o.background = "dark" -- or "light" for light mode
-
+vim.o.background = "dark"           -- or "light" for light mode
