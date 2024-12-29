@@ -15,10 +15,10 @@ apps=(
   "docker"
   "zotero"
   "google-chrome"
-  "wezterm"
   "visual-studio-code"
   "rectangle"
   "zettlr"
+  "ghostty"
 )
 
 # Loop over the array to install each application.

@@ -9,7 +9,8 @@
 
 # dotfiles directory
 dotfile_dir="${HOME}/dotfiles"
-
+# DOTFILES_DIR="$HOME/Repos/github.com/mischavandenburg/dotfiles"
+XDG_CONFIG_HOME="$HOME/.config"
 # Install Homebrew - First check if Homebrew has been installed.
 # This will also install X-code tools as part of the Homebrew installation
 which -s brew
@@ -63,13 +64,10 @@ fi
 # Exit immediately if a command exits with a non-zero status
 set -e
 
-# Need to create base directory for housing symlinks and scripts (.config)
-config_dir="$HOME/.config"
-
-if [[ ! -d "$config_dir" ]]; then
-  echo "$config_dir" does not exist.
-  echo Creating "$config_dir"
-  mkdir -v "$config_dir"
+if [[ ! -d "$XDG_CONFIG_HOME" ]]; then
+  echo "$XDG_CONFIG_HOME" does not exist.
+  echo Creating "$XDG_CONFIG_HOME"
+  mkdir -v "$XDG_CONFIG_HOME"
 fi
 
 # Are we in the dotfiles directory?

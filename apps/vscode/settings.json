@@ -203,5 +203,7 @@
     "workbench.iconTheme": "material-icon-theme",
     "editor.lineHeight": 0,
     "vim.leader": "<space>",
-    "workbench.colorTheme": "Gruvbox Dark Medium"
+    "workbench.colorTheme": "Gruvbox Dark Medium",
+    "workbench.startupEditor": "none",
+    "explorer.compactFolders": false
 }

@@ -1,0 +1,28 @@
+
+font-family = JetBrainsMono Nerd Font
+#font-family = Iosevka Nerd Font
+# font-family = SFMono Nerd Font 
+font-size = 26
+font-feature = -liga
+theme = GruvboxDark
+shell-integration-features = no-cursor,sudo,no-title
+cursor-style = block
+adjust-cell-height = 15%
+# background-opacity = 0.96
+
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
+
+window-padding-balance = true
+window-padding-x = 10
+window-padding-y = 10
+window-save-state = always
+confirm-close-surface = false
+macos-titlebar-style = hidden
+window-colorspace = "display-p3"
+# background = 1C2021
+# foreground = d4be98
+
+# keybindings
+keybind = cmd+s>r=reload_config
+keybind = cmd+s>x=close_surface
