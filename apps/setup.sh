@@ -70,7 +70,7 @@ brew upgrade --cask
 brew cleanup
 
 # Run app updates
-for i in tmux rectangle mise wezterm uv vscode nvim; do
+for i in tmux rectangle mise ghostty uv vscode nvim; do
   echo "$HOME/dotfiles/apps/$i/setup.sh"
   # shellcheck disable=SC1090
   source "$HOME/dotfiles/apps/$i/setup.sh"
