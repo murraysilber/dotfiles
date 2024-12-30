@@ -19,7 +19,7 @@ window-padding-y = 10
 window-save-state = always
 confirm-close-surface = false
 macos-titlebar-style = hidden
-window-colorspace = "display-p3"
+# window-colorspace = "display-p3"
 # background = 1C2021
 # foreground = d4be98
 
