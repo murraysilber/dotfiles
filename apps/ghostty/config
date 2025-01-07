@@ -1,9 +1,11 @@
 
-font-family = JetBrainsMono Nerd Font
-#font-family = Iosevka Nerd Font
+# font-family = JetBrainsMono Nerd Font
+# font-family = Iosevka Nerd Font
 # font-family = SFMono Nerd Font 
 font-size = 26
 font-feature = -liga
+font-feature = -calt
+font-feature = -dlig
 theme = GruvboxDark
 shell-integration-features = no-cursor,sudo,no-title
 cursor-style = block
@@ -26,3 +28,4 @@ macos-titlebar-style = hidden
 # keybindings
 keybind = cmd+s>r=reload_config
 keybind = cmd+s>x=close_surface
+
