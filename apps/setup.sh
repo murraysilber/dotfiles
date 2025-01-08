@@ -51,6 +51,7 @@ packages=(
   "neovim"
   "lua-language-server"
   "ripgrep"
+  "fd"
 )
 
 # Loop over the array to install each application.
