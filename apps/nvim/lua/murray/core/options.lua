@@ -1,4 +1,4 @@
-vim.cmd("let g:netrw_liststyle = 3")
+vim.g.netrw_liststyle = 3 -- display tree structure in NetRW
 
 local opt = vim.opt -- for conciseness
 
