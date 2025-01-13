@@ -44,6 +44,10 @@ opt.splitbelow = true -- split horizontal window to the bottom
 vim.opt.swapfile = false
 vim.opt.backup = false
 
+-- allow virtual editing in visual block mode
+vim.opt.virtualedit = "block"
+
+
 
 -- Autocommands
 vim.api.nvim_create_augroup("custom_buffer", { clear = true })

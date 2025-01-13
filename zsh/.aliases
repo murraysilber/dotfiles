@@ -16,6 +16,9 @@ alias ls="command ls ${colorflag}"
 alias la="ls -la ${colorflag}"
 alias ll="ls -lahF ${colorflag}"
 
+# General util
+alias c='clear'
+
 # +------+
 # | grep |
 # +------+
