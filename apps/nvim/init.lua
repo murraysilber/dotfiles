@@ -15,7 +15,7 @@ if not vim.loop.fs_stat(lazypath) then
   }
 end
 vim.opt.rtp:prepend(lazypath)
-
+   
 -- Import color theme based on environment variable NVIM_THEME
 local default_color_scheme = 'gruvbox'
 local env_var_nvim_theme = os.getenv 'NVIM_THEME' or default_color_scheme
@@ -25,8 +25,8 @@ local themes = {
   gruvbox = 'plugins.themes.gruvbox',
   onedark = 'plugins.themes.onedark',
 }
--- setupplugins
--- Setup plugins
+
+-- Setup
 require('lazy').setup({
 
   -- import plugins
@@ -35,6 +35,7 @@ require('lazy').setup({
     require "plugins.treesitter",
     require "plugins.which-key",
     require "plugins.lualine",
+    require "plugins.plugins",
   },  
     -- automatically detect config file changes and reload the ui
     change_detection = {

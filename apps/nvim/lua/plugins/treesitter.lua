@@ -33,6 +33,9 @@ return {
         'bash',
         'css',
         'html',
+        'elixir',
+        'eex',
+        'heex',
       },
 
       -- Autoinstall languages that are not installed

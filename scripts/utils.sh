@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/usr/bin/env bash
 default_color=$(tput sgr 0)
 red="$(tput setaf 1)"
 yellow="$(tput setaf 3)"
