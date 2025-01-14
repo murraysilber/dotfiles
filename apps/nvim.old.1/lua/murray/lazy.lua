@@ -21,6 +21,7 @@ require("lazy").setup({
   spec = {
     -- import your plugins
     { import = "murray.plugins" },
+    { import = "murray.plugins.lsp" }
   },
 
   change_detection = {

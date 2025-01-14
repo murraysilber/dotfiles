@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 ############################
 # This script sets up a Mac from scratch
 # 1. Dotfiles - pulls them from github and sets up symlinks
@@ -7,32 +7,56 @@
 # 4. And also installs other Apps using Homebrew
 ############################
 
+# util for user friendly output
+default_color=$(tput sgr 0)
+red="$(tput setaf 1)"
+yellow="$(tput setaf 3)"
+green="$(tput setaf 2)"
+blue="$(tput setaf 4)"
+
+info() {
+    printf "%s==> %s%s\n" "$blue" "$1" "$default_color"
+}
+
+success() {
+    printf "%s==> %s%s\n" "$green" "$1" "$default_color"
+}
+
+error() {
+    printf "%s==> %s%s\n" "$red" "$1" "$default_color"
+}
+
+warning() {
+    printf "%s==> %s%s\n" "$yellow" "$1" "$default_color"
+}
+
+# Install Homebrew
+# Check if Homebrew has already been installed. 
+# Make the install non-interactive using NONINTERACTIVE=1
+install_homebrew() {
+    info "Installing Homebrew..."
+    # `command -v brew` will output nothing if Homebrew is not installed
+	  if [[ $(command -v brew) == "" ]]; then
+      sudo --validate
+      NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+	  else
+      warning "Homebrew already installed"
+	  fi
+}
+
 # dotfiles directory
 dotfile_dir="${HOME}/dotfiles"
 # DOTFILES_DIR="$HOME/Repos/github.com/mischavandenburg/dotfiles"
 XDG_CONFIG_HOME="$HOME/.config"
+
 # Install Homebrew - First check if Homebrew has been installed.
 # This will also install X-code tools as part of the Homebrew installation
-which -s brew
-if [[ $? != 0 ]]; then
-  # Install Homebrew
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# We need X-code tools for a number of things
+install_homebrew()
 
-  # Test if Homebrew was installed
+# Test if Homebrew was installed
   brew --version
-
-  # Attempt to set up Homebrew PATH automatically for this session
-  if [[ -x "/opt/homebrew/bin/brew" ]]; then
-    # For Apple Silicon Macs
-    echo "Configuring Homebrew in PATH for Apple Silicon Mac..."
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-  fi
-else
-  echo "Homebrew has already been installed"
-  echo "This script assumes the Mac has not been bootstrapped"
-  echo "Perhaps the update script should be run?...."
-  exit 1
-fi
 
 # clone dotfiles repo from github
 if [[ -d "$dotfile_dir" ]]; then
