@@ -41,13 +41,14 @@ opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
 -- backup options
-vim.opt.swapfile = false
-vim.opt.backup = false
+opt.swapfile = false
+opt.backup = false
 
 -- allow virtual editing in visual block mode
-vim.opt.virtualedit = "block"
+opt.virtualedit = "block"
 
-
+-- search highlight
+opt.hlsearch = true
 
 -- Autocommands
 vim.api.nvim_create_augroup("custom_buffer", { clear = true })

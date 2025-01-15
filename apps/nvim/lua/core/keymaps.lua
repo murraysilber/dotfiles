@@ -9,7 +9,7 @@ local keymap = vim.keymap
 -- keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" }) not sure if I like this
 
 -- clear search highlights
-keymap.set("n", "<leader>nh", ":nohl<CR>", opts, { desc = "Clear search highlights" })
+keymap.set("n", "<leader>nh", ":noh<CR>", opts, { desc = "Clear search highlights" })
 
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>", opts, { desc = "Increment number" }) -- increment
