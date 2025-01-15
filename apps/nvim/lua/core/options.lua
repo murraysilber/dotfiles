@@ -1,4 +1,5 @@
 vim.g.netrw_liststyle = 3 -- display tree structure in NetRW
+vim.g.have_nerd_font = true -- we have nerd fonts installed
 
 local opt = vim.opt -- for conciseness
 
