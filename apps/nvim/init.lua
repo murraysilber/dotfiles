@@ -147,7 +147,7 @@ local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
 -- }}}
 
---{{{ Plugin: Gruvbox Colourscheme
+-- Plugin: Gruvbox Colourscheme {{{
 now(function()
   add({
     source = 'ellisonleao/gruvbox.nvim',
@@ -156,27 +156,27 @@ vim.cmd([[colorscheme gruvbox]])
 end)
 --}}}
 
--- {{{ Plugin: mini-icons
+-- Plugin: mini-icons {{{
 now(function() require("mini.icons").setup() end)
 -- }}}
 
--- {{{ Plugin: mini-pairs
+-- Plugin: mini-pairs {{{
 now(function() require("mini.pairs").setup() end)	
 -- }}}
 
--- {{{ Plugin: mini-diff
+-- Plugin: mini-diff {{{
 now(function() require("mini.diff").setup() end)
 -- }}}
 
--- {{{ Plugin: mini-git
+-- Plugin: mini-git {{{
 now(function() require("mini.git").setup() end)
 -- }}}
 
--- {{{ Plugin: mini-statusline
+-- plugin: mini-statusline {{{
 now(function() require('mini.statusline').setup() end)
 -- }}}
 
--- {{{ Plugin: Treesitter
+-- Plugin: Treesitter {{{ 
 later(function()
 	add({
 		source = 'nvim-treesitter/nvim-treesitter',
@@ -190,7 +190,7 @@ later(function()
 end)
 -- }}}
 
--- {{{ Plugin: Treesitter-endwise 
+-- plugin: Treesitter-endwise {{{ 
 later(function()
   add({
     source = 'rrethy/nvim-treesitter-endwise',
