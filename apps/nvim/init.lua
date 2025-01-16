@@ -34,8 +34,9 @@ require('lazy').setup({
     require(themes[env_var_nvim_theme]),
     require "plugins.treesitter",
     require "plugins.which-key",
-    require "plugins.lualine",
+--    require "plugins.lualine",
     require "plugins.telescope",
+    require "plugins.mini-nvim",
     require "plugins.plugins",
     require "plugins.lsp.mason"
   },  
@@ -58,7 +59,6 @@ require('lazy').setup({
     notify = false,
   },
 
---  require 'plugins.telescope',
 --  require 'plugins.lsp',
 --  require 'plugins.autocompletion',
 --  require 'plugins.none-ls',
