@@ -16,6 +16,7 @@ return {
 
   {
     -- Highlight todo, notes, etc in comments
+    -- TODO: Need to do some stuff
     'folke/todo-comments.nvim',
     event = 'VimEnter',
     dependencies = { 'nvim-lua/plenary.nvim' },

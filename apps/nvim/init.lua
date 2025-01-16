@@ -35,7 +35,9 @@ require('lazy').setup({
     require "plugins.treesitter",
     require "plugins.which-key",
     require "plugins.lualine",
+    require "plugins.telescope",
     require "plugins.plugins",
+    require "plugins.lsp.mason"
   },  
     -- automatically detect config file changes and reload the ui
     change_detection = {
