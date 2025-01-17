@@ -30,16 +30,16 @@ opt.smartcase = true -- if you include mixed case, assumes you want case sensiti
 
 -- colour related settings
 opt.termguicolors = true -- better colours on true colour terminals
-opt.background = "dark" -- default colourschemes to dark if they have both light and dark options. 
+opt.background = 'dark' -- default colourschemes to dark if they have both light and dark options.
 
 -- gutter related settings
-opt.signcolumn = "yes" -- show sign column so that text in editor does not shift
+opt.signcolumn = 'yes' -- show sign column so that text in editor does not shift
 
 -- backspace
-opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line, or insert mode start position
+opt.backspace = 'indent,eol,start' -- allow backspace on indent, end of line, or insert mode start position
 
 -- clipboard
-opt.clipboard:append("unnamedplus") -- use system clipboard as default register
+opt.clipboard:append 'unnamedplus' -- use system clipboard as default register
 
 -- split windows
 opt.splitright = true -- split vertical window to the right
@@ -50,52 +50,54 @@ opt.swapfile = false
 opt.backup = false
 
 -- allow virtual editing in visual block mode
-opt.virtualedit = "block"
+opt.virtualedit = 'block'
 
 -- search highlight
 opt.hlsearch = true
 
 -- Autocommands
-vim.api.nvim_create_augroup("custom_buffer", { clear = true })
+vim.api.nvim_create_augroup('custom_buffer', { clear = true })
 
 -- highlight yanks
-vim.api.nvim_create_autocmd("TextYankPost", {
-  group    = "custom_buffer",
-  pattern  = "*",
-  callback = function() vim.highlight.on_yank { timeout = 350 } end
+vim.api.nvim_create_autocmd('TextYankPost', {
+  group = 'custom_buffer',
+  pattern = '*',
+  callback = function()
+    vim.highlight.on_yank { timeout = 350 }
+  end,
 })
--- }}}	
+-- }}}
 
 -- Keymaps {{{
 -- leader key
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- For conciseness
 local opts = { noremap = true, silent = true }
 local keymap = vim.keymap
 
 -- saving files
-keymap.set("n", "<Leader>s", ":w<CR>:so %<CR>")
-keymap.set("n", "<Leader>w", ":w<CR>")
+keymap.set('n', '<Leader>s', ':w<CR>:so %<CR>')
+keymap.set('n', '<Leader>w', ':w<CR>')
 
 -- folding
-keymap.set("n", "<Tab>", "za")
+keymap.set('n', '<Tab>', 'za')
 
 -- keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" }) not sure if I like this
 
 -- clear search highlights
-keymap.set("n", "<leader>nh", ":noh<CR>", opts, { desc = "Clear search highlights" })
+keymap.set('n', '<leader>nh', ':noh<CR>', opts, { desc = 'Clear search highlights' })
 
 -- increment/decrement numbers
-keymap.set("n", "<leader>+", "<C-a>", opts, { desc = "Increment number" }) -- increment
-keymap.set("n", "<leader>-", "<C-x>", opts, { desc = "Decrement number" }) -- decrement
+keymap.set('n', '<leader>+', '<C-a>', opts, { desc = 'Increment number' }) -- increment
+keymap.set('n', '<leader>-', '<C-x>', opts, { desc = 'Decrement number' }) -- decrement
 
 -- window management
-keymap.set("n", "<leader>sv", "<C-w>v", opts, { desc = "Split window vertically" }) -- split window vertically
-keymap.set("n", "<leader>sh", "<C-w>s", opts, { desc = "Split window horizontally" }) -- split window horizontally
-keymap.set("n", "<leader>se", "<C-w>=", opts, { desc = "Make splits equal width and height" }) -- make split windows equal width and height
-keymap.set("n", "<leader>sx", "<cmd>close<CR>", opts, { desc = "Close current split" }) -- close current split window
+keymap.set('n', '<leader>sv', '<C-w>v', opts, { desc = 'Split window vertically' }) -- split window vertically
+keymap.set('n', '<leader>sh', '<C-w>s', opts, { desc = 'Split window horizontally' }) -- split window horizontally
+keymap.set('n', '<leader>se', '<C-w>=', opts, { desc = 'Make splits equal width and height' }) -- make split windows equal width and height
+keymap.set('n', '<leader>sx', '<cmd>close<CR>', opts, { desc = 'Close current split' }) -- close current split window
 
 -- Navigate between splits
 keymap.set('n', '<C-k>', ':wincmd k<CR>', opts)
@@ -125,21 +127,24 @@ keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnosti
 
 -- Plugin Manager {{{
 -- Clone 'mini.nvim' manually in a way that it gets managed by 'mini.deps'
-local path_package = vim.fn.stdpath('data') .. '/site/'
+local path_package = vim.fn.stdpath 'data' .. '/site/'
 local mini_path = path_package .. 'pack/deps/start/mini.nvim'
 if not vim.loop.fs_stat(mini_path) then
-  vim.cmd('echo "Installing `mini.nvim`" | redraw')
+  vim.cmd 'echo "Installing `mini.nvim`" | redraw'
   local clone_cmd = {
-    'git', 'clone', '--filter=blob:none',
-    'https://github.com/echasnovski/mini.nvim', mini_path
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/echasnovski/mini.nvim',
+    mini_path,
   }
   vim.fn.system(clone_cmd)
-  vim.cmd('packadd mini.nvim | helptags ALL')
-  vim.cmd('echo "Installed `mini.nvim`" | redraw')
+  vim.cmd 'packadd mini.nvim | helptags ALL'
+  vim.cmd 'echo "Installed `mini.nvim`" | redraw'
 end
 
 -- Set up 'mini.deps' (customize to your liking)
-require('mini.deps').setup({ path = { package = path_package } })
+require('mini.deps').setup { path = { package = path_package } }
 
 -- Use 'mini.deps'. `now()` and `later()` are helpers for a safe two-stage
 -- startup and are optional.
@@ -149,58 +154,117 @@ local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
 -- Plugin: Gruvbox Colourscheme {{{
 now(function()
-  add({
+  add {
     source = 'ellisonleao/gruvbox.nvim',
-  })
-vim.cmd([[colorscheme gruvbox]])
+  }
+  vim.cmd [[colorscheme gruvbox]]
 end)
 --}}}
 
 -- Plugin: mini-icons {{{
-now(function() require("mini.icons").setup() end)
+now(function()
+  require('mini.icons').setup()
+end)
 -- }}}
 
 -- Plugin: mini-pairs {{{
-now(function() require("mini.pairs").setup() end)	
+now(function()
+  require('mini.pairs').setup()
+end)
 -- }}}
 
 -- Plugin: mini-diff {{{
-now(function() require("mini.diff").setup() end)
+now(function()
+  require('mini.diff').setup()
+end)
 -- }}}
 
 -- Plugin: mini-git {{{
-now(function() require("mini.git").setup() end)
+now(function()
+  require('mini.git').setup()
+end)
 -- }}}
 
 -- plugin: mini-statusline {{{
-now(function() require('mini.statusline').setup() end)
--- }}}
-
--- Plugin: Treesitter {{{ 
-later(function()
-	add({
-		source = 'nvim-treesitter/nvim-treesitter',
-		-- run update after checkout
-		hooks = { post_checkout = function() vim.cmd('TSUpdate') end },
-	})
-	require('nvim-treesitter.configs').setup({
-		ensure_installed= { 'lua', 'vimdoc', 'markdown', 'markdown_inline' },
-		highlight = { enable = true },
-	})
+now(function()
+  require('mini.statusline').setup()
 end)
 -- }}}
 
--- plugin: Treesitter-endwise {{{ 
+-- Plugin: Treesitter {{{
 later(function()
-  add({
+  add {
+    source = 'nvim-treesitter/nvim-treesitter',
+    -- run update after checkout
+    hooks = {
+      post_checkout = function()
+        vim.cmd 'TSUpdate'
+      end,
+    },
+  }
+  require('nvim-treesitter.configs').setup {
+    ensure_installed = { 'lua', 'vimdoc', 'markdown', 'markdown_inline' },
+    highlight = { enable = true },
+  }
+end)
+-- }}}
+
+-- plugin: Treesitter-endwise {{{
+later(function()
+  add {
     source = 'rrethy/nvim-treesitter-endwise',
-    require('nvim-treesitter.configs').setup({
-      endwise = {
-        enable = true,
-      },
-    })
-  })
+  }
+  require('nvim-treesitter.configs').setup {
+    endwise = {
+      enable = true,
+    },
+  }
 end)
 -- }}}
 
+-- Plugin: conform.nvim {{{
+later(function()
+  add {
+    source = 'stevearc/conform.nvim',
+  }
+  require('conform').setup {
+    formatters_by_ft = {
+      lua = { 'stylua' },
+      python = { 'ruff' },
+    },
+    format_on_save = {
+      timeout_ms = 500,
+      lsp_format = 'fallback',
+    },
+  }
+end)
+--}}}
 
+-- LSP {{{
+now(function()
+  add {
+    source = 'neovim/nvim-lspconfig',
+    -- Supply dependencies near target plugin
+    depends = { 'williamboman/mason.nvim' },
+  }
+  require('lspconfig').lua_ls.setup {
+    settings = {
+      Lua = {
+        runtime = { version = 'LuaJIT' },
+        diagnostics = {
+          globals = { 'vim', 'MiniDeps' },
+        },
+      },
+    },
+  }
+  require('mason').setup {
+    ui = {
+      icons = {
+        package_installed = '✓',
+        package_pending = '➜',
+        package_uninstalled = '✗',
+      },
+    },
+  }
+end)
+-- }}}
