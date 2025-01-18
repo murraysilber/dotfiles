@@ -37,6 +37,7 @@ alias rm='rm -iv'
 # | NeoVim |
 # +-----+
 alias v="nvim"
+alias nv="nvim --startuptime startuptime.log"
 
 # +-------+
 # | fonts |
