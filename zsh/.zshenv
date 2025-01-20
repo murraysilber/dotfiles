@@ -13,7 +13,7 @@ export XDG_CACHE_HOME="$HOME/.cache"           # Cache files
 export XDG_DATA_HOME="$HOME/.local/share"      # Application data
 export XDG_STATE_HOME="$HOME/.local/state"     # Logs and state files
 
-# Themes (gruvbox or onedark)
+# Themes (gruvbox)
 export TMUX_THEME="gruvbox"
 export NVIM_THEME="gruvbox"
 
