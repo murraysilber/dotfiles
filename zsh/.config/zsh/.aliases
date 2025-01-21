@@ -64,9 +64,9 @@ alias dboot='cd ~/Developer/boot.dev'
 alias gpu='git push -u origin HEAD'
 
 # My bin files
-alias ip='~/.config/bin/pomodoro/init_pomo'
+alias ip='~/.config/scripts/pomodoro/init_pomo'
 alias dotz='cd ~/dotfiles'
-alias b='~/.config/bin/brew-tools'
+alias b='~/.config/scripts/brew-tools'
 
 #Python venv
 alias av='source $PWD/.venv/bin/activate' #activate venv

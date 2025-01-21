@@ -31,7 +31,37 @@ require("lazy").setup({
   require(themes[env_var_nvim_theme]),
   require("plugins.treesitter"),
   require("plugins.misc"),
-  require("plugins.vim-tmux-navigator")
+  require("plugins.vim-tmux-navigator"),
+  require("plugins.telescope"),
+  require("plugins.which-key"),
+
+  install = {
+    missing = true,
+    colorscheme = { "gruvbox" }
+  },
+  checker = {
+    enabled = true,
+    notify = false,
+  },
+  change_detection = {
+    enabled = true,
+    notify = false,
+  },
+  ui = {
+    -- border = "rounded"
+  },
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        "tarPlugin",
+        "tohtml",
+       -- "tutor",
+        "zipPlugin",
+      },
+    },
+  },
+
 })
 
 require 'core.options'  -- Load general options

@@ -30,5 +30,5 @@ export DOTFILES="$HOME/dotfiles"
 # Add /usr/local/bin to the beginning of the PATH environment variable.
 # This ensures that executables in /usr/local/bin are found before other directories in the PATH.
 export PATH="/usr/local/bin:$PATH"
-export PATH="$HOME/.config/bin:$PATH"
-export PATH="$HOME/.config/bin/pomodoro:$PATH"
+export PATH="$HOME/.config/scripts:$PATH"
+export PATH="$HOME/.config/scripts/pomodoro:$PATH"

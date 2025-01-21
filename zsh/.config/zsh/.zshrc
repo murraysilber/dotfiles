@@ -33,7 +33,7 @@ eval "$(fzf --zsh)"
 
 setopt PROMPT_SUBST
 
-# Load dotfiles:
+# Load custom:
 for file in $HOME/.config/zsh/.{zprompt,aliases}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done

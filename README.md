@@ -16,3 +16,8 @@ Copy this and execute in the terminal
 zsh <(curl -s https://raw.githubusercontent.com/murraysilber/dotfiles/main/bootstrap.sh) --branch main
 
 ```
+
+```sh
+stow -v -t ~/Library/Application\ Support/ rectangle
+
+```
