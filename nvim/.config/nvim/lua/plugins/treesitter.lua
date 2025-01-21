@@ -102,4 +102,3 @@ return {
     vim.filetype.add { extension = { multibranch = 'groovy' } }
   end,
 }
-

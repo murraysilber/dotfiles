@@ -2,6 +2,11 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+require 'core.options' -- Load general options
+require 'core.keymaps' -- Load general keymaps
+require 'core.autocmds' -- Load Autocommands
+require 'core.abbreviations' -- Load abbreviations
+
 -- Install package manager
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
@@ -27,17 +32,22 @@ local themes = {
 }
 
 -- Setup plugins
-require("lazy").setup({
+require('lazy').setup {
   require(themes[env_var_nvim_theme]),
-  require("plugins.treesitter"),
-  require("plugins.misc"),
-  require("plugins.vim-tmux-navigator"),
-  require("plugins.telescope"),
-  require("plugins.which-key"),
-
+  require 'plugins.treesitter',
+  require 'plugins.misc',
+  require 'plugins.vim-tmux-navigator',
+  require 'plugins.telescope',
+  require 'plugins.which-key',
+  require 'plugins.lualine',
+  require 'plugins.lsp',
+  require 'plugins.none-ls',
+  require 'plugins.autocompletion',
+  require 'plugins.indent-blankline',
+  require 'plugins.comment',
   install = {
     missing = true,
-    colorscheme = { "gruvbox" }
+    colorscheme = { 'gruvbox' },
   },
   checker = {
     enabled = true,
@@ -53,18 +63,12 @@ require("lazy").setup({
   performance = {
     rtp = {
       disabled_plugins = {
-        "gzip",
-        "tarPlugin",
-        "tohtml",
-       -- "tutor",
-        "zipPlugin",
+        'gzip',
+        'tarPlugin',
+        'tohtml',
+        -- "tutor",
+        'zipPlugin',
       },
     },
   },
-
-})
-
-require 'core.options'  -- Load general options
-require 'core.keymaps'  -- Load general keymaps
-require 'core.autocmds' -- Load Autocommands
-require 'core.abbreviations' -- Load abbreviations
+}
