@@ -1,7 +1,8 @@
 
 # Dotfiles
 
-This repository holds my dotfiles, which are the configuration files and scripts I use to personalize my Mac development environment. They ensure a consistent setup across various machines and streamline the process of configuring a new machine.
+This repository holds my dotfiles, which are the configuration files and scripts I use to personalize my Mac development environment.
+They ensure a consistent setup across various machines and streamline the process of configuring a new machine.
 
 
 ## DON'T USE JUST YET!!!!
@@ -18,6 +19,10 @@ zsh <(curl -s https://raw.githubusercontent.com/murraysilber/dotfiles/main/boots
 ```
 
 ```sh
+# stow command for rectangle config
 stow -v -t ~/Library/Application\ Support/ rectangle
+
+# stow command for vscode config
+stow -v -t ~/Library/Application\ Support/ vscode
 
 ```

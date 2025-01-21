@@ -25,10 +25,11 @@ export BROWSER="chrome"
 # Default Locations
 export ZDOTDIR="$HOME/.config/zsh"
 export DOTFILES="$HOME/dotfiles"
-
+export SCRIPT_DIR="$HOME/.config/scripts"
 
 # Add /usr/local/bin to the beginning of the PATH environment variable.
 # This ensures that executables in /usr/local/bin are found before other directories in the PATH.
 export PATH="/usr/local/bin:$PATH"
+
 export PATH="$HOME/.config/scripts:$PATH"
 export PATH="$HOME/.config/scripts/pomodoro:$PATH"

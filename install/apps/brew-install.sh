@@ -1,32 +1,33 @@
-# install additional apps
+#!/usr/bin/env bash
 
-echo "we are in apps setup"
+. $SCRIPT_DIR/utils.sh
 
 # Casks to install. If already installed, cask will be skipped
 apps=(
-  "firefox"
-  "brave-browser"
+  # "firefox"
+  # "brave-browser"
   "1password"
   "1password-cli"
-  "spotify"
+  # "spotify"
   "alfred"
   "font-jetbrains-mono-nerd-font"
   "logseq"
-  "docker"
-  "zotero"
+  # "docker"
+  # "zotero"
   "google-chrome"
   "visual-studio-code"
   "rectangle"
-  "zettlr"
+  # "zettlr"
   "ghostty"
 )
 
-# Loop over the array to install each application.
+# Loop over the array to install each cask
+info "Installing casks ........"
 for app in "${apps[@]}"; do
   if brew list --cask | grep -q "^$app\$"; then
-    echo "$app is already installed. Skipping..."
+    warning "$app is already installed. Skipping..."
   else
-    echo "Installing $app..."
+    info "Installing {$app}..."
     brew install --cask "$app"
   fi
 done
@@ -38,7 +39,7 @@ packages=(
   "tree"
   "gum"
   "fastfetch"
-  "latexindent"
+  # "latexindent"
   "tree"
   "jq"
   "wget"
@@ -52,29 +53,16 @@ packages=(
   "lua-language-server"
   "ripgrep"
   "fd"
+  "stow"
 )
 
 # Loop over the array to install each application.
+info "Installing formulae ..........."
 for package in "${packages[@]}"; do
   if brew list --formula | grep -q "^$package\$"; then
-    echo "$package is already installed. Skipping..."
+    warning "$package is already installed. Skipping..."
   else
-    echo "Installing $package..."
+    info "Installing $package..."
     brew install "$package"
   fi
-done
-
-# Upgrade any already-installed casks and formulae
-echo "Upgrading installed apps......"
-brew upgrade
-brew upgrade --cask
-brew cleanup
-
-# Run app updates
-for i in tmux rectangle mise ghostty uv vscode nvim; do
-  echo "$HOME/dotfiles/apps/$i/setup.sh"
-  # shellcheck disable=SC1090
-  source "$HOME/dotfiles/apps/$i/setup.sh"
-  # cd $i && ./setup.sh
-  # cd -
 done

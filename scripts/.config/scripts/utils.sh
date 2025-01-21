@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 default_color=$(tput sgr 0)
 red="$(tput setaf 1)"
 yellow="$(tput setaf 3)"
@@ -18,6 +19,5 @@ error() {
 }
 
 warning() {
-    printf "%s==> %s%s%s\n" "$yellow" "$1" "$2" "$default_color"
+    printf "%s==> %s%s\n" "$yellow" "$1" "$default_color"
 }
-

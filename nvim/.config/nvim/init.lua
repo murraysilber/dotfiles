@@ -67,3 +67,4 @@ require("lazy").setup({
 require 'core.options'  -- Load general options
 require 'core.keymaps'  -- Load general keymaps
 require 'core.autocmds' -- Load Autocommands
+require 'core.abbreviations' -- Load abbreviations
