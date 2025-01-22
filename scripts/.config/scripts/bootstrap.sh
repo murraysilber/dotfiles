@@ -32,9 +32,9 @@ warning() {
 
 # Install x-code cli tools. (Needed for homebrew and git installs)
 install_xcode() {
-    info "Installing Apple's CLI tools (prerequisites for Git and Homebrew)..."
+    info "Installing Apple's x-code CLI tools (prerequisites for Git and Homebrew)..."
     if xcode-select -p >/dev/null; then
-        warning "xcode is already installed"
+        warning "x-code CLI tools are already installed"
     else
         xcode-select --install
         sudo xcodebuild -license accept
@@ -94,6 +94,8 @@ set -e
 install_xcode
 install_homebrew
 clone_git_repo
+
+# TODO: install apps using homebrew and sync dotfiles.
 
 # if [[ ! -d "$XDG_CONFIG_HOME" ]]; then
 #     echo "$XDG_CONFIG_HOME" does not exist.
