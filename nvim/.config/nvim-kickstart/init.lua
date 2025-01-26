@@ -188,6 +188,30 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- close certain widows with q rather than :q
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = {
+    'grug-far',
+    'help',
+    'man',
+    'qf',
+    'query',
+  },
+  callback = function(event)
+    vim.bo[event.buf].buflisted = false
+    vim.keymap.set('n', 'q', '<cmd>close<cr>', { buffer = event.buf, silent = true })
+  end,
+  desc = 'close certain windows with q',
+})
+
+-- does not insert a comment on a new line if previous line was a comment.
+vim.api.nvim_create_autocmd('BufEnter', {
+  callback = function()
+    vim.opt.formatoptions:remove { 'c', 'r', 'o' }
+  end,
+  desc = 'Disable New Line Comment',
+})
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -260,7 +284,7 @@ require('lazy').setup({
     opts = {
       -- delay between pressing a key and opening which-key (milliseconds)
       -- this setting is independent of vim.opt.timeoutlen
-      delay = 0,
+      delay = 350,
       icons = {
         -- set icon mappings to true if you have a Nerd Font
         mappings = vim.g.have_nerd_font,
@@ -587,6 +611,8 @@ require('lazy').setup({
         -- ts_ls = {},
         --
 
+        bashls = {},
+
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
@@ -597,7 +623,9 @@ require('lazy').setup({
                 callSnippet = 'Replace',
               },
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-              -- diagnostics = { disable = { 'missing-fields' } },
+              diagnostics = { disable = { 'missing-fields' } },
+              telemetry = { enable = false },
+              globals = { 'vim' },
             },
           },
         },
@@ -668,6 +696,8 @@ require('lazy').setup({
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'ruff', -- Python formatter and linter
+        'shfmt', -- Shell script formatter
+        'shellcheck', -- Shell Script linter
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -721,6 +751,9 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         python = { 'ruff' },
+        bash = { 'shfmt', stop_after_first = true },
+        zsh = { 'shfmt', stop_after_first = true },
+        sh = { 'shfmt', stop_after_first = true },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
@@ -855,7 +888,33 @@ require('lazy').setup({
   },
 
   -- Highlight todo, notes, etc in comments
-  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
+
+  {
+    'folke/todo-comments.nvim',
+    event = { 'BufReadPre', 'BufNewFile' },
+    cmd = { 'TodoTelescope' },
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      local todo_comments = require 'todo-comments'
+
+      -- set keymaps
+      local keymap = vim.keymap -- for conciseness
+
+      keymap.set('n', ']t', function()
+        todo_comments.jump_next()
+      end, { desc = 'Next todo comment' })
+
+      keymap.set('n', '[t', function()
+        todo_comments.jump_prev()
+      end, { desc = 'Previous todo comment' })
+
+      keymap.set('n', '<leader>st', '<cmd>TodoTelescope<cr>', { desc = 'Search TODOs' })
+
+      keymap.set('n', '<leader>sT', '<cmd>TodoTelescope keywords=TODO,FIX,FIXME,INFO,WARN<cr>', { desc = 'Search TODO/FIX/FIXME/INFO/WARN' })
+
+      todo_comments.setup()
+    end,
+  },
 
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
@@ -931,7 +990,7 @@ require('lazy').setup({
   --
   -- require 'kickstart.plugins.debug',
   require 'kickstart.plugins.indent_line',
-  -- require 'kickstart.plugins.lint',
+  require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
   -- require 'kickstart.plugins.neo-tree',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
