@@ -68,6 +68,9 @@ alias ip='~/.config/scripts/pomodoro/init_pomo'
 alias dotz='cd ~/dotfiles'
 alias b='~/.config/scripts/brew-tools'
 
+#Python
+alias python='python3'
+
 #Python venv
 alias av='source $PWD/.venv/bin/activate' #activate venv
 alias cv='python -m venv .venv'           #create venv
