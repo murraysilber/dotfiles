@@ -65,4 +65,3 @@ vim.opt.signcolumn = 'yes' -- show sign column so that text in editor does not s
 
 -- backspace
 vim.opt.backspace = 'indent,eol,start' -- allow backspace on indent, end of line, or insert mode start position
-

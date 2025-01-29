@@ -19,7 +19,7 @@ return {
       {
         '<leader>gg',
         '<cmd>LazyGit<cr>',
-        desc = 'LazyGit',
+        desc = 'Lazy[G]it',
       },
     },
   },

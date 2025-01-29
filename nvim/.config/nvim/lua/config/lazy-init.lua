@@ -10,7 +10,6 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 require('lazy').setup({
   spec = {
     'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-
     { import = 'plugins.coding.autopairs' },
     { import = 'plugins.coding.cmp' },
     -- { import = 'plugins.coding.codecompanion' },
@@ -21,6 +20,7 @@ require('lazy').setup({
     -- { import = 'plugins.coding.trouble' },
     -- { import = 'plugins.dap.core' },
     { import = 'plugins.editor.telescope' },
+    { import = 'plugins.editor.harpoon' },
     { import = 'plugins.editor.gitsigns' },
     -- { import = 'plugins.editor.grug-far' },
     { import = 'plugins.editor.lazygit' },
@@ -44,8 +44,7 @@ require('lazy').setup({
     -- { import = 'plugins.test.core' },
     { import = 'plugins.ui.colorscheme' },
     -- { import = 'plugins.ui.dressing' },
-    { import = 'plugins.ui.treesitter-context' },
-    { import = 'plugins.util.mini-hipatterns' },
+    --    { import = 'plugins.ui.treesitter-context' },
   },
   defaults = {},
   performance = {
@@ -81,5 +80,11 @@ require('lazy').setup({
       task = '📌',
       lazy = '💤 ',
     },
+  },
+  install = {
+    -- install missing plugins on startup. This doesn't increase startup time.
+    missing = true,
+    -- try to load one of these colorschemes when starting an installation during startup
+    colorscheme = { 'gruvbox-material' },
   },
 })

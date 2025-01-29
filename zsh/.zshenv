@@ -8,10 +8,10 @@
 ###############################
 
 # XDG Base directory specification
-export XDG_CONFIG_HOME="$HOME/.config"         # Config files
-export XDG_CACHE_HOME="$HOME/.cache"           # Cache files
-export XDG_DATA_HOME="$HOME/.local/share"      # Application data
-export XDG_STATE_HOME="$HOME/.local/state"     # Logs and state files
+export XDG_CONFIG_HOME="$HOME/.config"     # Config files
+export XDG_CACHE_HOME="$HOME/.cache"       # Cache files
+export XDG_DATA_HOME="$HOME/.local/share"  # Application data
+export XDG_STATE_HOME="$HOME/.local/state" # Logs and state files
 
 # Themes (gruvbox)
 export TMUX_THEME="gruvbox"
@@ -21,6 +21,10 @@ export NVIM_THEME="gruvbox"
 export EDITOR="nvim"
 export TERMINAL="ghostty"
 export BROWSER="chrome"
+
+# Mac provided c compiler cannot compile C++ 14 or later...so.....use another
+# CC=/opt/homebrew/bin/gcc-14 nvim -c "TSInstall norg"
+export CC="/opt/homebrew/bin/gcc-14"
 
 # Default Locations
 export ZDOTDIR="$HOME/.config/zsh"

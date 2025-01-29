@@ -1,10 +1,28 @@
 return { -- Highlight, edit, and navigate code
   'nvim-treesitter/nvim-treesitter',
+  event = { 'BufReadPre', 'BufNewFile' },
   build = ':TSUpdate',
   main = 'nvim-treesitter.configs', -- Sets main module to use for opts
   -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
   opts = {
-    ensure_installed = { 'regex', 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'python' },
+    ensure_installed = {
+      'regex',
+      'dockerfile',
+      'bash',
+      'c',
+      'diff',
+      'html',
+      'lua',
+      'luadoc',
+      'markdown',
+      'markdown_inline',
+      'query',
+      'vim',
+      'vimdoc',
+      'python',
+      'terraform',
+      'go',
+    },
     -- Autoinstall languages that are not installed
     auto_install = true,
     highlight = {
@@ -13,6 +31,12 @@ return { -- Highlight, edit, and navigate code
       --  If you are experiencing weird indenting issues, add the language to
       --  the list of additional_vim_regex_highlighting and disabled languages for indent.
       additional_vim_regex_highlighting = { 'ruby' },
+      disable = function(lang)
+        local buf_name = vim.fn.expand '%'
+        if lang == 'terraform' and string.find(buf_name, 'fixture') then
+          return true
+        end
+      end,
     },
     indent = { enable = true, disable = { 'ruby' } },
   },
@@ -23,4 +47,3 @@ return { -- Highlight, edit, and navigate code
   --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
   --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
 }
-

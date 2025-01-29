@@ -15,10 +15,10 @@ return {
       enabled = true,
       priority = 1,
       only_scope = true,
-      only_current = false,
+      only_current = true,
     },
 
-    --    input = { enabled = true },
+    input = { enabled = true },
     quickfile = { enabled = true },
     scroll = { enabled = true },
     statuscolumn = { enabled = true },
