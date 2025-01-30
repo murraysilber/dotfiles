@@ -23,7 +23,7 @@ return { -- LSP Plugins
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP.
-      -- { 'j-hui/fidget.nvim', opts = {} },
+      { 'j-hui/fidget.nvim', opts = {} },
 
       -- Allows extra capabilities provided by nvim-cmp
       'hrsh7th/cmp-nvim-lsp',
@@ -227,6 +227,16 @@ return { -- LSP Plugins
           },
         },
       }
+      -- load bash language server when editing a shell script
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = 'sh',
+        callback = function()
+          vim.lsp.start {
+            name = 'bash-language-server',
+            cmd = { 'bash-language-server', 'start' },
+          }
+        end,
+      })
 
       -- Ensure the servers and tools above are installed
       --
@@ -247,6 +257,7 @@ return { -- LSP Plugins
         'ruff', -- Python formatter and linter
         'shfmt', -- Shell script formatter
         'shellcheck', -- Shell Script linter
+        'markdownlint', -- Markdown linter
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
