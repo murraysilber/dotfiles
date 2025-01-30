@@ -62,6 +62,7 @@ alias dboot='cd ~/Developer/boot.dev'
 
 # git
 alias gpu='git push -u origin HEAD'
+alias gc='~/.config/scripts/fancy-git-commit.sh'
 
 # My bin files
 alias ip='~/.config/scripts/pomodoro/init_pomo'
