@@ -1,5 +1,5 @@
 
-# font-family = JetBrainsMono Nerd Font
+ font-family = 'JetBrainsMono Nerd Font'
 # font-family = Iosevka Nerd Font
 # font-family = SFMono Nerd Font 
 font-size = 26
@@ -25,7 +25,7 @@ macos-titlebar-style = hidden
 # background = 1C2021
 # foreground = d4be98
 
-# keybindings
+# keybinding
 keybind = cmd+s>r=reload_config
 keybind = cmd+s>x=close_surface
 
