@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-. $SCRIPT_DIR/utils.sh
+. "$SCRIPT_DIR/utils.sh"
 
 # Casks to install. If already installed, cask will be skipped
 apps=(
