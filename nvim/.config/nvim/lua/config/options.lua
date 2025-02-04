@@ -24,6 +24,9 @@ end)
 -- Enable break indent
 vim.opt.breakindent = true
 
+-- Spelling
+vim.opt.spelllang = { 'en_gb' }
+
 -- Save undo history
 vim.opt.undofile = true
 

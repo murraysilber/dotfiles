@@ -47,7 +47,7 @@ install_homebrew() {
     info "Installing Homebrew..."
     # `command -v brew` will output nothing if Homebrew is not installed
     if [[ $(command -v brew) == "" ]]; then
-        sudo --validate
+        sudo --validate # request sudo upfront
         NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         eval "$(/opt/homebrew/bin/brew shellenv)"
     else

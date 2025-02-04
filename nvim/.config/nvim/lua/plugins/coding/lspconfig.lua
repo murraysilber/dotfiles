@@ -8,6 +8,7 @@ return { -- LSP Plugins
       library = {
         -- Load luvit types when the `vim.uv` word is found
         { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
+        { path = 'snacks.nvim', words = { 'Snacks' } },
       },
     },
   },
@@ -161,7 +162,7 @@ return { -- LSP Plugins
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
-
+        elixirls = {},
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
@@ -256,7 +257,7 @@ return { -- LSP Plugins
         'stylua', -- Used to format Lua code
         'ruff', -- Python formatter and linter
         'shfmt', -- Shell script formatter
-        'shellcheck', -- Shell Script linter
+        --'shellcheck', -- Shell Script linter
         'markdownlint', -- Markdown linter
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }

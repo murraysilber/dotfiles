@@ -44,6 +44,23 @@ return {
         default = { 'Identifier', '#7C3AED' },
         test = { 'Identifier', '#FF00FF' },
       },
+
+      keys = {
+        {
+          '<leader>st',
+          function()
+            Snacks.picker.todo_comments()
+          end,
+          desc = 'Todo',
+        },
+        {
+          '<leader>sT',
+          function()
+            Snacks.picker.todo_comments { keywords = { 'TODO', 'FIX', 'FIXME' } }
+          end,
+          desc = 'Todo/Fix/Fixme',
+        },
+      },
     }
 
     vim.keymap.set('n', ']t', function()

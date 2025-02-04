@@ -5,6 +5,15 @@ return { -- Highlight, edit, and navigate code
   main = 'nvim-treesitter.configs', -- Sets main module to use for opts
   -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
   opts = {
+    autotag = {
+      enable = true,
+      filetypes = {
+        'html',
+        'javascript',
+        'typescript',
+        'markdown',
+      },
+    },
     ensure_installed = {
       'regex',
       'dockerfile',
@@ -14,14 +23,13 @@ return { -- Highlight, edit, and navigate code
       'html',
       'lua',
       'luadoc',
-      'markdown',
-      'markdown_inline',
       'query',
       'vim',
       'vimdoc',
       'python',
       'terraform',
       'go',
+      'elixir',
     },
     -- Autoinstall languages that are not installed
     auto_install = true,
