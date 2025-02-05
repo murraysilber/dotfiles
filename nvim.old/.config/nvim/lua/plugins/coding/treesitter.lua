@@ -30,6 +30,8 @@ return { -- Highlight, edit, and navigate code
       'terraform',
       'go',
       'elixir',
+      'eex',
+      'heex',
     },
     -- Autoinstall languages that are not installed
     auto_install = true,
