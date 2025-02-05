@@ -56,7 +56,7 @@ install_homebrew() {
 }
 
 # dotfiles directory
-dotfile_dir="${HOME}/dotfiles"
+dotfile_dir="$HOME/dotfiles"
 # DOTFILES_DIR="$HOME/Repos/github.com/mischavandenburg/dotfiles"
 XDG_CONFIG_HOME="$HOME/.config"
 
@@ -73,7 +73,7 @@ clone_git_repo() {
             warning "Git repo exists"
             # TODO: get input from user and based on input, determine if we exit here or not
             warning "Should you rather be running the update script?......"
-            exit 1
+            # exit 1
         fi
     else
         info "Cloning git repo...."
@@ -104,15 +104,13 @@ clone_git_repo
 # fi
 
 # Are we in the dotfiles directory?
-#cd "${HOME}"/dotfiles
+cd "${HOME}"/dotfiles
 
-# # Run installers
-# for i in wallpaper macos zsh wezterm tmux shell-tools rectangle vscode mise uv apps; do
-#     echo "$HOME/dotfiles/$i/setup.sh"
-#     source "$HOME/dotfiles/$i/setup.sh"
-#     # cd $i && ./setup.sh
-#     # cd -
-# done
+# symink dotfiles using GNU stow (https://www.gnu.org/software/stow/) - there are many ways to use stow, this is just one way. 
+ for i in wallpaper zsh uv vscode tmux scripts rectangle nvim mise ghostty; do
+     info "Stowing $i"
+     stow $i
+ done
 #
 # INSTALL APPS
 # Install Apps using Homebrew & mas
