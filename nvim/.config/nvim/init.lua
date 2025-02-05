@@ -1,4 +1,4 @@
---[[     
+-[[     
   TODO: The very first thing you should do is to run the command `:Tutor` in Neovim.
 --]]
 
@@ -122,6 +122,14 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+
+-- window management
+vim.keymap.set('n', '<leader>sv', '<C-w>v', { desc = 'Split window vertically' })
+vim.keymap.set('n', '<leader>sh', '<C-w>s', { desc = 'Split window horizontally' })
+vim.keymap.set('n', '<leader>se', '<C-w>=', { desc = 'Make splits equal width and height' })
+vim.keymap.set('n', '<leader>sx', '<cmd>close<CR>', { desc = 'Close current split' })
+vim.keymap.set('n', '<leader>si', '<cmd>vertical resize +5<CR>', { desc = 'Increase the split window size' })
+vim.keymap.set('n', '<leader>sd', '<cmd>vertical resize -5<CR>', { desc = 'Decrease the split window size' })
 
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
