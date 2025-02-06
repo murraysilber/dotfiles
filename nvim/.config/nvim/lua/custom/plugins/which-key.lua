@@ -49,7 +49,7 @@ return { -- Useful plugin to show you pending keybinds.
       { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
       { '<leader>d', group = '[D]ocument' },
       { '<leader>r', group = '[R]ename' },
-      { '<leader>s', group = '[S]earch' },
+      { '<leader>s', group = '[F]ind' },
       { '<leader>w', group = '[W]orkspace' },
       { '<leader>t', group = '[T]oggle' },
       { '<leader>g', group = 'Lazy[G]it' },
