@@ -50,10 +50,10 @@ packages=(
   "zsh-syntax-highlighting"
   "fzf"
   "neovim"
-  "lua-language-server"
   "ripgrep"
   "fd"
   "stow"
+  "gcc"
 )
 
 # Loop over the array to install each application.
