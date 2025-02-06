@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env bash
 
 # macOS Version
 IS_APPLE_CPU=$(sysctl -n machdep.cpu.brand_string | grep -i "apple") # Apple M1 Hardware = "Apple processor"
@@ -13,7 +13,7 @@ OS_MINOR_PATCH_VERSION=$(echo $MAC_OS_VERSION | sed -E 's/([0-9]+)\.([0-9]+)\.?(
 echo "minor patch version: " ${OS_MINOR_PATCH_VERSION}
 
 # support from macOS Monterey
-if [ ${OS_MAJOR_VERSION} -gt 12 ]; then
+if [[ ${OS_MAJOR_VERSION} -gt 12 ]]; then
   OS_UNSUPPORTED=false
 else
   OS_UNSUPPORTED=true

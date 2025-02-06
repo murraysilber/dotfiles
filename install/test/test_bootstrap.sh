@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env bash
 
 # clone a new vanilla vm to test bootstrapping a Mac
 tart list
