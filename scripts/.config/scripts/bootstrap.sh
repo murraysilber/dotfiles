@@ -106,11 +106,28 @@ clone_git_repo
 # Are we in the dotfiles directory?
 cd "${HOME}"/dotfiles
 
-# symink dotfiles using GNU stow (https://www.gnu.org/software/stow/) - there are many ways to use stow, this is just one way. 
- for i in wallpaper zsh uv vscode tmux scripts rectangle nvim mise ghostty; do
-     info "Stowing $i"
-     stow $i
- done
+# symink dotfiles using GNU stow (https://www.gnu.org/software/stow/) - there are many ways to use stow, this is just one way.
+for i in wallpaper zsh uv tmux scripts nvim mise ghostty; do
+    info "Stowing $i"
+    stow $i
+done
+
+# symlink dotfiles for vscode and Rectangle....they have specific targets that differ from the rest
+for in in vscode rectangle; do
+    # Rectangle
+    # stow -nvt "$HOME/Library/Application Support" rectangle
+    # stow -nv -t "$HOME/Library/Application Support" rectangle
+    # stow -nv -t ~/Library/Application Support rectangle
+    # stow -nv -t '~/Library/Application Support' rectangle
+    # stow -nv -t '~/Library/Application Support/' rectangle
+    # stow -nv -t ~/Library/Application\Support/ rectangle
+    # stow -nv -t ~/Library/Application\ Support/ rectangle
+    # stow -v -t ~/Library/Application\ Support/ rectangle
+
+    # VSCode
+    # stow -nv -t ~/Library/Application\ Support/ vscode\
+    # stow -v -t ~/Library/Application\ Support/ vscode\
+done
 #
 # INSTALL APPS
 # Install Apps using Homebrew & mas

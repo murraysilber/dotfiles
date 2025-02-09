@@ -4,4 +4,4 @@ excludesfile = /Users/murray/.config/git/.gitignore_global
 name = Murray Silber
 email = murraysilber@gmail.com
 [init]
-	defaultBranch = main
+defaultBranch = main
