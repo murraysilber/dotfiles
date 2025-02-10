@@ -72,6 +72,14 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 - Restore session: `Prefix + CTRL + r`
 - Install plugins: `Prefix + I`
 
+## Pomodoro Shortcuts
+<tmux-prefix> p to toggle between starting/pausing a Pomodoro/break
+<tmux-prefix> P to cancel a Pomodoro/break
+<tmux-prefix> _ to skip a Pomodoro/break
+<tmux-prefix> e to restart a Pomodoro
+<tmux-prefix> C-p to open the Pomodoro timer menu
+<tmux-prefix> M-p to set a custom Pomodoro timer
+
 ## Useful Snippets
 
 Add this to you `.zshrc` to always work in a Tmux session:

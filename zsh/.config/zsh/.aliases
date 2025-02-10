@@ -65,7 +65,6 @@ alias gpu='git push -u origin HEAD'
 alias gc='~/.config/scripts/fancy-git-commit.sh'
 
 # My bin files
-alias ip='~/.config/scripts/pomodoro/init_pomo'
 alias dotz='cd ~/dotfiles'
 alias b='~/.config/scripts/brew-tools'
 

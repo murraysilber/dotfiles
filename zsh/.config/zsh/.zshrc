@@ -7,6 +7,12 @@ if command -v tmux &>/dev/null && [[ -z "$TMUX" ]]; then
   tmux new-session -A -s main
 fi
 
+# set location of .zcompdump
+# Save the location of the current completion dump file.
+if [ -z "$ZSH_COMPDUMP" ]; then
+  ZSH_COMPDUMP="${ZDOTDIR:-${ZSH}}/cache/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
+fi
+
 # Load and initialise things
 autoload -U zmv
 # autoload -U promptinit && promptinit
