@@ -8,3 +8,5 @@
 lua/.luarc.json
 dev-plugins
 .vscode/
+.zcompdump
+

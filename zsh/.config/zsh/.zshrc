@@ -7,17 +7,22 @@ if command -v tmux &>/dev/null && [[ -z "$TMUX" ]]; then
   tmux new-session -A -s main
 fi
 
-# set location of .zcompdump
-# Save the location of the current completion dump file.
-if [ -z "$ZSH_COMPDUMP" ]; then
-  ZSH_COMPDUMP="${ZDOTDIR:-${ZSH}}/cache/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
-fi
-
 # Load and initialise things
 autoload -U zmv
 # autoload -U promptinit && promptinit
 autoload -U colors && colors
-autoload -Uz compinit && compinit
+
+autoload -Uz zrecompile
+autoload -Uz compinit
+dump=$ZSH_COMPDUMP
+
+# http://zsh.sourceforge.net/Doc/Release/Conditional-Expressions.html
+if [[ -s $dump(#qN.mh+24) && (! -s "$dump.zwc" || "$dump" -nt "$dump.zwc") ]]; then
+    compinit -i d $ZSH_COMPDUMP
+    zrecompile $ZSH_COMPDUMP
+fi
+compinit -C
+
 
 # history setup
 export HISTSIZE=50000

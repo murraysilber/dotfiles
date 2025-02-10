@@ -30,7 +30,7 @@ export CC="/opt/homebrew/bin/gcc-14"
 export ZDOTDIR="$HOME/.config/zsh"
 export DOTFILES="$HOME/dotfiles"
 export SCRIPT_DIR="$HOME/.config/scripts"
-
+export ZSH_COMPDUMP="$HOME/.zcompdump"
 # Add /usr/local/bin to the beginning of the PATH environment variable.
 # This ensures that executables in /usr/local/bin are found before other directories in the PATH.
 export PATH="/usr/local/bin:$PATH"
