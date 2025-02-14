@@ -87,6 +87,8 @@ return {
       },
     }
 
+    lspconfig.taplo.setup {}
+
     lspconfig.pylsp.setup {
       settings = {
         pylsp = {

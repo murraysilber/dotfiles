@@ -17,6 +17,7 @@ return { -- Highlight, edit, and navigate code
       'vim',
       'vimdoc',
       'python',
+      'toml',
     },
     -- Autoinstall languages that are not installed
     auto_install = true,
