@@ -8,8 +8,16 @@ return {
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
 
+  -- Navigate nvim and tmux windows/panels with vim bindings
   {
     'christoomey/vim-tmux-navigator',
+
+    event = function()
+      if vim.fn.exists '$TMUX' == 1 then
+        return 'VeryLazy'
+      end
+    end,
+
     cmd = {
       'TmuxNavigateLeft',
       'TmuxNavigateDown',
@@ -18,6 +26,7 @@ return {
       'TmuxNavigatePrevious',
       'TmuxNavigatorProcessList',
     },
+
     keys = {
       { '<c-h>', '<cmd><C-U>TmuxNavigateLeft<cr>' },
       { '<c-j>', '<cmd><C-U>TmuxNavigateDown<cr>' },
