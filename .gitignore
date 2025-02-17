@@ -9,4 +9,13 @@ lua/.luarc.json
 dev-plugins
 .vscode/
 .zcompdump
-
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+*.log
+data
+.DS_Store
+lazy-lock.json
