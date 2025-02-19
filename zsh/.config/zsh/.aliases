@@ -38,8 +38,6 @@ alias rm='rm -iv'
 # +-----+
 alias v="nvim"
 alias nv="nvim --startuptime startuptime.log"
-alias vk='NVIM_APPNAME=nvim-kickstart nvim' # Kickstart
-alias vl='NVIM_APPNAME=nvim-lazy nvim' # Kickstart
 
 # +-------+
 # | fonts |
@@ -60,7 +58,7 @@ alias pscpu='ps auxf | sort -nr -k 3 | head -5'
 # +----+
 # | cd |
 # +----+
-alias dboot='cd ~/Developer/boot.dev'
+# alias dboot='cd ~/Developer/boot.dev'
 
 # git
 alias gpu='git push -u origin HEAD'
