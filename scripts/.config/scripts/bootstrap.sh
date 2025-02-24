@@ -114,7 +114,6 @@ done
 
 # symlink dotfiles for vscode and Rectangle....they have specific targets that differ from the rest
 for i in vscode rectangle; do
-
   stow -v -t ~/Library/Application\ Support/ "$i"
 done
 # Rectangle
