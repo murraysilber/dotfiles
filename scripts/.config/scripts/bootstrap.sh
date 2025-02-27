@@ -57,8 +57,7 @@ install_homebrew() {
 
 # dotfiles directory
 dotfile_dir="$HOME/dotfiles"
-# DOTFILES_DIR="$HOME/Repos/github.com/mischavandenburg/dotfiles"
-XDG_CONFIG_HOME="$HOME/.config"
+# XDG_CONFIG_HOME="$HOME/.config"
 
 # clone dotfiles repo from github
 clone_git_repo() {
@@ -116,15 +115,6 @@ done
 for i in vscode rectangle; do
   stow -v -t ~/Library/Application\ Support/ "$i"
 done
-# Rectangle
-# stow -nvt "$HOME/Library/Application Support" rectangle
-# stow -nv -t "$HOME/Library/Application Support" rectangle
-# stow -nv -t ~/Library/Application Support rectangle
-# stow -nv -t '~/Library/Application Support' rectangle
-# stow -nv -t '~/Library/Application Support/' rectangle
-# stow -nv -t ~/Library/Application\Support/ rectangle
-# stow -nv -t ~/Library/Application\ Support/ rectangle
-# stow -v -t ~/Library/Application\ Support/ rectangle
 
 # INSTALL APPS
 # Install Apps using Homebrew & mas

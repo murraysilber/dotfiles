@@ -63,3 +63,4 @@ hyperkey
 logseq
 rectangle
 visual-studio-code
+skim

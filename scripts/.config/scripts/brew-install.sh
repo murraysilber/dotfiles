@@ -19,6 +19,7 @@ apps=(
   "rectangle"
   # "zettlr"
   "ghostty"
+  "skim"
 )
 
 # Loop over the array to install each cask
@@ -54,6 +55,7 @@ packages=(
   "fd"
   "stow"
   "gcc"
+  "hyperkey"
 )
 
 # Loop over the array to install each application.

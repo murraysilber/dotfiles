@@ -1,6 +1,6 @@
 return {
   { "f4z3r/gruvbox-material.nvim" },
-  -- Configure LazyVim to load gruvbox
+  -- Configure LazyVim to load gruvbox-material
   {
     "LazyVim/LazyVim",
     opts = {

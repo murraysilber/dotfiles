@@ -59,7 +59,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 ## Essential Shortcuts
 
-- Prefix: `CTRL + a`
+- Prefix: `CTRL + b`
 - Create new tmux window: `Prefix + c`
 - Navigate to window: `Prefix + number`
 - Cycle through window: `Prefix + n/p`
@@ -73,6 +73,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 - Install plugins: `Prefix + I`
 
 ## Pomodoro Shortcuts
+
 <tmux-prefix> p to toggle between starting/pausing a Pomodoro/break
 <tmux-prefix> P to cancel a Pomodoro/break
 <tmux-prefix> _ to skip a Pomodoro/break
