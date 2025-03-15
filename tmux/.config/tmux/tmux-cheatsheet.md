@@ -59,31 +59,47 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 ## Essential Shortcuts
 
-- Prefix: `CTRL + b`
+### Windows
+
 - Create new tmux window: `Prefix + c`
 - Navigate to window: `Prefix + number`
 - Cycle through window: `Prefix + n/p`
 - See all windows: `Prefix + w`
 - Rename window: `Prefix + ,`
+- Find window by name: `Prefix + f`
+- To close a window: `Prefix + &`
+
+### Panes
+
+- Split window vertically: `Prefix + %`
+- Split window horizontally: `Prefix + "`
+- Close current active pane: `Prefix + x`
+
+### Sessions
+
 - Rename session: `Prefix + $`
 - Explore sessions: `Prefix + s`
 - Save sessions: `Prefix + CTRL + s`
 - Detach: `Prefix + d`
 - Restore session: `Prefix + CTRL + r`
+
+### General
+
+- Prefix: `CTRL + b`
 - Install plugins: `Prefix + I`
 
-## Pomodoro Shortcuts
+### Pomodoro Shortcuts
 
-<tmux-prefix> p to toggle between starting/pausing a Pomodoro/break
-<tmux-prefix> P to cancel a Pomodoro/break
-<tmux-prefix> _ to skip a Pomodoro/break
-<tmux-prefix> e to restart a Pomodoro
-<tmux-prefix> C-p to open the Pomodoro timer menu
-<tmux-prefix> M-p to set a custom Pomodoro timer
+- To toggle between starting/pausing a Pomodoro/break: `Prefix + p`
+- To cancel a Pomodoro/break: `Prefix + P`
+- To skip a Pomodoro/break: `Prefix + _`
+- To restart a Pomodoro: `Prefix + e`
+- To open the Pomodoro timer menu: `Prefix + C-p`
+- To set a custom Pomodoro timer: `Prefix + M-p`
 
 ## Useful Snippets
 
-Add this to you `.zshrc` to always work in a Tmux session:
+Add this to your `.zshrc` to always work in a Tmux session:
 
 ```shell
 # Always work in a tmux session if Tmux is installed

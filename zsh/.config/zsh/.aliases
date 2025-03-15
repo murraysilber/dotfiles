@@ -38,7 +38,7 @@ alias rm='rm -iv'
 # +-----+
 alias v="nvim"
 alias nv="nvim --startuptime startuptime.log"
-
+alias kv="NVIM_APPNAME=kvim nvim"
 # +-------+
 # | fonts |
 # +-------+
