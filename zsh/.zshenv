@@ -36,4 +36,3 @@ export ZSH_COMPDUMP="$HOME/.zcompdump"
 export PATH="/usr/local/bin:$PATH"
 
 export PATH="$HOME/.config/scripts:$PATH"
-export PATH="$HOME/.config/scripts/pomodoro:$PATH"
