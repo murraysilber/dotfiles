@@ -1,71 +1,36 @@
--- Options are automatically loaded before lazy.nvim startup
--- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
--- Add any additional options here
---
--- Make line numbers default
-vim.opt.number = true
--- You can also add relative line numbers, to help with jumping.
---  Experiment for yourself to see if you like it!
-vim.opt.relativenumber = true
+vim.g.mapleader = " " -- space leader key
+vim.o.mouse = "" -- disable mouse in nvim
 
--- Enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = "a"
+vim.o.termguicolors = true -- enable 24-bit colors
+vim.o.updatetime = 200 -- save swap file with 200ms debouncing
+vim.o.autoread = true -- auto update file if changed outside of nvim
+vim.o.undofile = true -- persistant undo history
+vim.o.number = true -- enable line numbers
+vim.o.relativenumber = true -- enable relative line numbers
 
--- Don't show the mode, since it's already in the status line
-vim.opt.showmode = false
+vim.o.completeopt = "menu,menuone,noselect,preview" -- omnicomplete options for popup menu
+vim.o.pumheight = 10 -- max height of completion menu
+vim.o.winborder = "rounded" -- rounded border
+vim.o.showmode = false -- disable showing mode below statusline
 
--- Sync clipboard between OS and Neovim.
---  Schedule the setting after `UiEnter` because it can increase startup-time.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
-vim.schedule(function()
-  vim.opt.clipboard = "unnamedplus"
-end)
+vim.o.cursorline = true -- enable cursor line
+vim.o.signcolumn = "yes" -- always show sign column
+vim.o.ignorecase = true -- case-insensitive search
+vim.o.smartcase = true -- until search pattern contains upper case characters
+vim.o.incsearch = true -- enable highlighting search in progress
 
--- Enable break indent
-vim.opt.breakindent = true
+vim.o.tabstop = 2 -- how many spaces tab inserts
+vim.o.softtabstop = 2 -- how many spaces tab inserts
+vim.o.shiftwidth = 2 -- controls number of spaces when using >> or << commands
+vim.o.expandtab = true -- use appropriate number of spaces with tab
+vim.o.smartindent = true -- indenting correctly after {
+vim.o.autoindent = true -- copy indent from current line when starting new line
+vim.o.scrolloff = 8 -- always keep 8 lines above/below cursor unless at start/end of file
 
--- Save undo history
-vim.opt.undofile = true
+vim.o.splitbelow = true -- better splitting
+vim.o.splitright = true -- better splitting
 
--- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+vim.o.wrap = false -- disable wrapping
+vim.o.breakindent = true -- prevent line wrapping
 
--- Keep signcolumn on by default
-vim.opt.signcolumn = "yes"
-
--- Decrease update time
-vim.opt.updatetime = 250
-
--- Decrease mapped sequence wait time
-vim.opt.timeoutlen = 300
-
--- Configure how new splits should be opened
-vim.opt.splitright = true
-vim.opt.splitbelow = true
-
--- Sets how neovim will display certain whitespace characters in the editor.
---  See `:help 'list'`
---  and `:help 'listchars'`
-vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
-
--- Preview substitutions live, as you type!
-vim.opt.inccommand = "split"
-
--- Show which line your cursor is on
-vim.opt.cursorline = true
-
--- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
-
--- colour related settings
-vim.opt.termguicolors = true -- better colours on true colour terminals
-vim.opt.background = "dark" -- default colourschemes to dark if they have both
-
--- gutter related settings
-vim.opt.signcolumn = "yes" -- show sign column so that text in editor does not shift
-
--- backspace
-vim.opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line, or insert mode start position
+vim.diagnostic.config({ virtual_text = true }) -- inline diagnostics
