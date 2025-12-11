@@ -48,7 +48,7 @@ opt.undofile = true -- Persistent undo
 opt.undolevels = 10000
 opt.undodir = vim.fn.expand("~/.vim/undodir") -- Undo directory
 opt.updatetime = 300 -- Faster completion
--- opt.timeoutlen = vim.g.vscode and 1000 or 300 -- Lower than default (1000) to quickly trigger which-key
+opt.timeoutlen = vim.g.vscode and 1000 or 300 -- Lower than default (1000) to quickly trigger which-key
 opt.ttimeoutlen = 0 -- Key code timeout
 opt.autoread = true -- Auto reload files changed outside vim
 opt.autowrite = true -- Auto save
@@ -99,21 +99,25 @@ end
 
 vim.g.autoformat = true
 vim.g.trouble_lualine = true
+
 opt.fillchars = {
-	foldopen = "",
-	foldclose = "",
+	-- foldopen = "",
+	-- foldclose = "",
 	fold = " ",
 	foldsep = " ",
 	diff = "╱",
 	eob = " ",
 }
+
 opt.jumpoptions = "view"
 opt.laststatus = 3 -- global statusline
+opt.list = false
 opt.linebreak = true -- Wrap lines at convenient points
-opt.list = false -- Show some invisible characters (tabs...)
+opt.list = true -- Show some invisible characters (tabs...
 opt.shiftround = true -- Round indent
 opt.shiftwidth = 2 -- Size of an indent
 opt.shortmess:append({ W = true, I = true, c = true, C = true })
+
 vim.g.markdown_recommended_style = 0
 
 vim.filetype.add({

@@ -14,7 +14,6 @@ return {
 				typescriptreact = { "prettierd", "prettier", stop_after_first = true },
 				graphql = { "prettierd", "prettier", stop_after_first = true },
 				sql = { "sql_formatter" },
-				go = { "goimports", "gofmt" },
 			},
 		},
 	},
@@ -28,15 +27,5 @@ return {
 		config = function()
 			require("nvim-ts-autotag").setup()
 		end,
-	},
-	{
-		{
-			"olexsmir/gopher.nvim",
-			ft = "go",
-			build = function()
-				vim.cmd.GoInstallDeps()
-			end,
-			opts = {},
-		},
 	},
 }

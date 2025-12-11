@@ -1,5 +1,6 @@
-require("config.autocommands")
+-- Load all configuration modules
 require("config.options")
 require("config.keymaps")
-require("config.globals")
-require("config.lazy")
+require("config.diagnostics")
+require("config.autocmds")
+
