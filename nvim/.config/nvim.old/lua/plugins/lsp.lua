@@ -6,14 +6,15 @@ return {
 		dependencies = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
-			"hrsh7th/cmp-nvim-lsp",
+			"WhoIsSethDaniel/mason-tool-installer.nvim",
 		},
 		config = function()
 			-- Mason setup
 			require("mason").setup()
-			require("mason-lspconfig").setup({
+			require("mason-lspconfig").setup()
+			require("mason-tool-installer").setup({
 				ensure_installed = {
-					--					"ruby_lsp", -- ruby LSP from Shopify
+					--	"ruby_lsp", -- ruby LSP from Shopify
 					-- "solargraph", -- still pretty popular, an alternative to ruby_lsp
 					"lua_ls", -- lua LSP
 					"html", -- html LSP
@@ -24,8 +25,6 @@ return {
 				},
 				automatic_installation = true,
 			})
-
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			-- on_attach function to map keys after LSP attaches to buffer
 			local on_attach = function(_, bufnr)

@@ -2,7 +2,7 @@ local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 -- "n" here applies the mapping in normal mode, "<leader>ex" is the key combination and "vim.cmd.Ex" open the file explorer
-map("n", "<leader>fe", vim.cmd.Ex)
+map("n", "<leader>ex", vim.cmd.Ex)
 
 -- Disable Space bar since it will be used as the leader key
 -- map({ "n", "v" }, "<leader>", "<nop>", opts)
@@ -61,10 +61,10 @@ map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsea
 -- Clear search, diff update and redraw
 -- taken from runtime/lua/_editor.lua
 map(
-  "n",
-  "<leader>ur",
-  "<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>",
-  { desc = "Redraw / Clear hlsearch / Diff Update" }
+	"n",
+	"<leader>ur",
+	"<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>",
+	{ desc = "Redraw / Clear hlsearch / Diff Update" }
 )
 
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
@@ -102,17 +102,17 @@ map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
 
 -- location list
 map("n", "<leader>xl", function()
-  local success, err = pcall(vim.fn.getloclist(0, { winid = 0 }).winid ~= 0 and vim.cmd.lclose or vim.cmd.lopen)
-  if not success and err then
-    vim.notify(err, vim.log.levels.ERROR)
-  end
+	local success, err = pcall(vim.fn.getloclist(0, { winid = 0 }).winid ~= 0 and vim.cmd.lclose or vim.cmd.lopen)
+	if not success and err then
+		vim.notify(err, vim.log.levels.ERROR)
+	end
 end, { desc = "Location List" })
 -- quickfix list
 map("n", "<leader>xq", function()
-  local success, err = pcall(vim.fn.getqflist({ winid = 0 }).winid ~= 0 and vim.cmd.cclose or vim.cmd.copen)
-  if not success and err then
-    vim.notify(err, vim.log.levels.ERROR)
-  end
+	local success, err = pcall(vim.fn.getqflist({ winid = 0 }).winid ~= 0 and vim.cmd.cclose or vim.cmd.copen)
+	if not success and err then
+		vim.notify(err, vim.log.levels.ERROR)
+	end
 end, { desc = "Quickfix List" })
 
 map("n", "[q", vim.cmd.cprev, { desc = "Previous Quickfix" })
@@ -157,17 +157,17 @@ map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
 -- Close all fold except the current one.
 map("n", "zv", "zMzvzz", {
-  desc = "Close all folds except the current one",
+	desc = "Close all folds except the current one",
 })
 
 -- Close current fold when open. Always open next fold.
 map("n", "zj", "zcjzOzz", {
-  desc = "Close current fold when open. Always open next fold.",
+	desc = "Close current fold when open. Always open next fold.",
 })
 
 -- Close current fold when open. Always open previous fold.
 map("n", "zk", "zckzOzz", {
-  desc = "Close current fold when open. Always open previous fold.",
+	desc = "Close current fold when open. Always open previous fold.",
 })
 
 -- Better paste
@@ -187,12 +187,12 @@ map("v", ">", ">gv", opts)
 
 -- Easier access to beginning and end of lines
 map("n", "<A-h>", "^", {
-  desc = "Go to start of line",
-  silent = true,
+	desc = "Go to start of line",
+	silent = true,
 })
 map("n", "<A-l>", "$", {
-  desc = "Go to end of line",
-  silent = true,
+	desc = "Go to end of line",
+	silent = true,
 })
 
 -- Move live up or down
@@ -206,13 +206,13 @@ map("v", "<A-Up>", ":m '<-2<CR>gv=gv", opts)
 
 -- Fix Spell checking
 map("n", "z0", "1z=", {
-  desc = "Fix world under cursor",
+	desc = "Fix world under cursor",
 })
 
 -- Toggle wrap
 map("n", "<leader>tw", "<cmd>set wrap!<CR>", {
-  desc = "Toggle Wrap",
-  silent = true,
+	desc = "Toggle Wrap",
+	silent = true,
 })
 
 -- auto close pairs
