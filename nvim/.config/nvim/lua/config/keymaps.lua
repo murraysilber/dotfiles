@@ -2,7 +2,7 @@ local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 -- "n" here applies the mapping in normal mode, "<leader>ex" is the key combination and "vim.cmd.Ex" open the file explorer
-map("n", "<leader>fe", vim.cmd.Ex)
+map("n", "<leader>cd", vim.cmd.Ex)
 
 -- Disable Space bar since it will be used as the leader key
 -- map({ "n", "v" }, "<leader>", "<nop>", opts)
