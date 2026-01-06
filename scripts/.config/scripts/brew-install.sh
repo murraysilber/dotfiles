@@ -47,6 +47,7 @@ packages=(
   "tmux"
   "mise"
   "uv"
+  "tree-sitter-cli"
   "zsh-autosuggestions"
   "zsh-syntax-highlighting"
   "fzf"

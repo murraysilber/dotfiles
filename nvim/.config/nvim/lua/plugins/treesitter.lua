@@ -1,28 +1,34 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  lazy = false,
   build = ":TSUpdate",
-  config = function()
-    local configs = require("nvim-treesitter.configs")
-    configs.setup({
-      highlight = { enable = true },
-      indent = { enable = true },
-      autoage = { enable = true },
-      ensure_installed = {
-        "lua",
-        "ruby",
-        "elixir",
-        "eex",
-        "vim",
-        "html",
-        "javascript",
-        "query",
-        "vimdoc",
-        "go",
-        "python",
-        "java", -- add whatever coding language that you use in your day-to-day
-        "regex",
-      },
-      auto_install = false,
-    })
-  end,
+  opts = {
+    ensure_installed = {
+      "bash",
+      "vimdoc",
+      "html",
+      "json",
+      "lua",
+      -- "markdown",
+      -- "markdown_inline",
+      "python",
+      "query",
+      "regex",
+      "vim",
+      "yaml",
+      "go",
+      "bicep",
+      "terraform",
+      "c_sharp",
+    },
+    -- Disable terraform treesitter on fixture files
+    highlight = {
+      disable = function(lang)
+        local buf_name = vim.fn.expand("%")
+        if lang == "terraform" and string.find(buf_name, "fixture") then
+          return true
+        end
+      end,
+    },
+  },
 }
