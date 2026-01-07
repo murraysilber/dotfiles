@@ -22,7 +22,9 @@ return {
           "emmet_ls", -- emmet LSP
           "jsonls",   -- json LSP
           "expert",   -- official Elixir LSP
-          "ruff"      -- Ruff LSP
+          "ruff",     -- Ruff LSP
+          "prettierd",
+          "expert",   -- Elixir LSP
         },
         automatic_installation = true,
       })

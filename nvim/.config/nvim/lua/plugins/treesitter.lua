@@ -20,6 +20,9 @@ return {
       "bicep",
       "terraform",
       "c_sharp",
+      "elixir",
+      "eex",
+      "ruby",
     },
     -- Disable terraform treesitter on fixture files
     highlight = {
