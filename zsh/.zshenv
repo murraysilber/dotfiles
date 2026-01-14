@@ -24,7 +24,7 @@ export BROWSER="chrome"
 
 # Mac provided c compiler cannot compile C++ 14 or later...so.....use another
 # CC=/opt/homebrew/bin/gcc-14 nvim -c "TSInstall norg"
-export CC="/opt/homebrew/bin/gcc-14"
+export CC="/opt/homebrew/bin/gcc-15"
 
 # Default Locations
 export ZDOTDIR="$HOME/.config/zsh"
