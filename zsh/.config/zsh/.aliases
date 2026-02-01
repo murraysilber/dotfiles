@@ -67,6 +67,7 @@ alias gc='~/.config/scripts/fancy-git-commit.sh'
 # My bin files
 alias dotz='cd ~/dotfiles'
 alias b='~/.config/scripts/brew-tools'
+alias notes='cd ~/Documents/notes/'
 
 #Python
 alias python='python3'
